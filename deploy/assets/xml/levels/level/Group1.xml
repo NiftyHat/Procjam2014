@@ -1,0 +1,50 @@
+	<AREA key="Group1" >
+		<LAYERS>
+			<LAYER depth="0" name="Map1" tile_width="32" tile_height="32" rows="10" cols="10" x="0" y="0" x_unit="0" y_unit="0" scroll_x="1" scroll_y="1" tile_path="graphics/tiles/greybox_tiles.png" collide="true" >
+				10,10,10,10,10,10,10,10,10,10
+				10,0,10,10,0,0,0,0,0,10
+				10,0,10,0,0,0,0,0,0,10
+				10,0,10,0,0,0,10,0,0,10
+				10,0,10,0,0,10,10,10,0,10
+				10,0,0,0,0,10,0,10,0,10
+				10,0,0,0,0,0,0,0,0,10
+				10,3,0,0,0,0,0,0,0,10
+				10,10,2,3,0,0,0,0,0,10
+				10,10,10,10,10,10,10,10,10,10
+			</LAYER>
+		</LAYERS>
+		<OBJECTS>
+			<START>
+				<START x="96.000" y="128.000"/>
+				<ID link_id="null" guid="2E77C800-5898-CF3F-6ACB-A3CD814ED251"/>
+				<CLASS name="MARKER_START"/>
+				<SIZE width="16.000" height="16.000"/>
+				<ROTATION deg="0.000" rad="0.000"/>
+				<BOUNDS x="0" y="0"  width="16" height="16"/>
+				<SCROLL x="1" y="1"/>
+				<SCALE x="1.000" y="1.000" />
+				<ANCHOR x="0" y="0"/>
+				<PROPS>					
+				</PROPS>
+			</START>
+			<START>
+				<START x="864.000" y="352.000"/>
+				<ID link_id="null" guid="3D03AA4C-EA8F-5BED-B879-FD8FB8CF48C6"/>
+				<CLASS name="MARKER_START"/>
+				<SIZE width="16.000" height="16.000"/>
+				<ROTATION deg="0.000" rad="0.000"/>
+				<BOUNDS x="0" y="0"  width="16" height="16"/>
+				<SCROLL x="1" y="1"/>
+				<SCALE x="1.000" y="1.000" />
+				<ANCHOR x="0" y="0"/>
+				<PROPS>					
+				</PROPS>
+			</START>
+		</OBJECTS>
+		<SHAPES>
+		</SHAPES>
+		<LINKS>
+		</LINKS>
+		<PROPS>
+		</PROPS>
+	</AREA>

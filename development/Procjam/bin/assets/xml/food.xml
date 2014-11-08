@@ -1,0 +1,1419 @@
+<data>
+  <DONUT_GLAZED GRAPHIC="doughnut_sprinkle.png">
+    <NAME>Glazed Donut</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>SPEED</POWER>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Just as fatty and bad for you as a normal donut but with EXTRA sugar to increase the waistline even further.]]></COPY>
+  </DONUT_GLAZED>
+  <DONUT GRAPHIC="doughnut_glazed.png">
+    <NAME>Donut</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>FAT</POWER>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Homer's favourite: fat, sugar and more fat. You only have to look at his waistline to see the effect they can have on your own body. D'oh!]]></COPY>
+  </DONUT>
+  <ENERGY_DRINK GRAPHIC="blue_can.png">
+    <NAME>Energy Drink</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>can</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POWER>SPEED</POWER>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Yes it will give you a boost...but only because it is so full of sugar!]]></COPY>
+  </ENERGY_DRINK>
+  <LEMONADE GRAPHIC="yellow_can.png">
+    <NAME>Lemonade</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>can</SOUND>
+      <POWER>SPEED</POWER>
+      <HARM>50</HARM>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[It's water, a LOT of sugar and lemon flavouring. Your body will use those calories first then convert your food to fat, woohoo!]]></COPY>
+  </LEMONADE>
+  <ORANGEADE GRAPHIC="orange_can.png">
+    <NAME>Orangeade</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>can</SOUND>
+      <POWER>SPEED</POWER>
+      <HARM>50</HARM>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[It's water, a LOT of sugar and orange flavouring. Your body will use those calories first then convert your food to fat, woohoo!]]></COPY>
+  </ORANGEADE>
+  <COLA GRAPHIC="red_can.png">
+    <NAME>Cola</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>can</SOUND>
+      <POWER>SPEED</POWER>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[It's water, a LOT of sugar and cola flavouring. Your body will use those calories first then convert your food to fat, woohoo!]]></COPY>
+  </COLA>
+  <BEANS GRAPHIC="beans.png">
+    <NAME>Baked Beans</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="0" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>C,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA["Beans, beans, good for your heart. The more you eat the more you fart!" Who knew you were receiving nutrition advice in the playground?]]></COPY>
+  </BEANS>
+  <LENTILS GRAPHIC="lentils.png">
+    <NAME>Lentils</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="0" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>IRN,MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Vegetarians know their power: add herbs or spices to them to improve your interest. Lentils, that is - not vegetarians...]]></COPY>
+  </LENTILS>
+  <ONION GRAPHIC="onion.png">
+    <NAME>Onion</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Versatile and ubiquitous, they are edible raw or gently fried as part of something bigger and are an easy part of your 5 fruit-and-veg a day.]]></COPY>
+  </ONION>
+  <GREEN_PEPPER GRAPHIC="green_pepper.png">
+    <NAME>Green Pepper</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>C</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Interesting fact: contains vitamin C but half as much as its brother the red pepper]]></COPY>
+  </GREEN_PEPPER>
+  <CAULIFLOWER GRAPHIC="cauliflower.png">
+    <NAME>Cauliflower</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Low in fat, high in dietary fibre, lots of calcium, what more can you ask? Don't boil it to a mush though.]]></COPY>
+  </CAULIFLOWER>
+  <BROCCOLI GRAPHIC="broccoli.png">
+    <NAME>Broccoli</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Superfood! Rich in the antioxidants vitamin C and beta-carotene, as well as folate - all of which can protect against cardiovascular disease and cancer.]]></COPY>
+  </BROCCOLI>
+  <SPROUTS GRAPHIC="sprout.png">
+    <NAME>Sprouts</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>C,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Don't feel sorry for the humble sprout. They taste better than they smell and being high in folic acid can help prevent heart disease too.]]></COPY>
+  </SPROUTS>
+  <ASPARAGUS GRAPHIC="asparagus.png">
+    <NAME>Asparagus</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>B,BTC</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[It may make your wee smell, but in some countries it's an aphrodisiac (The asaparagus, not your wee).]]></COPY>
+  </ASPARAGUS>
+  <CELERY GRAPHIC="celery.png">
+    <NAME>Celery</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Its potassium content helps maintain nerves and muscles too.]]></COPY>
+  </CELERY>
+  <PRUNES GRAPHIC="prunes.png">
+    <NAME>Prunes</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[These sweet, wrinkled beauties can really get things moving and keep your gut healthy. "Better out than in", as they say.]]></COPY>
+  </PRUNES>
+  <FROZEN_SPINACH GRAPHIC="spinach_frozen.png">
+    <NAME>Frozen Spinach</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Flash-frozen from the field, frozen spinach is just as healthy as fresh.]]></COPY>
+  </FROZEN_SPINACH>
+  <SPINACH GRAPHIC="spinach.png">
+    <NAME>Spinach</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Versatile as you can eat it raw, boiled or steamed. High in iron, which helps your blood cells circulate oxygen round your body.]]></COPY>
+  </SPINACH>
+  <TINNED_SPINACH GRAPHIC="spinach_canned.png">
+    <NAME>Tinned Spinach</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Not as good for you as the fresh stuff, but eating any vegetables is better than none!]]></COPY>
+  </TINNED_SPINACH>
+  <EGG GRAPHIC="egg_raw.png">
+    <NAME>Egg</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="0" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>D,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Full of proteins and vitamins, eggs are super foods! Scrambled, boiled or poached, they are delicious!]]></COPY>
+  </EGG>
+  <BOILED_EGG GRAPHIC="egg.png">
+    <NAME>Boiled Egg</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>D,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Nothing could be simpler to cook. Line up some soldiers and you'll have full battle strength! Full of vitamins and proteins.]]></COPY>
+  </BOILED_EGG>
+  <FRIED_EGG GRAPHIC="egg_fried.png">
+    <NAME>Fried Egg</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="0" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>D,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[OK, eggs are superfood! But fried means adding lots of fat, so it's not as healthy as a boiled one.]]></COPY>
+  </FRIED_EGG>
+  <CHICKEN_FILLET GRAPHIC="chicken_fillet_grilled.png">
+    <NAME>Chicken Fillet</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Grilled, stir fried on in a curry sauce, they are packed with protein. The healthiest way to eat a chook is without the skin on.]]></COPY>
+  </CHICKEN_FILLET>
+  <GRILLED_STEAK GRAPHIC="steak_lean.png">
+    <NAME>Grilled Steak</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>IRN,MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Be brave, go rare! Lean red meat is high in protein and very good for you, but if you cremate it you'll be left with an old leather sole.]]></COPY>
+  </GRILLED_STEAK>
+  <FATTY_STEAK GRAPHIC="steak_fatty.png">
+    <NAME>Fatty Steak</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="0" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>IRN,MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[The clue is in the title - eat too much fat and you'll go the same way. Fat is essential for your cells but not waistline.]]></COPY>
+  </FATTY_STEAK>
+  <FISH GRAPHIC="fish_fresh.png">
+    <NAME>White Fish</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>D,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Fish in almost all forms is low in fat good for you and your heart. No, that doesn't include deep fried and battered with a side of fries.]]></COPY>
+  </FISH>
+  <GRILLED_FISH GRAPHIC="fish_grilled.png">
+    <NAME>Grilled White Fish</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL,MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Grilled with some lemon, garlic and parsley, it's well pucka! As Mr Oliver says, "Please may I have some more?"]]></COPY>
+  </GRILLED_FISH>
+  <BATTERED_FISH GRAPHIC="fish_battered.png">
+    <NAME>Battered White Fish</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="0" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL,MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Treat it as a treat...not as healthy as baked, boiled or grilled fish and the less said about the chips the better.]]></COPY>
+  </BATTERED_FISH>
+  <WHOLEGRAIN_BREAD GRAPHIC="bread_brown.png">
+    <NAME>Whole Grain Bread</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="500" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>EXTENDED</POWER>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>IRN,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Like all carbohydrates, whole grain bread is a great source of slow release energy and the whole grain has extra minerals and fibre.]]></COPY>
+  </WHOLEGRAIN_BREAD>
+  <WHOLEGRAIN_PASTA GRAPHIC="pasta_brown.png">
+    <NAME>Whole Grain Pasta</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="500" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>EXTENDED</POWER>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Like all carbohydrates, pasta is a great source of slow release energy and the whole grain has extra minerals and fibre.]]></COPY>
+  </WHOLEGRAIN_PASTA>
+  <WHOLEGRAIN_BAGEL GRAPHIC="bagel_brown.png">
+    <NAME>Whole Grain Bagel</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="500" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>EXTENDED</POWER>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Like all carbohydrates, whole grain bread is a great source of slow release energy. The whole grain contains extra minerals and fibre.]]></COPY>
+  </WHOLEGRAIN_BAGEL>
+  <WHOLEGRAIN_CRACKER GRAPHIC="cracker_wholemeal.png">
+    <NAME>Whole Grain Cracker</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="500" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>EXTENDED</POWER>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Like all carbohydrates, whole grain cracker is a great source of slow release energy and the whole grain has extra minerals and fibre.]]></COPY>
+  </WHOLEGRAIN_CRACKER>
+  <POTATOES GRAPHIC="potato.png">
+    <NAME>Potato</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="500" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>EXTENDED</POWER>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>C</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Boiled potatoes are full of good things and keep you full for longer with lots of slow release carbohydrates.]]></COPY>
+  </POTATOES>
+  <BANANA GRAPHIC="banana.png">
+    <NAME>Bananas</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>EXTENDED</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[From green to yellow to brown. It can have different tastes, from starchy to very sweet. It is rich in potassium and so good after a workout!]]></COPY>
+  </BANANA>
+  <PORRIDGE GRAPHIC="cereal_porridge.png">
+    <NAME>Porridge</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="500" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>EXTENDED</POWER>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Packed with slow release energy, phytochemicals and antioxidants. These can help prevent heart diseases and certain cancers but avoid the added sugar versions if you can.]]></COPY>
+  </PORRIDGE>
+  <WHITE_BREAD GRAPHIC="bread_white.png">
+    <NAME>White Bread</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="500" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Like all carbohydrates, bread is a great source of slow release energy.]]></COPY>
+  </WHITE_BREAD>
+  <WHITE_PASTA GRAPHIC="pasta_white.png">
+    <NAME>White Pasta</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="450" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Like all carbohydrates, pasta is a great source of slow release energy and goes with virtually everything.]]></COPY>
+  </WHITE_PASTA>
+  <WHITE_BAGEL GRAPHIC="bagel_white.png">
+    <NAME>White Bagel</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="450" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Like all carbohydrates, bagels are a great source of slow release energy and contain extra calcium.]]></COPY>
+  </WHITE_BAGEL>
+  <BREAKFAST_CEREAL GRAPHIC="cereal_sugar.png">
+    <NAME>Breakfast Cereal</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>IRN,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Some breakfast cereals have as much sugar as a can of cola. Brown toast or porridge would be a better option.]]></COPY>
+  </BREAKFAST_CEREAL>
+  <WHITE_RICE GRAPHIC="rice_white.png">
+    <NAME>White Rice</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="500" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>STARCH</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Billions of people can't be wrong. Simple to cook with lots of energy there's not a bad word to be said. Brown rice has extra minerals and fibre.]]></COPY>
+  </WHITE_RICE>
+  <ORANGE_SQUASH GRAPHIC="orange_juice.png">
+    <NAME>Orange juice</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>C</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[If you can't get them fresh, then freshly squeezed is just as good. Lots of natural sugar will give you a quick energy boost.]]></COPY>
+  </ORANGE_SQUASH>
+  <APPLEJUICE GRAPHIC="apple_juice.png">
+    <NAME>Apple Juice</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[An almost instant natural sugar boost for your body. Aim for pressed juice if you can or a real apple is even better.]]></COPY>
+  </APPLEJUICE>
+  <COOKIE GRAPHIC="cookie.png">
+    <NAME>Cookie</NAME>
+    <DIGESTION TIME="5.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[If a cookie monster really ate all those cookies he'd be the size of a house! Biscuits are a treat, not a way of life.]]></COPY>
+  </COOKIE>
+  <SWEET GRAPHIC="sweet.png">
+    <NAME>Sweet</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <POWER>SPEED</POWER>
+      <HARM>25</HARM>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[It really is just like eating a spoonful of sugar, with some colouring. Fast burn energy is the only result.]]></COPY>
+  </SWEET>
+  <BURGER GRAPHIC="burger.png">
+    <NAME>Burger</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>IRN,MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[The epitome of fast food, McFatAss grew large on these. Home-made ones can be good for you but fast food burgers will make your heart suffer.]]></COPY>
+  </BURGER>
+  <BURGER_CHICKEN GRAPHIC="burger_chicken.png">
+    <NAME>Chicken Burger</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[The chicken might have protein, but it's been seriously abused by all the mayonnaise, salt, ketchup and fried breadcrumbs.]]></COPY>
+  </BURGER_CHICKEN>
+  <FRENCHFRIES GRAPHIC="fries.png">
+    <NAME>French Fries</NAME>
+    <DIGESTION TIME="19.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <HARM>50</HARM>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>C</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Plain potatoes contain 0% fat. French fried versions contain nearly 50% fat. If that doesn't knock you over the extra salt and sugar will.]]></COPY>
+  </FRENCHFRIES>
+  <MILK GRAPHIC="milk_whole.png">
+    <NAME>Milk</NAME>
+    <DIGESTION TIME="10.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>DAIRY</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Your bones & teeth will thank milk as it contains a mineral called calcium which is vital for their strength. A full fat option is best for young children.]]></COPY>
+  </MILK>
+  <MILK_SEMI GRAPHIC="milk_semi.png">
+    <NAME>Semi-skimmed Milk</NAME>
+    <DIGESTION TIME="10.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>DAIRY</GROUP>
+      <POINTS>50</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[A good balance between lower fat content but all the goodness of calcium that milk is best at.]]></COPY>
+  </MILK_SEMI>
+  <MILK_SKIMMED GRAPHIC="milk_skimmed.png">
+    <NAME>Skimmed Milk</NAME>
+    <DIGESTION TIME="10.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>DAIRY</GROUP>
+      <POINTS>20</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Less fat than any of the other milk! Good for people losing weight, but not good for babies' brains.]]></COPY>
+  </MILK_SKIMMED>
+  <CHEESE GRAPHIC="cheese.png">
+    <NAME>Cheese</NAME>
+    <DIGESTION TIME="10.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>DAIRY</GROUP>
+      <POINTS>100</POINTS>
+      <HARM>25</HARM>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Oh so cheesy but a rich source of calcium for strong bones. Watch the saturated fat and added salt though, it'll make your heart sad.]]></COPY>
+  </CHEESE>
+  <YOGHURT GRAPHIC="yoghurt.png">
+    <NAME>Yoghurt</NAME>
+    <DIGESTION TIME="10.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>DAIRY</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[A once simple food that's all too often mutated into a sugar filled, artificially flavoured dessert, so stick with natural varieties.]]></COPY>
+  </YOGHURT>
+  <LOWFAT_YOGHURT GRAPHIC="yoghurt_lowfat.png">
+    <NAME>Low Fat Yoghurt</NAME>
+    <DIGESTION TIME="10.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <HARM>50</HARM>
+      <GROUP>DAIRY</GROUP>
+      <POINTS>50</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Don't be fooled! Low fat doesn't mean low calories, just check the sugar content and additive list.]]></COPY>
+  </LOWFAT_YOGHURT>
+  <FRIED_CHICKEN GRAPHIC="drumstick.png">
+    <NAME>Fried Chicken</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Deep fried for your body's displeasure.]]></COPY>
+  </FRIED_CHICKEN>
+  <MC_BURGER GRAPHIC="burger_doublecheese.png">
+    <NAME>Dbl. Cheeseburger</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[All the downsides of a hamburger, but with extra cheese just to add insult to injury. A truly tasty but dangerous food.]]></COPY>
+  </MC_BURGER>
+  <MC_WINGS GRAPHIC="chicken_fried_wing.png">
+    <NAME>Fried Wings</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Take the piece of the chicken with the least meat and most fat and deep fry it to make it twice as bad for you.]]></COPY>
+  </MC_WINGS>
+  <MC_NUGGETS GRAPHIC="chicken_nugget.png">
+    <NAME>Nuggets</NAME>
+    <DIGESTION TIME="7.0" ENERGY_TEMP="180" ENERGY_PERM="120"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Really just a breaded slurry of chicken skin, tendons, salt, water and preservatives. Mmmm, skin and tendons...]]></COPY>
+  </MC_NUGGETS>
+  <MC_NACHOS GRAPHIC="nachos_cheese.png">
+    <NAME>Nachos</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Deep fried corn covered in melted cheese. Sounds good, but you may as well dip your heart in cheese too.]]></COPY>
+  </MC_NACHOS>
+  <MC_MUFFIN GRAPHIC="sausage_egg_muffin.png">
+    <NAME>Breakfast Muffin</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="500" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>STARCH</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Like all breads, contains lots of carbohydrates. It's what's between the buns that gives cause for concern.]]></COPY>
+  </MC_MUFFIN>
+  <MC_MEAL GRAPHIC="crappy_meal.png">
+    <NAME>Crappy Meal</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[A simple way of getting little kids to eat junk food. It usually contains as much packaging as food.]]></COPY>
+  </MC_MEAL>
+  <MC_BUCKET GRAPHIC="chicken_bucket.png">
+    <NAME>Sharing Bucket</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[There's enough fat in a bucket of fried chicken to sustain an army. If you're eating this alone you should be worried.]]></COPY>
+  </MC_BUCKET>
+  <MC_KEBAB GRAPHIC="kebab.png">
+    <NAME>Kebab</NAME>
+    <DIGESTION TIME="17.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[A chicken shish kebab and salad is actually a good meal, but a tired greasy lamb doner and chips is a time bomb for your body.]]></COPY>
+  </MC_KEBAB>
+  <MC_HOTDOG GRAPHIC="hotdog.png">
+    <NAME>Hotdog</NAME>
+    <DIGESTION TIME="17.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[It's meat from every part of beast, and we mean EVERY part. A neat little wiener hiding a multitude of sins.]]></COPY>
+  </MC_HOTDOG>
+  <MC_FISH GRAPHIC="fish_chips.png">
+    <NAME>Fish and Chips</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>FAT</POWER>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Fish and fat, fat and chips, chish and fips, whatever you call it, eat sparingly. It does not do wonders for your body.]]></COPY>
+  </MC_FISH>
+  <MC_SHAKE_BANANA GRAPHIC="milkshake_banana.png">
+    <NAME>Banana Milkshake</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[What was once a healthy glass of milk is now full of extra sugar, flavourings and additives. Next time try making it fresh at home with real fruit.]]></COPY>
+  </MC_SHAKE_BANANA>
+  <MC_SHAKE_CHOCOLATE GRAPHIC="milkshake_choc.png">
+    <NAME>Chocolate Milkshake</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[What was once a healthy glass of milk is now full of extra sugar, flavourings and additives.]]></COPY>
+  </MC_SHAKE_CHOCOLATE>
+  <MC_SHAKE_STRAWBERRY GRAPHIC="milkshake_straw.png">
+    <NAME>Berry Milkshake</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[What was once a healthy glass of milk is now full of extra sugar, flavourings and additives. Next time try making it fresh at home with real fruit.]]></COPY>
+  </MC_SHAKE_STRAWBERRY>
+  <MC_SLURRY_CHOCOLATE GRAPHIC="mrslurry_choc.png">
+    <NAME>Dbl Choc Mr.Slurry</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POWER>FAT</POWER>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Take one cheap ice cream dessert and add extra sugar and artificial chocolate sauce to give you a size boost.]]></COPY>
+  </MC_SLURRY_CHOCOLATE>
+  <MC_SLURRY_BERRY GRAPHIC="mrslurry_straw.png">
+    <NAME>Berry Mr.Slurry</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>FAT</POWER>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Take one cheap ice cream desert and add extra sugar and artificial berry sauce to give you a size boost.]]></COPY>
+  </MC_SLURRY_BERRY>
+  <MC_SLURRY_BANANA GRAPHIC="mrslurry_banana.png">
+    <NAME>Banana Mr.Slurry</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>FAT</POWER>
+      <HARM>50</HARM>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Take one cheap ice cream dessert and add extra sugar and artificial banana sauce to give you a size boost.]]></COPY>
+  </MC_SLURRY_BANANA>
+  <RASPBERRY GRAPHIC="raspberry.png">
+    <NAME>Raspberry</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>C</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Another great British summer fruit packed with vitamin C and super sweet as a treat.]]></COPY>
+  </RASPBERRY>
+  <STRAWBERRY GRAPHIC="strawberry.png">
+    <NAME>Strawberry</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>C</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[A summer favourite and only the real deal will do. Packed with vitamin C, they couldn't be better for you.]]></COPY>
+  </STRAWBERRY>
+  <APPLE GRAPHIC="apple.png">
+    <NAME>Apple</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>200</POINTS>
+    </EXTRA>
+    <COPY><![CDATA["An apple a day keeps the doctor away". Perhaps not entirely true but sweet crunchy fruit is very good for your body and teeth.]]></COPY>
+  </APPLE>
+  <TOMATOE GRAPHIC="tomato.png">
+    <NAME>Tomato</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>200</POINTS>
+      <VITAMIN>C,BTC</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Superfood! They are full of Vitamin C and Beta carotene.]]></COPY>
+  </TOMATOE>
+  <TOMATOE_CANNED GRAPHIC="tomato_canned.png">
+    <NAME>Canned Tomato</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>200</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Not as much Vitamin C as fresh tomatoes, but they're great in pasta sauces, curries or simply on toast.]]></COPY>
+  </TOMATOE_CANNED>
+  <ESPRESSO GRAPHIC="espresso.png">
+    <NAME>Espresso</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <POWER>SPEED</POWER>
+      <HARM>25</HARM>
+      <SOUND>gulp</SOUND>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[A short, quick hit of caffeine to get the body and mind moving faster. Too much coffee can have strange effects.]]></COPY>
+  </ESPRESSO>
+  <COFFEE GRAPHIC="coffee.png">
+    <NAME>Coffee</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <POWER>SPEED</POWER>
+      <HARM>25</HARM>
+      <SOUND>gulp</SOUND>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[Coffee contains caffeine which stimulates the body and mind to get you moving double time.]]></COPY>
+  </COFFEE>
+  <TEA GRAPHIC="tea.png">
+    <NAME>Tea</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <POINTS>100</POINTS>
+      <HARM>25</HARM>
+    </EXTRA>
+    <COPY><![CDATA[Tea has about half the caffeine of a cup of coffee but still acts as a stimulant to the body and mind.]]></COPY>
+  </TEA>
+  <SPAHGETTI_HOOPS GRAPHIC="spaghoops.png">
+    <NAME>Spaghetti Hoops</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="500" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <GROUP>STARCH</GROUP>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[In the time it takes to open a tin and reheat you could have cooked fresh pasta! Too much sugar in the sauce but a good source of energy.]]></COPY>
+  </SPAHGETTI_HOOPS>
+  <ALLSORT_ROUND_ORANGE GRAPHIC="sweetorange.png">
+    <NAME>Orange Sweet</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>25</HARM>
+      <POWER>SPEED</POWER>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[It really is just like eating a spoonful of sugar, with some orange colouring. Fast burn energy is the only result.]]></COPY>
+  </ALLSORT_ROUND_ORANGE>
+  <ALLSORT_ROUND_PINK GRAPHIC="sweetpink.png">
+    <NAME>Bubblegum Sweet</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>25</HARM>
+      <POWER>SPEED</POWER>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[It really is just like eating a spoonful of sugar, with some pink colouring. Fast burn energy is the only result.]]></COPY>
+  </ALLSORT_ROUND_PINK>
+  <ALLSORT_SQUARE_ORANGE GRAPHIC="sweetallsortorange.png">
+    <NAME>Liquorice Sweet</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>25</HARM>
+      <POWER>SPEED</POWER>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[It really is just like eating a spoonful of sugar, with some orange colouring. Fast burn energy is the only result.]]></COPY>
+  </ALLSORT_SQUARE_ORANGE>
+  <ALLSORT_SQUARE_PINK GRAPHIC="sweetallsortpink.png">
+    <NAME>Liquorice Sweet</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>25</HARM>
+      <POWER>SPEED</POWER>
+      <POINTS>100</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[It really is just like eating a spoonful of sugar, with some pink colouring. Fast burn energy is the only result.]]></COPY>
+  </ALLSORT_SQUARE_PINK>
+  <CARROT GRAPHIC="carrots.png">
+    <NAME>Carrot</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>BTC</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Millions of rabbits can't be wrong!  They are rich in the antioxidant beta-carotene. Crunch them raw, or gently cook for 10 minutes, they'll give you lots of bounce.]]></COPY>
+  </CARROT>
+  <ORANGE GRAPHIC="orange.png">
+    <NAME>Orange</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>C</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Oranges are not the only fruit of course, but this staple juicer is great sliced, sucked or squeezed.]]></COPY>
+  </ORANGE>
+  <BACON_SANDWICH GRAPHIC="sammich_bacon.png">
+    <NAME>Bacon Sandwich</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS>100</POINTS>
+      <HARM>50</HARM>
+      <VITAMIN>MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Bacon sarnies are virtually a staple food in some homes. Trim the fat and grill the bacon for a better behaved body.]]></COPY>
+  </BACON_SANDWICH>
+  <CHEESE_SANDWICH GRAPHIC="sammich_cheese.png">
+    <NAME>Cheese Sandwich</NAME>
+    <DIGESTION TIME="10.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>DAIRY</GROUP>
+      <POWER>FAT</POWER>
+      <POINTS>100</POINTS>
+      <HARM>25</HARM>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Cheese and pickle, a ploughman's favourite. If you eat it all the time then go for reduced fat version.]]></COPY>
+  </CHEESE_SANDWICH>
+  <JAM_SANDWICH GRAPHIC="sammich.png">
+    <NAME>Jam Sandwich</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POINTS>100</POINTS>
+      <HARM>50</HARM>
+    </EXTRA>
+    <COPY><![CDATA[Sugar plus fruit equals Jam. Between the carbohydrates in the bread and the jam it's got a lot of energy.]]></COPY>
+  </JAM_SANDWICH>
+  <NEW_POTATOE GRAPHIC="potato_new.png">
+    <NAME>New Potato</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="0" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>STARCH</GROUP>
+      <POWER>EXTENDED</POWER>
+      <POINTS>100</POINTS>
+      <VITAMIN>C</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Boiled potatoes are packed with good things and keep you full for longer with lots of slow release carbohydrates.]]></COPY>
+  </NEW_POTATOE>
+  <JACKET_POTATOE GRAPHIC="potato_jacket.png">
+    <NAME>Jacket Potato</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="500" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>STARCH</GROUP>
+      <POWER>EXTENDED</POWER>
+      <POINTS>100</POINTS>
+      <HARM>25</HARM>
+      <VITAMIN>C</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[A great meal in a jacket, eat with skin on and go easy on the mayonnaise and butter. Beans or Tuna is better.]]></COPY>
+  </JACKET_POTATOE>
+  <BREAKFAST_CEREAL_WHOLE GRAPHIC="cereal_musli.png">
+    <NAME>Muesli</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="200" ENERGY_PERM="500"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>STARCH</GROUP>
+	  <POWER>EXTENDED</POWER>
+      <POINTS>100</POINTS>
+      <VITAMIN>IRN,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Wholegrain cereals are high in fiber and give you energy throughout the day. They have lots of good minerals and vitamins for a healthy body. ]]></COPY>
+  </BREAKFAST_CEREAL_WHOLE>
+  <CHOCOLATE_BAR GRAPHIC="chocolate.png">
+    <NAME>Chocolate Bar</NAME>
+    <DIGESTION TIME="3.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>SPEED</POWER>
+      <POINTS>100</POINTS>
+      <HARM>25</HARM>
+    </EXTRA>
+    <COPY><![CDATA[Delicious! Don't over eat it though!]]></COPY>
+  </CHOCOLATE_BAR>
+  <ICECREAM_STRAWBERRY GRAPHIC="icecream_straw.png">
+    <NAME>Berry Ice-cream</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>SPEED</POWER>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[A creamy mix of cream eggs and sugar the energy levels are eye watering. Can be high in saturated fat.]]></COPY>
+  </ICECREAM_STRAWBERRY>
+  <ICECREAM_VANILLA GRAPHIC="icecream_vanilla.png">
+    <NAME>Vanilla Ice-cream</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>SPEED</POWER>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[A creamy mix of cream eggs and sugar the energy levels are eye watering. Can be high in saturated fat.]]></COPY>
+  </ICECREAM_VANILLA>
+  <ICECREAM_CHOCOLATE GRAPHIC="icecream_chocolate.png">
+    <NAME>Chocolate Ice-cream</NAME>
+    <DIGESTION TIME="8.0" ENERGY_TEMP="750" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>SPEED</POWER>
+      <HARM>25</HARM>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[A creamy mix of cream, eggs and sugar, the energy levels are eye watering. However, it can be high in saturated fat.]]></COPY>
+  </ICECREAM_CHOCOLATE>
+  <FISH_FINGER GRAPHIC="fish_finger.png">
+    <NAME>Fish Finger</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <HARM>50</HARM>
+      <POWER>FAT</POWER>
+      <POINTS>CAL,MAG</POINTS>
+    </EXTRA>
+    <COPY><![CDATA[It's the deep-fried breadcrumbs that bring this little fishy dish down. Frozen fillets would be better.]]></COPY>
+  </FISH_FINGER>
+  <PIZZA GRAPHIC="pizza_slice.png">
+    <NAME>Pizza</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>FAT</POWER>
+      <POINTS>100</POINTS>
+      <HARM>50</HARM>
+    </EXTRA>
+    <COPY><![CDATA[Pizza can be healthy, but not when covered in a meat feast and double cheesy crust. Pile on the veg instead!]]></COPY>
+  </PIZZA>
+  <SAUSAGE GRAPHIC="sausage.png">
+    <NAME>Sausage</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>PROTEIN</GROUP>
+      <POWER>STRENGTH</POWER>
+      <POINTS>100</POINTS>
+      <VITAMIN>IRN,MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Good and evil, sausages might contain good minerals, but also lots of saturated fat and salt, not ideal for a healthy heart.]]></COPY>
+  </SAUSAGE>
+  <MICROWAVE_CURRY GRAPHIC="microwave_lasagne.png">
+    <NAME>Micro Lasagne</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>FAT</POWER>
+      <POINTS>50</POINTS>
+      <HARM>50</HARM>
+    </EXTRA>
+    <COPY><![CDATA[A true TV dinner for couch potatoes everywhere! Lots of saturated fat from the fatty mince and cheese.]]></COPY>
+  </MICROWAVE_CURRY>
+  <MICROWAVE_LASAGNE GRAPHIC="microwave_curry.png">
+    <NAME>Micro Curry</NAME>
+    <DIGESTION TIME="9.0" ENERGY_TEMP="350" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>SUGAR_FAT</GROUP>
+      <POWER>FAT</POWER>
+      <POINTS>50</POINTS>
+      <HARM>50</HARM>
+    </EXTRA>
+    <COPY><![CDATA[Some takeaway curries are literally swimming in oil and salt, and your heart will be drowning in them.]]></COPY>
+  </MICROWAVE_LASAGNE>
+  <PEA GRAPHIC="peas.png">
+    <NAME>Pea</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>C,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Peas are high in fibre, protein, vitamins and minerals.]]></COPY>
+  </PEA>
+  <KIDNEY_BEANS GRAPHIC="kidney_beans.png">
+    <NAME>Kidney Beans</NAME>
+    <DIGESTION TIME="20" ENERGY_TEMP="0" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS/>
+      <VITAMIN>CAL,IRN</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Kidney beans are a very good source of cholesterol-lowering fibre and packed with minerals.]]></COPY>
+  </KIDNEY_BEANS>
+  <CASHEW GRAPHIC="cashew.png">
+    <NAME>Cashew nuts</NAME>
+    <DIGESTION TIME="20" ENERGY_TEMP="0" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <POWER>EXTENDED</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS/>
+      <VITAMIN>MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Raw is best, but even roasted, salted or sugared these nuts pack a mix of nutrients and minerals not found in many foods.]]></COPY>
+  </CASHEW>
+  <SARDINES GRAPHIC="sardines.png">
+    <NAME>Sardines</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS/>
+      <VITAMIN>CAL,D</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[It's sad to see these little nutritional powerhouses squashed in their tins. Liberate some today and reap the benefits of Omega 3 in your diet!]]></COPY>
+  </SARDINES>
+  <LAMB GRAPHIC="lamb.png">
+    <NAME>Lamb</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS/>
+      <VITAMIN>IRN,MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Cute to look at but even better with mint sauce. Full of proteins which help structure our cells and fuel us with energy.]]></COPY>
+  </LAMB>
+  <BRAZIL_NUTS GRAPHIC="brazil_nuts.png">
+    <NAME>Brazil nuts</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="0" ENERGY_PERM="300"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <POWER>EXTENDED</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS/>
+      <VITAMIN>CAL,MAG</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Go nuts for a Brazilian! Their proteins contain all the necessary amino acids to foster optimal growth in the human body. They are rich in the mineral selenium.]]></COPY>
+  </BRAZIL_NUTS>
+  <SHELLFISH GRAPHIC="shellfish.png">
+    <NAME>Shellfish</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS/>
+      <VITAMIN>MAG,B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[The UK's seas are full of some of the best. Low in fat, fast to cook, loads of protein, magnesium & vitamin B. There's more to them than a prawn cocktail.]]></COPY>
+  </SHELLFISH>
+  <RED_PEPPER GRAPHIC="red_pepper.png">
+    <NAME>Red Pepper</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>C,BTC</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Contains double the amount of vitamin C than its brother, the green pepper]]></COPY>
+  </RED_PEPPER>
+  <FIGS GRAPHIC="figs.png">
+    <NAME>Figs</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS>100</POINTS>
+      <VITAMIN>CAL,IRN</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[One of the highest plant sources of fibre, calcium and iron. It'll make you go far!]]></COPY>
+  </FIGS>
+  <APRICOT GRAPHIC="apricot.png">
+    <NAME>Apricot</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER/>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS/>
+      <VITAMIN>IRN,BTC</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Rich in fibre, iron and beta carotene, dried apricots can be used to relieve constipation. Drink plenty of water too!]]></COPY>
+  </APRICOT>
+  <GREEN_BEANS GRAPHIC="green_beans.png">
+    <NAME>Green beans</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS/>
+      <VITAMIN>B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Green beans come in all shapes and sizes. Containing lots of vitamin B essential for your health, but don't overcook them.]]></COPY>
+  </GREEN_BEANS>
+  <PLUMS GRAPHIC="plums.png">
+    <NAME>Plums</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER/>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS/>
+      <VITAMIN>BTC</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Purple, yellow or red, grab a couple of ripe ones today. They have as much beta-carotene as Carrots.]]></COPY>
+  </PLUMS>
+  <MELON GRAPHIC="melon.png">
+    <NAME>Melon</NAME>
+    <DIGESTION TIME="20.0" ENERGY_TEMP="750" ENERGY_PERM="100"/>
+    <EXTRA>
+      <SOUND>crunch</SOUND>
+      <POWER/>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS/>
+      <VITAMIN>C,BTC</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[They can be called a fruit or a plant, and taste great naked or with yoghurt on top.]]></COPY>
+  </MELON>
+  <CABBAGE GRAPHIC="cabbage.png">
+    <NAME>Cabbage</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>chew</SOUND>
+      <POWER>GAS</POWER>
+      <GROUP>FRUIT_VEG</GROUP>
+      <POINTS/>
+      <VITAMIN>B</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[The unsung hero in the prevention against Cancer. Just don't cook it too long!]]></COPY>
+  </CABBAGE>
+  <FROMAGE_FRAIS GRAPHIC="fromage_frais.png">
+    <NAME>Fromage Frais</NAME>
+    <DIGESTION TIME="10.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>DAIRY</GROUP>
+      <POINTS/>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Dairy foods are yummy but opt for the low fat varieties!]]></COPY>
+  </FROMAGE_FRAIS>
+  <CREAM_CHEESE GRAPHIC="cream_cheese.png">
+    <NAME>Cream Cheese</NAME>
+    <DIGESTION TIME="10.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>DAIRY</GROUP>
+      <HARM>25</HARM>
+      <POINTS/>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Easy to add to potatoes and pasta. Packs a lot of flavour but can have a lot of saturated fat too.]]></COPY>
+  </CREAM_CHEESE>
+  <CREAM GRAPHIC="cream.png">
+    <NAME>Double Cream</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <POWER>FAT</POWER>
+      <GROUP>DAIRY</GROUP>
+      <HARM>50</HARM>
+      <POINTS/>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[It's full of fat. Need we say more?]]></COPY>
+</CREAM>
+  <BACON GRAPHIC="bacon.png">
+    <NAME>Bacon</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <POWER>STRENGTH</POWER>
+      <HARM>25</HARM>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS/>
+      <VITAMIN/>
+    </EXTRA>
+    <COPY><![CDATA[If fried in fat you'll be mopping up the grease and clogging up your arteries, but grill it and it's much more healthy.]]></COPY>
+  </BACON>
+  <OILY_FISH GRAPHIC="salmon.png">
+    <NAME>Oily Fish</NAME>
+    <DIGESTION TIME="18.0" ENERGY_TEMP="0" ENERGY_PERM="200"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <POWER>STRENGTH</POWER>
+      <GROUP>PROTEIN</GROUP>
+      <POINTS/>
+      <VITAMIN>D</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[Oily fish are rich in Omega-3, great for the heart and the brain. For you, not the fish.]]></COPY>
+  </OILY_FISH>
+  <BUTTER GRAPHIC="butter_extra.png">
+    <NAME>Butter</NAME>
+    <DIGESTION TIME="15.0" ENERGY_TEMP="350" ENERGY_PERM="0"/>
+    <EXTRA>
+      <SOUND>gulp</SOUND>
+      <POWER/>
+      <GROUP>DAIRY</GROUP>
+      <HARM>25</HARM>
+      <POINTS/>
+      <VITAMIN>CAL</VITAMIN>
+    </EXTRA>
+    <COPY><![CDATA[The original spread of dairy, fats and salt. Fats are essential to healthy cells, but not if they are saturated fats.]]></COPY>
+  </BUTTER>
+</data>

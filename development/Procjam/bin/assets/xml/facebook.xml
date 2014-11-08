@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+   <WALLPOST>
+		<TITLE>I'm a %rank_full%</TITLE>
+		<MESSAGE>Eat my score!</MESSAGE>
+		<NAME>I'm a %rank_full% in Nom Nom Nation</NAME>
+		<CAPTION>I got a rank of %rank_main% in the %level_theme% of Nom Nom Nation!</CAPTION>
+		<DESCRIPTION>Play Nom Nation, a delicious platform adventure by Playerthree and Channel 4 in which you must unleash the power of the Noms and defeat Jabber The Gut, head of the McFatass Corporation.</DESCRIPTION>
+		<IMG scr="http://www.playnomnation.com/images/posts/fb_thumb_levelup.png" href="http://www.playnomnation.com/" />
+		<ACTION_LINK text="Play Nom Nation" href="http://www.playnomnation.com">Play Nom Nation</ACTION_LINK>
+	</WALLPOST> 
+	<VARS>
+		<IMG_SOURCE>http://www.playnomnation.com/flash/</IMG_SOURCE>
+		<LINK_URL>http://www.playnomnation.com/</LINK_URL>		
+		<REF_TOKEN>?ref=facebook</REF_TOKEN>
+		
+	</VARS>
+</data>

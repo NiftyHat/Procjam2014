@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<RECIPE key="level0">
+		<NAME>NO RECIPE</NAME>
+		<ICON>11</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Click to go to the site</LINK_TEXT>
+		<COPY><![CDATA[Nothing here. Obviously you cheated to get to this screen you scoundrel!]]></COPY>
+	</RECIPE>
+	<RECIPE key="level1">
+		<NAME>Super quick Pitta Pizzas</NAME>
+		<ICON>1</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Download it now</LINK_TEXT>
+		<COPY><![CDATA[A quick and easy, healthy pizza recipe! Helps combat polycystic ovary syndrome in girls, while boys will benefit from a healthier meal than the fat-drenched fast-food alternative.]]></COPY>
+	</RECIPE>
+	<RECIPE key="level2">
+		<NAME>Low GI Spaghetti Bolognese</NAME>
+		<ICON>2</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Download it now</LINK_TEXT>
+		<COPY><![CDATA[Spaghetti Bolognese in under 10 minutes?  Your mum will be so proud. This low-GI recipe includes ingredients that will help combat a fatty liver.]]></COPY>
+	</RECIPE>
+	<RECIPE key="level3">
+		<NAME>Home-made re-hydration drink</NAME>
+		<ICON>3</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Download it now</LINK_TEXT>
+		<COPY><![CDATA[This is a home-made rehydration and can be used after sports, or if you had a funny tummy. More nutrients, less processed powder and chemicals. Everyone is a winner in under two minutes.]]></COPY>
+	</RECIPE>
+	<RECIPE key="level4">
+		<NAME>Spinach Salad with sumac, tomatoes and feta</NAME>
+		<ICON>4</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Download it now</LINK_TEXT>
+		<COPY><![CDATA[Buy it, rinse it, chop it, toss it, heat it, serve it, eat it.  This unusual and flavoursome salad helps combat acid reflux.]]></COPY>
+	</RECIPE>
+	<RECIPE key="level5">
+		<NAME>Super Smoothie</NAME>
+		<ICON>5</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Download it now</LINK_TEXT>
+		<COPY><![CDATA[Smoothies are so versatile, almost any non-citrus fruit will work well with this recipe. Try adding a handful of oats or nuts for added protein and a more substantial breakfast or pick-me-up. In the summer add a couple of blocks of ice for a super refreshing smoothie.]]></COPY>
+	</RECIPE>
+	<RECIPE key="level6">
+		<NAME>Jerk Chicken with rice and peas</NAME>
+		<ICON>6</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Download it now</LINK_TEXT>
+		<COPY><![CDATA[A simple meal that feeds a family, covering all the major food groups along the way, and helps combat high cholesterol.]]></COPY>
+	</RECIPE>
+	<RECIPE key="level7">
+		<NAME>Homemade pitta chips with guacamole, hummus and salsa</NAME>
+		<ICON>7</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Download it now</LINK_TEXT>
+		<COPY><![CDATA[Serve in three little bowls and dip dip dip! Helps combat asthma.]]></COPY>
+	</RECIPE>
+	<RECIPE key="level8">
+		<NAME>Cod with roasted winter veggies</NAME>
+		<ICON>8</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Download it now</LINK_TEXT>
+		<COPY><![CDATA[This fish dish is quick to prep, yet healthy as can be: high in oily fish, low in fat its ingredients help combat diabetes.]]></COPY>
+	</RECIPE>
+	<RECIPE key="level9">
+		<NAME>Quickest mint and courgette pasta</NAME>
+		<ICON>9</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Download it now</LINK_TEXT>
+		<COPY><![CDATA[This is a no cook pasta sauce, perfect for a super quick dinner or lunch. This dish is all about the balance of acidity from the lemon, sweet sharpness from the parmesan, depth from the oil and good seasoning to bring it all together, so taste and adjust until it tastes amazing. Don’t use the pre-grated parmesan for this - buy a block and grate it yourself.]]></COPY>
+	</RECIPE>
+	<RECIPE key="level10">
+		<NAME>Super fragrant soya coconut curry</NAME>
+		<ICON>10</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Download it now</LINK_TEXT>
+		<COPY><![CDATA[This curry uses two types of soya, edamame beans and tofu so for those trying to up their soy intake this is a brilliant dish. It’s super tasty for anyone else though and a welcome, lighter change to the usual chicken tikka masala. ]]></COPY>
+	</RECIPE>
+	<RECIPE key="boss">
+		<NAME>NO RECIPE</NAME>
+		<ICON>11</ICON>
+		<LINK_URL>http://test.playnomnation.com/downloads/</LINK_URL>
+		<LINK_TEXT>Click to go to the site</LINK_TEXT>
+		<COPY><![CDATA[Nothing here. Obviously you cheated to get to this screen you scoundrel!]]></COPY>
+	</RECIPE>
+</data>

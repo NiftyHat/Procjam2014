@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<NPCS>
+		<NOMGOD_NPC path="graphics/npc/faces/genie.png"/>
+		<BROCOLLI_KING_NPC path="graphics/npc/faces/brocolli_king.png"/>
+		<JABBA_NPC path="graphics/npc/faces/jabba.png"/>
+		<CHEF_NPC path="graphics/npc/faces/chef.png"/>
+	</NPCS>
+	<CONTENT>
+		<TUTORIAL key="tut_hurt" name="Damage">
+			<SET_NPC>BROCOLLI_KING_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_energy_bar"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_ftx_energy_lbl"</TRIGGER>
+			<TALK>Watch out Chef! Getting hurt saps your energy. Eating most noms will give you some energy back.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_energy" name="Energy">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_gut"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_ftx_gut_lbl"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_energy_bar"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_ftx_energy_lbl"</TRIGGER>
+			<TALK>Sugar-filled Noms only give a burst of fast burn energy. There are some Noms that give you long lasting slow-release energy that lasts longer.</TALK>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_heart"  name="Heart">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_heart"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_ftx_lives_lbl"</TRIGGER>
+			<TALK>Hello Chef! If you run out of energy or fall too far, you'll lose a healthy heart section. Run out of hearts and it's game over.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_magic"  name="Groups">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_magic_five"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_heart"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_ftx_lives_lbl"</TRIGGER>
+			<TALK>Chef, hear my wisdom. Eat a mix of Noms for a healthy life! Find the five food groups RED,GREEN,YELLOW,PURPLE and BLUE - eat one food from each and I'll give you an extra heart.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_vitality" name="Vitality">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_vitality_bar"</TRIGGER>
+			<TALK>Many Noms contain vital elements. Consume the right Noms to complete your vitality shield for enlightened protection until the end of the level.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_gut_size" name="Gut Size">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_gut"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_ftx_gut_lbl"</TRIGGER>
+			<TALK>Your gut can only hold two Noms at once. It's best to wait for one to digest before you eating something else!</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_fat_damage" name="Heart Dam">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_heart"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_gut"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_ftx_gut_lbl"</TRIGGER>
+			<TALK>Beware Chef, fatty Noms can have lots of useful energy but some may clog up your heart and kill it dead.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_Fat" name="Fat">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_powerup_title"</TRIGGER>
+			<TALK>Fatty Noms can super-size you for a short time! Use your extra bulk to crush and block enemies, weigh down platforms and fight strong winds.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_Thin" name="Thin">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Super-exercising makes you skinny and light until you eat again! You can squeeze through tiny gaps and land softly but your body is weak and vulnerable.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_Gas" name="Gas">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="showHUDElement">"m_powerup_title"</TRIGGER>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Hold your nose! Some Noms produce excess wind. With FART JET power, hold down [X] to boost yourself up.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_Strength" name="Strength">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_powerup_title"</TRIGGER>
+			<TALK>High protein Noms produce muscle and give you the POWER PUNCH. Press [X] to bash a clear path.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_Speed"  name="Speed">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="showHUDElement">"m_powerup_title"</TRIGGER>
+			<TALK>Super sweet Noms trigger the SUGAR RUSH power-up, which let you RUN and JUMP faster with fast-burn energy. Too much of a good thing can be hard to stomach though.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<TUTORIAL key="tut_Extend" name="Extend">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Chef, if your power-ups are not lasting long enough, eat a carb-rich Nom to extend their effect.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_Debuff" name="Longer">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_powerup_title"</TRIGGER>
+			<TALK>Some power-ups can last longer when combined with similar power-up Noms but you risk some nasty side effects...</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>	
+		<TUTORIAL key="tut_Explosion" name="Bomb">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TRIGGER func="showHUDElement">"m_powerup_title"</TRIGGER>
+			<TALK>Eat a FART Nom and a STRENGTH Nom. Press [X] to make a fart bomb! Pick it up and throw it around! Fart bombs explode when they hit something.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<TUTORIAL key="tut_Rocket" name="Rocket">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="showHUDElement">"m_powerup_title"</TRIGGER>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Eating a FART Nom with a SPEED Nom gives you rocket farts! Press [X] to build power then use [LEFT] and [RIGHT] to set direction, and release to rocket away!</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<TUTORIAL key="tut_Turbopunch" name="Turbo">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Release some aggression with TURBO PUNCH. Press the [X] key whilst running to wreak havoc.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<TUTORIAL key="tut_Wayfat" name="Too-fat">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Oh dear, it's the Incredible Bulk! Use [X] to transfer the fat to your heart before you explode.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<TUTORIAL key="tut_Bloat"  name="Bloat">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Wind overload! You've literally ballooned. Use the arrow keys to float around.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<TUTORIAL key="tut_Nausea" name="Nausea">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Eating lots of sugary Noms will make you sick. Hold down [X] to see what we mean...Not pleasant!</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<TUTORIAL key="tut_Rage"  name="Rage">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Double-muscle meat-head equals RAGE MODE!  Get it out of your system by braking through barriers.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<TUTORIAL key="tut_drop" name="Throw">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>When carrying an item, drop it by pressing [X]. When running you will throw them instead.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<TUTORIAL key="tut_Parlour" name="Temple">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Welcome to the Temple of Nom! Discover the secrets of the Noms you have eaten. Check your achievements and expand your knowledge. Collect enough Noms and you may open secret new areas...</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<TUTORIAL key="tut_Swim" name="Swim">
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TRIGGER func="playSound">"tutorial_show"</TRIGGER>
+			<TALK>Dive in, the water is lovely! Use the arrow keys to swim along.</TALK>
+			<TRIGGER func="playSound">"tutorial_hide"</TRIGGER>
+		</TUTORIAL>
+		<CONVERSATION key="nomgod_intro">
+			<!--<SET_NPC>JABBA</SET_NPC>-->
+			<SET_NPC>NOMGOD_NPC</SET_NPC>
+			<TALK>Welcome young Chef. Beyond lies Nature World, the first quest on your journey!</TALK>
+            <TALK>You must find the 10 lost pages torn from the sacred Book of Nom to rescue Nom Nation.</TALK>
+            <TALK>Each page will unlock a new quest in your journey through Fire, Ice, Sugar and Factory Worlds until a final showdown with Jabber The Gut himself. </TALK>
+            <TALK>If you need to take a break or switch off the music, press [SPACE] to get to the pause menu. Good luck, I hope you're feeling hungry! Nom nom nom...</TALK>
+		</CONVERSATION>
+		<CONVERSATION key="boss_start">
+			<TALK npc="JABBA_NPC">Mwhahahahahaa...</TALK>
+            <TALK npc="JABBA_NPC">Your culinary mind tricks do not frighten me young Chef! I'll shove you in a salty bun and eat you ALIVE. </TALK>
+			<TALK npc="JABBA_NPC">Your attractive, fit, healthy little body makes me sick! Get me a bucket, I'm going to vomit.</TALK>
+			<TALK npc="CHEF_NPC">Om nom nom nom.</TALK>
+            <TALK npc="JABBA_NPC">[Wheeze]. Respect my authority! Only I can feed the nation what they want.</TALK>
+			<TALK npc="CHEF_NPC">Nom nom nom, Om nom nom nom!</TALK>
+            <TALK npc="JABBA_NPC">Mwhahahhahaa, mmmm, you smell so goooood.</TALK>
+            <TALK npc="JABBA_NPC">Balls to you, and brains, bums, knuckles and nipples! EAT my hurl!</TALK>
+			<TALK npc="CHEF_NPC">Om nom nom!!!</TALK>
+			<TALK npc="JABBA_NPC">Ha ha ha you'll never reach the mincer control!</TALK>
+			<TRIGGER func="bossActivate"></TRIGGER>
+		 </CONVERSATION>
+		 <CONVERSATION key="boss_end">
+            <TALK npc="JABBA_NPC">WAIT! What are you doing?! NO Chef, DON'T pull that lever!</TALK>
+            <TALK npc="JABBA_NPC">AAAAAAARRRRGGGHHHHH!</TALK>
+            <TALK npc="JABBA_NPC">I'm melt... in... your.... mouth..... AAGHRGSHASD [CRUNCH]</TALK>
+        </CONVERSATION>
+	</CONTENT>
+</data>

@@ -1,0 +1,42 @@
+	<ASSETS>
+		<CHEST_WOODEN path="graphics/items/chest_wooden.png">
+			<SIZE width="32" height="32"/>
+			<BOUNDS x="0" y="0" width="32" height="32"/>
+			<ANCHOR x="0" y="0"/>
+		</CHEST_WOODEN>
+		<INV_COINS path="graphics/items/inventory/inventory_coin_pile.png">
+			<SIZE width="32" height="32"/>
+			<BOUNDS x="0" y="0" width="32" height="32"/>
+			<ANCHOR x="0" y="0"/>
+		</INV_COINS>
+		<PICKUP_COINS path="graphics/items/pickups/pickup_coins.png">
+			<SIZE width="32" height="32"/>
+			<BOUNDS x="0" y="0" width="32" height="32"/>
+			<ANCHOR x="0" y="0"/>
+		</PICKUP_COINS>
+		<MARKER_START path="graphics/editor_stuff/mt_start.png">
+			<SIZE width="16" height="16"/>
+			<BOUNDS x="0" y="0" width="16" height="16"/>
+			<ANCHOR x="0" y="0"/>
+		</MARKER_START>
+		<MARKER_END path="graphics/editor_stuff/mt_fin.png">
+			<SIZE width="16" height="16"/>
+			<BOUNDS x="0" y="0" width="16" height="16"/>
+			<ANCHOR x="0" y="0"/>
+		</MARKER_END>
+		<PLAYER path="graphics/player/character.png">
+			<SIZE width="64" height="64"/>
+			<BOUNDS x="0" y="0" width="64" height="64"/>
+			<ANCHOR x="0" y="0"/>
+			<ANIMS>
+				<ANIM animnum="0" fps="10.000" name="idle" numframes="2" looped="true" frames="0,0"/>
+ 				<ANIM animnum="1" fps="10.000" name="run" numframes="6" looped="true" frames="40,41,42,43,44,45"/>
+ 				<ANIM animnum="2" fps="10.000" name="sprint" numframes="8" looped="true" frames="50,51,52,53,54,55,56,57"/>
+ 				<ANIM animnum="3" fps="10.000" name="climb" numframes="6" looped="true" frames="60,61,62,63,64,65"/>
+ 				<ANIM animnum="4" fps="10.000" name="open_chest" numframes="7" looped="false" frames="10,7,8,8,8,10,1"/>
+ 				<ANIM animnum="5" fps="10.000" name="fall" numframes="4" looped="false" frames="11,15,16,16"/>
+ 				<ANIM animnum="6" fps="10.000" name="jump" numframes="3" looped="true" frames="10,11,12"/>
+ 				<ANIM animnum="7" fps="10.000" name="land" numframes="4" looped="true" frames="12,13,10,7"/>
+ 			</ANIMS>
+ 		</PLAYER>
+	</ASSETS>

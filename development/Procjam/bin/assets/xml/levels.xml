@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+                <EXAMPLE_LEVEL>
+                   <!-- key refeances the unique name of the levels main XML document and the folder of it's included assets -->
+                          <ID key="test" index="2" />
+                          <COPY name="LEVEL 01" text="A level, woop woop"/>
+                          <THEME />
+                          <DEV author="Duncan" development="greybox"/>
+                         <INFO/>
+                         <DIALOGUE character="theBoss" copy="Blah blah blah"/>
+                </EXAMPLE_LEVEL>
+</data>

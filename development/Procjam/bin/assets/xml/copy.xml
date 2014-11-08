@@ -1,0 +1,212 @@
+<data>
+  <TUTORIAL>
+    <NODE name="jump">
+      <!--NOMGOD : level1:area_start-->
+      Use the [UP] key to jump!
+    </NODE>
+    <NODE name="crumbs">
+      <!--PIG : level1:area_start-->
+      Oink! hey chef, try to collect all the rice grains in each level!
+    </NODE>
+    <NODE name="ladders">
+      <!--RAT : level1:area_start-->
+      Squeak! Use the [UP] and [DOWN] arrows to climb ladders.
+    </NODE>
+    <NODE name="checkpoints">
+      <!--PIG : level1:area_food-->
+      Oink! Lose a life and you'll re-appear at the last checkpoint.
+    </NODE>
+    <NODE name="brocolli_king">
+      <!--BROCOLLI_KING : level1:area_food-->
+      Broccoli King: Doors of the Nom God can only be opened by eating all the Noms indicated on them.
+    </NODE>
+    <NODE name="weight_platform">
+      <!--COW : level1:area_fat-->
+      Mooo! Some platforms won't shift unless you are heavy. A nice juicy burger might help you bulk out a bit?
+    </NODE>
+    <NODE name="fat_jump">
+      <!--RAT : level1:area_fat-->
+      Squeak! It's harder to walk and jump when overweight! Burn some fat by holding the [X] key to exercise.
+    </NODE>
+    <NODE name="strong_blocks">
+      <!--PIG : level1:area_fat-->
+      Oink! Drop something heavy on a cracked floor to break through to the other side.
+    </NODE>
+    <NODE name="springs">
+      <!--CHICKEN : level1:area_fat-->
+      Cluck! Give yourself a spring up to high platforms but it helps not to be too fat.
+    </NODE>
+    <NODE name="vines">
+      <!--CHICKEN : level1:area_gas-->
+      Cluck! Some vines hanging from trees can be climbed.
+    </NODE>
+    <NODE name="hazard_warning">
+      <!--RAT : level1:area_gas-->
+      Squeak! A spike in the bum hurts. Don't touch them!
+    </NODE>
+    <NODE name="falling">
+      <!--COW : level1:area_gas-->
+      Mooo! A fall from the world means instant death. So don't do it.
+    </NODE>
+    <NODE name="pushable">
+      <!--COW : level1:area_strength-->
+      Mooo! You can grab and move pushable blocks with the [X] key as well as punching them along too!
+    </NODE>
+    <NODE name="clouds">
+      <!--CHICKEN : level1:area_food-->
+      Cluck! Jumping on clouds is almost as fun as flying!
+    </NODE>
+    <NODE name="swimming">
+      <!--PIG : level2:area_02-->
+      Oink! Ok pigs can't fly, but you can use the [ARROW KEYS] to swim around!
+    </NODE>
+    <NODE name="escape">Press [R] at any time to re-spawn at a checkpoint and reset the level.</NODE>
+    <NODE name="turbo">
+      <!--RAT : level1:area_speed-->
+      Squeak! You'll need a speed boost to make it across here!
+    </NODE>
+    <NODE name="enemy">
+      <!--JABBA_TV : level2:area_start-->
+      Hey kids! Check out new McFatass Burnt Bits. Radiated and fried each day, feared by Noms and Chefs everywhere.
+    </NODE>
+    <NODE name="enemy_damage">
+      <!--RAT : level2:area_start-->
+      Squeak! Burnt Bits are like zombie Noms, they will chase you down - and hurt you if touched.
+    </NODE>
+    <NODE name="enemy_stun">
+      <!--JABBA_TV : level2:area_start-->
+      Hey kids! Burnt Bits just love hunting for Noms, unless you land on one of course.
+    </NODE>
+    <NODE name="enemy_food">
+      <!--PIG : level2:area_00-->
+      Oink! Burnt Bits are stealing Noms. If they grab one try to rescue it.
+    </NODE>
+    <NODE name="enemy_throw">
+      <!--PIG : level2:area_00-->
+      Oink! A stunned Burnt Bit can be thrown. They make handy missiles to destroy other enemies.
+    </NODE>
+    <NODE name="enemy_water">
+      <!--RAT : level2:area_00-->
+      Squeak! Burnt Bits hate water. If they fall (or are thrown) into it they turn to mush.
+    </NODE>
+    <NODE name="enemy_flyer">
+      <!--CHICKEN : level2:area_01-->
+      <!--CHICKEN : level2:area_00-->
+      Cluck! I can't fly but grab a flapping Burnt Bit and enjoy the ride.
+    </NODE>
+    <NODE name="enemy_holder">
+      <!--CHICKEN : level2:area_02-->
+      Cluck! Oven Burnt Bits are harder to kill and can't be stunned. Jumping on them makes them open up.
+    </NODE>
+    <NODE name="enemy_swap">
+      <!--COW : level2:area_02-->
+      Mooo! Throwing Noms at an enemy will make them drop what they are carrying.
+    </NODE>
+    <NODE name="enemy_crush">
+      <!--COW : level2:area_02-->
+      Mooo! Burnt Bits can be crushed by dropping something big and heavy on them.
+    </NODE>
+    <NODE name="enemy_pot">If you can't stun a Burnt Bit, you can lob a pot at it instead. Pots also make handy platforms if dropped.</NODE>
+    <NODE name="enemy_thin">
+      <!--CHICKEN : level2:area_02-->
+      Cluck! If you are thin, Burnt Bits won't bother attacking you, but you take more damage if you touch them.
+    </NODE>
+    <NODE name="tiny_gap">
+      <!--CHICKEN : level2:area_02-->
+      Cluck! Perhaps if you went super skinny you might be able to slip down a gap or two?
+    </NODE>
+    <NODE name="exercise">
+      <!--RAT : level2:area_02-->
+      Squeak! Dancing by a BoomBox help you lose weight fast. Hold [X] in front of them to exercise and feel the burn.
+    </NODE>
+    <NODE name="nausea">
+      <!--PIG_HANG : level9:area_02-->
+      Oink! Even vomit has its uses, spew at your enemies to push them around.
+    </NODE>
+    <NODE name="pickup">Some items can be picked up. Simply stand close and tap [X] to grab it.</NODE>
+    <NODE name="thin">When super skinny, you're more at risk of injury. Just eat some good food to put weight back on again.</NODE>
+    <NODE name="king_kebab">
+      <!--KING_KEBAB : level3:area_1_start-->
+      Welcome to the Land of Fire: Gas, flame, fat and grill. Combine a strength and gas Nom to really get your ring burning.
+    </NODE>
+    <NODE name="queen_of_pies">
+      <!--mr_fizz : level5:area_1_start-->
+      Welcome to my big chill, the Frozen Land, deep in ice and snow. Ever eaten a speed and strength Nom together?
+    </NODE>
+    <NODE name="mr_fizz">
+      <!--MR_FIZZ : level7:area_1_start-->
+      Artificial looks are everything round here, who cares about the consequences right? Try a speed and gas Nom together!
+    </NODE>
+    <NODE name="fire_liquid">
+      <!--RAT : level3:area_1_start-->
+      Smokin'! Hot oil in the Fire Caves will drain your energy fast.
+    </NODE>
+    <NODE name="ice_liquid">Swimming in freezing cold water burns lots of energy. Bulk up a bit to survive longer.</NODE>
+    <NODE name="candy_liquid">
+      <!--JABBA_TV : level7:area_3-->
+      Take a dip in McFatass Acid Soda (TM). Prolonged exposure rots teeth, body and mind.
+    </NODE>
+    <NODE name="nomgod_intro">
+      <!--NOMGOD : level1:area_shrine-->
+      Follow the path through the cave and woods to find the lost page from the Book of Nom.
+    </NODE>
+    <NODE name="jabba_tv">Hey Kids! Pick up a delicious crappy meal today. It's totally full of junk!</NODE>
+    <NODE name="block_reset">
+      <!--NOMGOD : level1:area_speed-->
+      Press the Nom God's golden altar block to return all the blocks to their original state.
+    </NODE>
+    <NODE name="slimcat_1">
+      <!--RAT : level6:area_2-->
+      All hail Slimcat, the slimmest of the Feline race
+    </NODE>
+    <NODE name="slimcat_2">
+      <!--RAT : level6:area_2-->
+      Stroke the legendary Slimcat and you too shall become skinny
+    </NODE>
+    <NODE name="slimcat_3">
+      <!--RAT : level6:area_2-->
+      Slimcat, the cutest way to get thin!
+    </NODE>
+    <NODE name="no_more_eggs">Dear fellow designers. I don't care how much you love easter, stop filling levels with eggs. :) - Duncan</NODE>
+    <NODE name="lorum_ipsum">I can't remember what I had to say here, but i'm sure it was enlightening.</NODE>
+  </TUTORIAL>
+  <MENU>
+	
+	<LEVELEND_WIN><![CDATA[Level Complete]]></LEVELEND_WIN>
+	<LEVELEND_LOSE><![CDATA[Level Failed]]></LEVELEND_LOSE>
+    <HELP_VITALITY_TITLE><![CDATA[The Vitality Shield]]></HELP_VITALITY_TITLE>
+    <HELP_VITALITY_CONTENT><![CDATA[Protect your body from damage by eating Noms containing calcium, iron, magnesium, beta carotene and vitamins B, C and D.]]></HELP_VITALITY_CONTENT>
+    <HELP_MAGIC_TITLE><![CDATA[The Magic Five]]></HELP_MAGIC_TITLE>
+    <HELP_MAGIC_CONTENT><![CDATA[Gain an extra life by eating Noms from all five different food groups.]]></HELP_MAGIC_CONTENT>
+    <HELP_NOMS_TITLE><![CDATA[The Nom Collection]]></HELP_NOMS_TITLE>
+    <HELP_NOMS_CONTENT><![CDATA[Earn yourself a Munchelin star rank by tasting as many Noms as you can.]]></HELP_NOMS_CONTENT>
+    <FB_THANKS_MESSAGE><![CDATA[Thank you for posting Nom Nom Nation to Facebook.]]></FB_THANKS_MESSAGE>
+    <FB_THANKS_TITLE><![CDATA[Thanks!]]></FB_THANKS_TITLE>
+	<FB_SEEDED_MESSAGE><![CDATA[To post to facebook you have to play on www.playnomnation.com.     Go there now?]]></FB_SEEDED_MESSAGE>
+    <FB_SEEDED_TITLE><![CDATA[www.playnomnation.com]]></FB_SEEDED_TITLE>
+    <WIN_POPUP_TITLE><![CDATA[FOUND A BOOK OF NOM PAGE]]></WIN_POPUP_TITLE>
+    <WIN_POPUP_BODY><![CDATA[YOU FOUND RECIPE %pages_collected% OF 10]]></WIN_POPUP_BODY>
+    <BTN_BACK><![CDATA[BACK]]></BTN_BACK>
+    <BTN_CREDITS><![CDATA[CREDITS]]></BTN_CREDITS>
+    <BTN_FACEBOOK><![CDATA[FACEBOOK]]></BTN_FACEBOOK>
+	<SHARED_WARNING_MESSAGE><![CDATA[Nom Nation does not store any personal data. If you do not 'Allow' local data you will lose your progress on closing or refreshing the window. Change this now?]]></SHARED_WARNING_MESSAGE>
+    <SHARED_WARNING_TITLE><![CDATA[Save Data Warning!]]></SHARED_WARNING_TITLE>
+  </MENU>
+  <RANKS>
+    <RANK icon="headchef">Head Chef</RANK>
+    <RANK icon="souschef">Sous Chef</RANK>
+    <RANK icon="chef">Line Chef</RANK>
+    <RANK icon="saucemaster">Sauce Master</RANK>
+    <RANK icon="traineechef">Trainee Chef</RANK>
+    <RANK icon="potatopeeler">Potato Peeler</RANK>
+    <RANK icon="dishwasher">Dishwasher</RANK>
+    <RANK icon="kitchenhand">Kitchen Hand</RANK>
+  </RANKS>
+  <TITLES>
+    <FRUIT_VEG>Vegetarian</FRUIT_VEG>
+    <PROTEIN>Carnivorous</PROTEIN>
+    <DAIRY>Cheese Loving</DAIRY>
+    <STARCH>Energetic</STARCH>
+    <SUGAR_FAT>Junk Addicted</SUGAR_FAT>
+  </TITLES>
+</data>

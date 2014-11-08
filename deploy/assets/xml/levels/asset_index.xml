@@ -1,0 +1,40 @@
+	<ASSETS>
+		<START path="graphics/editor_stuff/mt_start.png">
+			<SIZE width="16" height="16"/>
+			<BOUNDS x="0" y="0" width="16" height="16"/>
+			<ANCHOR x="0" y="0"/>
+		</START>
+		<TELEPORT path="graphics/editor_stuff/mt_teleport.png">
+			<SIZE width="16" height="16"/>
+			<BOUNDS x="0" y="0" width="16" height="16"/>
+			<ANCHOR x="0" y="0"/>
+		</TELEPORT>
+		<FINISH path="graphics/editor_stuff/mt_fin.png">
+			<SIZE width="16" height="16"/>
+			<BOUNDS x="0" y="0" width="16" height="16"/>
+			<ANCHOR x="0" y="0"/>
+		</FINISH>
+		<PLAYER path="graphics/player.png">
+			<SIZE width="32" height="48"/>
+			<BOUNDS x="0" y="16" width="32" height="32"/>
+			<ANCHOR x="16" y="30"/>
+			<ANIMS>
+				<ANIM animnum="0" fps="4.000" name="walk_down" numframes="4" looped="true" frames="0,1,2,1"/>
+ 				<ANIM animnum="1" fps="4.000" name="walk_right" numframes="4" looped="true" frames="6,7,8,7"/>
+ 				<ANIM animnum="2" fps="4.000" name="walk_left" numframes="4" looped="true" frames="3,4,5,4"/>
+ 				<ANIM animnum="3" fps="4.000" name="walk_up" numframes="4" looped="true" frames="9,10,11,10"/>
+ 				<ANIM animnum="4" fps="10.000" name="idle_down" numframes="2" looped="true" frames="1,1"/>
+ 				<ANIM animnum="5" fps="10.000" name="idle_left" numframes="2" looped="true" frames="4,4"/>
+ 				<ANIM animnum="6" fps="10.000" name="idle_right" numframes="2" looped="true" frames="7,7"/>
+ 				<ANIM animnum="7" fps="10.000" name="idle_up" numframes="2" looped="true" frames="10,10"/>
+ 			</ANIMS>
+ 		</PLAYER>
+		<EMOTE_ICON path="graphics/effects/gath_emote.png">
+			<SIZE width="16" height="16"/>
+			<BOUNDS x="0" y="0" width="16" height="16"/>
+			<ANCHOR x="0" y="0"/>
+			<ANIMS>
+				<ANIM animnum="0" fps="10.000" name="!" numframes="12" looped="false" frames="0,2,17,18,18,18,18,18,19,17,2,1"/>
+ 			</ANIMS>
+ 		</EMOTE_ICON>
+	</ASSETS>
