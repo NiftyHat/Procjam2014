@@ -2,9 +2,14 @@ package game.entities
 {
 	import axengine.entities.AxPlayer;
 	import axengine.world.AxWorld;
+	import be.dauntless.astar.core.AstarPath;
+	import flash.geom.Point;
+	import game.ai.PathCallbackRequest;
 	import game.PJEntity;
+	import game.world.PJWorld;
 	import org.axgl.Ax;
 	import org.axgl.input.AxKey;
+	import org.axgl.util.AxTimer;
 	
 	/**
 	 * ...
@@ -12,6 +17,9 @@ package game.entities
 	 */
 	public class PJPlayer extends PJEntity 
 	{
+	
+		protected var _stunTimer:AxTimer;
+		protected var _isStunned:Boolean = false;
 		
 		public function PJPlayer() 
 		{
@@ -24,6 +32,7 @@ package game.entities
 			addAnimation("idle_left", [4]);
 			addAnimation("idle_right", [7]);
 			addAnimation("idle_up", [10]);
+			_mMoveSpeed = 0.25;
 		}
 		
 		override public function init($world:AxWorld):void 
@@ -36,6 +45,11 @@ package game.entities
 		override public function update():void 
 		{
 			super.update();
+			if (_isStunned) {
+				return;
+			}
+			if (Ax.keys.down(AxKey.Z)) {
+			} 
 			if (Ax.keys.down(AxKey.DOWN)) {
 				move(DOWN);
 			}
@@ -56,6 +70,25 @@ package game.entities
 			} else {
 				animate("idle" + _animSuffix);
 			}
+		}
+		
+		public function stun($time:Number):void 
+		{
+			startFlicker();
+			_isStunned = true;
+			if (!_stunTimer) {
+				_stunTimer = addTimer($time, onStunComplete);
+			} else {
+				_stunTimer.repeat = 0;
+				_stunTimer.alive = true;
+			}
+			_stunTimer.start();
+		}
+		
+		private function onStunComplete():void 
+		{
+			_isStunned = false;
+			stopFlicker();
 		}
 		
 		override protected function move($dir:int):void 

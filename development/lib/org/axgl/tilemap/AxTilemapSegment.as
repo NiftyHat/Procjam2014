@@ -16,17 +16,17 @@ package org.axgl.tilemap {
 	 */
 	public class AxTilemapSegment {
 		/** The index data used for the mesh of this model. */
-		internal var indexData:Vector.<uint>;
+		public var indexData:Vector.<uint>;
 		/** The index buffer used for the mesh of this model. */
 		internal var indexBuffer:IndexBuffer3D;
 		/** The vertex data used for the mesh of this model. */
-		internal var vertexData:Vector.<Number>;
+		public var vertexData:Vector.<Number>;
 		/** The vertex buffer used to draw this model. */
 		internal var vertexBuffer:VertexBuffer3D;
 		/** The offsets, containing the id into the tilemap.data array of which tile is where */
-		internal var bufferOffsets:Vector.<int>;
+		public var bufferOffsets:Vector.<int>;
 		/** The size of the buffer containing the tiles. */
-		internal var bufferSize:uint;
+		public var bufferSize:uint;
 		/** The number of triangles in this segment. */
 		internal var triangles:uint;
 		/** The parent tilemap this is a part of. */
@@ -34,7 +34,7 @@ package org.axgl.tilemap {
 		/** Whether or not the vertex buffer needs to be rebuilt and reuploaded. */
 		internal var dirty:Boolean;
 		/** The index used by the tilemap to calculate the index buffer entries. */
-		internal var index:uint;
+		public var index:uint;
 		/** The width of the segment in tiles. */
 		internal var width:uint;
 		/** The height of the segment in tiles. */

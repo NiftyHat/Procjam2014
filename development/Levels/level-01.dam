@@ -2,74 +2,98 @@
 <project>
   <version>3.1.6</version>
   <bgColor>0x777777</bgColor>
-  <viewPos x="0" y="0"/>
+  <viewPos x="19" y="83"/>
   <firstLayersTop>false</firstLayersTop>
-  <spriteEntries currentId="7">
-    <group name="Markers" idx="1" open="true">
-      <tileEntry name="START" idx="2" className="MARKER_START" image="../../deploy/assets/graphics/editor_stuff/mt_start.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false"/>
-      <tileEntry name="TELEPORT" idx="3" className="MARKER_TELEPORT" image="../../deploy/assets/graphics/editor_stuff/mt_teleport.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false">
+  <spriteEntries currentId="11">
+    <group name="Characters" idx="1" open="false">
+      <sprite name="THIEF" idx="2" className="CHAR_THIEF" image="../../deploy/assets/graphics/characters/theif_01_char.png" width="32" height="32" preview="1" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    </group>
+    <group name="Markers" idx="3" open="false">
+      <tileEntry name="START" idx="4" className="MARKER_START" image="../../deploy/assets/graphics/editor_stuff/mt_start.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false"/>
+      <tileEntry name="TELEPORT" idx="5" className="MARKER_TELEPORT" image="../../deploy/assets/graphics/editor_stuff/mt_teleport.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false">
         <properties>
           <type typeof="Int" name="p_linked_id" value="0" hidden="false"/>
           <type typeof="String" name="p_target" value="" hidden="false"/>
         </properties>
       </tileEntry>
-      <tileEntry name="FINISH" idx="4" className="MARKER_END" image="../../deploy/assets/graphics/editor_stuff/mt_fin.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false"/>
+      <tileEntry name="FINISH" idx="6" className="MARKER_END" image="../../deploy/assets/graphics/editor_stuff/mt_fin.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false"/>
     </group>
-    <sprite name="PLAYER" idx="5" className="PLAYER" image="../../deploy/assets/graphics/player.png" width="32" height="48" preview="0" anchorX="16" anchorY="30" centerAnchor="false" boundsX="0" boundsY="16" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="120" canEditFrames="true" lockRotation="false" selected="true">
+    <sprite name="PLAYER" idx="7" className="PLAYER" image="../../deploy/assets/graphics/player.png" width="32" height="48" preview="0" anchorX="16" anchorY="30" centerAnchor="false" boundsX="0" boundsY="16" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="120" canEditFrames="true" lockRotation="false">
       <anims>
         <anim name="walk_down" fps="10" loops="true">0,1,2,1</anim>
-        <anim name="walk_right" fps="10" loops="true">25,24,25,26</anim>
-        <anim name="walk_left" fps="10" loops="true">12,13,14,13</anim>
-        <anim name="walk_up" fps="10" loops="true">36,37,38,37</anim>
-        <anim name="cheer" fps="6" loops="true">1,5,4,3,3,4,3,5</anim>
+        <anim name="walk_right" fps="10" loops="true">7,6,7,8</anim>
+        <anim name="walk_left" fps="10" loops="true">4,5,4,3</anim>
+        <anim name="walk_up" fps="10" loops="true">10,9,10,11</anim>
         <anim name="idle_down" fps="10" loops="true">1,1</anim>
-        <anim name="idle_left" fps="10" loops="true">13,13</anim>
-        <anim name="idle_right" fps="10" loops="true">25,25</anim>
-        <anim name="idle_up" fps="10" loops="true">19,19</anim>
+        <anim name="idle_left" fps="10" loops="true">4,4</anim>
+        <anim name="idle_right" fps="10" loops="true">7,7</anim>
+        <anim name="idle_up" fps="10" loops="true">10,10</anim>
       </anims>
     </sprite>
-    <sprite name="EMOTE_ICON" idx="6" className="" image="../../deploy/assets/graphics/effects/gath_emote.png" width="16" height="16" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
+    <sprite name="EMOTE_ICON" idx="8" className="" image="../../deploy/assets/graphics/effects/gath_emote.png" width="16" height="16" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
       <anims>
         <anim name="!" fps="10" loops="false">0,2,17,18,18,18,18,18,19,17,2,1</anim>
       </anims>
     </sprite>
+    <sprite name="COIN_PILE" idx="9" className="COIN_PILE" image="../../deploy/assets/graphics/items/coin_pile.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    <sprite name="GRAVE" idx="10" className="DECO" image="../../deploy/assets/graphics/grave.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false" selected="true"/>
   </spriteEntries>
   <layers>
     <group name="Group1" id="0" xScroll="1" yScroll="1" visible="true" open="true" locked="false" exports="true">
-      <maplayer name="Map1" id="0" xScroll="1" yScroll="1" x="0" y="0" width="10" height="10" tileset="../../deploy/assets/graphics/tiles/greybox_tiles.png" tileWidth="32" tileHeight="32" visible="true" hasHits="true" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false" selected="true">
-        <row>10,10,10,10,10,10,10,10,10,10</row>
-        <row>10,0,10,10,0,0,0,0,0,10</row>
-        <row>10,0,10,0,0,0,0,0,0,10</row>
-        <row>10,0,10,0,0,0,10,0,0,10</row>
-        <row>10,0,10,0,0,10,10,10,0,10</row>
-        <row>10,0,0,0,0,10,0,10,0,10</row>
-        <row>10,0,0,0,0,0,0,0,0,10</row>
-        <row>10,3,0,0,0,0,0,0,0,10</row>
-        <row>10,10,2,3,0,0,0,0,0,10</row>
-        <row>10,10,10,10,10,10,10,10,10,10</row>
+      <maplayer name="Map1" id="0" xScroll="1" yScroll="1" x="0" y="0" width="30" height="19" tileset="../../deploy/assets/graphics/tiles/greybox_tiles.png" tileWidth="32" tileHeight="32" visible="true" hasHits="true" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
+        <row>10,10,26,19,0,0,17,27,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10</row>
+        <row>10,10,11,0,0,0,0,17,18,18,18,27,10,10,10,10,10,26,18,18,18,18,18,27,10,10,10,10,10,10</row>
+        <row>10,10,11,0,0,0,0,0,0,0,0,9,10,10,26,18,18,19,0,0,0,0,0,17,18,18,27,10,10,10</row>
+        <row>10,10,11,0,0,0,0,0,0,0,0,17,18,18,19,0,0,0,0,0,0,0,0,0,0,0,9,10,10,10</row>
+        <row>10,10,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,3,0,0,0,0,9,10,10,10</row>
+        <row>10,10,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,10,10,11,0,0,0,0,9,10,10,10</row>
+        <row>10,10,11,0,0,0,1,2,3,0,0,0,0,0,0,0,0,1,24,10,10,11,0,0,0,0,9,10,10,10</row>
+        <row>10,10,11,0,0,0,9,10,11,0,0,0,0,0,0,0,0,17,18,18,18,19,0,0,0,0,17,27,10,10</row>
+        <row>10,10,11,0,0,0,9,10,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,10,10</row>
+        <row>10,10,11,0,0,1,24,10,25,3,0,0,0,0,0,1,2,2,2,2,3,0,0,0,0,0,0,9,10,10</row>
+        <row>10,10,11,0,0,9,10,10,10,25,2,2,3,0,0,9,10,26,18,18,19,0,0,48,0,0,0,9,10,10</row>
+        <row>10,10,11,0,0,17,18,18,27,10,10,10,11,0,0,9,10,11,0,0,0,0,0,9,2,3,0,9,10,10</row>
+        <row>10,10,11,0,0,0,0,0,17,18,18,18,19,0,0,9,10,11,0,0,0,0,1,24,10,11,0,9,10,10</row>
+        <row>10,10,11,0,0,0,0,0,0,0,0,0,0,0,0,17,18,19,0,0,0,0,9,10,10,11,0,9,10,10</row>
+        <row>10,10,25,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,27,10,11,0,9,10,10</row>
+        <row>10,10,10,25,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,18,19,0,9,10,10</row>
+        <row>10,10,10,10,25,3,0,0,0,1,2,2,2,2,2,2,3,0,0,0,0,0,0,0,0,0,0,9,10,10</row>
+        <row>10,10,10,10,10,25,2,2,2,24,10,10,10,10,10,10,25,3,0,0,1,2,2,3,0,0,0,9,10,10</row>
+        <row>10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,25,2,2,24,10,10,25,2,2,2,24,10,10</row>
       </maplayer>
-      <spritelayer name="Layer2" id="1" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false">
-        <sprite guid="2E77C800-5898-CF3F-6ACB-A3CD814ED251" x="96" y="128" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="2"/>
-        <sprite guid="3D03AA4C-EA8F-5BED-B879-FD8FB8CF48C6" x="864" y="352" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="2"/>
+      <spritelayer name="Layer2" id="1" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false" selected="true">
+        <sprite guid="2E77C800-5898-CF3F-6ACB-A3CD814ED251" x="144" y="0" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="D341D31B-2031-5E96-CD84-9C764FE20660" x="672" y="64" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="9"/>
+        <sprite guid="966B0792-FA9F-6EB1-24D5-F323299A8A11" x="352" y="416" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="9"/>
+        <sprite guid="65250C4B-E900-98F2-8372-21FA42DD70C1" x="608" y="352" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="9"/>
+        <sprite guid="D414D9F6-DE19-1AC9-323B-0A1D00EE8779" x="256" y="96" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="9"/>
+        <sprite guid="1F6D7605-463F-D2C8-ED8C-9D4EBEF71AA9" x="384" y="256" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="9"/>
+        <sprite guid="73147BB4-E975-C55A-7943-C5A9849E6324" x="96" y="352" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="9"/>
+        <sprite guid="A0DD9064-5B52-ED1C-ACCA-9BCA580D442E" x="128" y="32" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="9"/>
+        <sprite guid="2376F206-3013-28A8-F6B0-5F170F041C94" x="160" y="192" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="2"/>
+        <sprite guid="B0D0E58B-41AD-7D5C-59F3-30F1304912EA" x="512" y="128" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="2"/>
+        <sprite guid="A575A8DB-AD31-FFF1-8C28-3F0072E8D658" x="576" y="416" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="2"/>
+        <sprite guid="0629DFE3-07A9-E6AA-37AF-01141CF59C75" x="256" y="416" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="2"/>
+        <sprite guid="49F6B5D8-3BD1-5F2D-02BE-7E5B0865818C" x="320" y="96" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="10"/>
       </spritelayer>
     </group>
   </layers>
   <layerTemplates/>
-  <tileMatrix currentMatrix="0" rows="3" cols="3" randomizeMiddle="true" ignoreClear="false" ignoreMapEdges="true" allowSpecialTiles="false" tileset="">
+  <tileMatrix currentMatrix="0" rows="3" cols="3" randomizeMiddle="false" ignoreClear="true" ignoreMapEdges="true" allowSpecialTiles="true" tileset="../../deploy/assets/graphics/tiles/greybox_tiles.png">
     <row>
-      <tile>0</tile>
-      <tile>0</tile>
-      <tile>0</tile>
+      <tile>1</tile>
+      <tile>2</tile>
+      <tile>3</tile>
     </row>
     <row>
-      <tile>0</tile>
-      <tile>0</tile>
-      <tile>0</tile>
+      <tile>9</tile>
+      <tile>10</tile>
+      <tile>11</tile>
     </row>
     <row>
-      <tile>0</tile>
-      <tile>0</tile>
-      <tile>0</tile>
+      <tile>17</tile>
+      <tile>18</tile>
+      <tile>19</tile>
     </row>
     <specialConnections>
       <sets>
@@ -119,16 +143,56 @@
       <rows>
         <row set="0">
           <tiles>
-            <id>0</id>
+            <id>24</id>
+            <id>25</id>
+            <id>26</id>
+            <id>27</id>
+          </tiles>
+        </row>
+        <row set="1">
+          <tiles>
+            <id>32</id>
+            <id>33</id>
+            <id>34</id>
+            <id>35</id>
+          </tiles>
+        </row>
+        <row set="2">
+          <tiles>
+            <id>40</id>
+            <id>41</id>
+            <id>42</id>
+            <id>43</id>
+          </tiles>
+        </row>
+        <row set="3">
+          <tiles>
+            <id>75</id>
             <id>0</id>
             <id>0</id>
             <id>0</id>
           </tiles>
         </row>
-        <row set="0">
+        <row set="4">
           <tiles>
+            <id>48</id>
+            <id>49</id>
+            <id>50</id>
+            <id>51</id>
+          </tiles>
+        </row>
+        <row set="5">
+          <tiles>
+            <id>56</id>
+            <id>57</id>
             <id>0</id>
             <id>0</id>
+          </tiles>
+        </row>
+        <row set="6">
+          <tiles>
+            <id>58</id>
+            <id>59</id>
             <id>0</id>
             <id>0</id>
           </tiles>
@@ -190,20 +254,22 @@
     <SaveGuidesSeparately>false</SaveGuidesSeparately>
     <ForceTilemapPositionChangesInUnits>false</ForceTilemapPositionChangesInUnits>
   </options>
-  <exporter name="none" spritepos="Top Left" rotatedSpritePos="false" relativePaths="false" useProjectExporterOnly="false">
+  <exporter name="D:\program files\DAME\lua\Exporters\csvTilemap.lua" spritepos="Top Left" rotatedSpritePos="false" relativePaths="false" useProjectExporterOnly="false">
     <setting name="MakeIndex">true</setting>
     <setting name="UseGroups">true</setting>
     <setting name="LevelName">level1</setting>
     <setting name="BaseDir">C:\Shared\Work\svn\MIN00639_-_LavaLab\deploy</setting>
     <setting name="DataDir">C:\Shared\Work\svn\CH400646_-_Appetite\deploy\assets\xml\levels</setting>
+    <setting name="FileExt">csv</setting>
+    <setting name="CSVDir"/>
   </exporter>
-  <projectExporter name="D:\SVN\120GallonsOfTea\Procjam\development\Levels\xmlP3.lua" spritepos="Top Left" rotatedSpritePos="false" relativePaths="false" useProjectExporterOnly="false">
+  <projectExporter name="D:\GitHub\Procjam2014\development\Levels\xmlP3.lua" spritepos="Top Left" rotatedSpritePos="false" relativePaths="true" useProjectExporterOnly="false">
     <setting name="isConstantFile">false</setting>
     <setting name="SharedAssetFile">asset_index</setting>
     <setting name="ExportMethod">Multi File - String Key</setting>
     <setting name="LevelName">level</setting>
-    <setting name="AssetsDir">D:\SVN\120GallonsOfTea\Procjam\deploy\assets</setting>
-    <setting name="DeployDir">D:\SVN\120GallonsOfTea\Procjam\deploy</setting>
+    <setting name="AssetsDir">../../deploy/assets</setting>
+    <setting name="DeployDir">../../deploy</setting>
   </projectExporter>
   <customPropertyTypes/>
   <guides>

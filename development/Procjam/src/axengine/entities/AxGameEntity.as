@@ -187,13 +187,16 @@ package axengine.entities
 		public function hurt($damage:int = 0, $source:AxGameEntity = null):void {
 			health -= $damage;
 			_lastFrameDamage += $damage;
+			if (health < 0) {
+				_lastFrameDamage += health
+			}
 			if (health <= 0 && alive) {
 				kill();
 			}
 		}
 		
 		public function visualizeDamage($value:int):void {
-			var textCounter:AxText = new AxText (center.x, y- 10, AxFont.fromFont("alagard", true, 18), $value.toString(), 30, "center");
+			var textCounter:AxText = new AxText (center.x, y- 10, AxFont.fromFont("alagard", false, 16), $value.toString(), 30, "center");
 			textCounter.velocity.y -= 130;
 			textCounter.color = new AxColor (1,0,0,1);
 			textCounter.velocity.x = (Math.random() * 200)  - 100;
@@ -287,6 +290,7 @@ package axengine.entities
 		
 		public function kill():void
 		{
+			alive = false;
 			if (_lastFrameDamage > 0) {
 				visualizeDamage(_lastFrameDamage)
 				_lastFrameDamage = 0;

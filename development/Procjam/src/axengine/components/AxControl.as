@@ -128,6 +128,11 @@ package axengine.components
 			//m_level = new Level ();
 			//m_level.loadRemote($key);
 		}
+		
+		public function gameEnd():void 
+		{
+			dispatchEvent(new GameEvent(GameEvent.END));
+		}
 
 		public function get paused():Boolean { return m_paused; }
 		

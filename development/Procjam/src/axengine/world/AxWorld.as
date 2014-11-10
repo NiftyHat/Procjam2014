@@ -663,7 +663,25 @@ package axengine.world
 			return false;
 		}
 		
+		protected function clampPointToPlaySpace($point:AxPoint) {
+			if ($point.x > Ax.camera.bounds.width) {
+				$point.x = Ax.camera.bounds.width
+			}
+			if ($point.x < 0) {
+				$point.x = 0
+			}
+			if ($point.y > Ax.camera.bounds.height) {
+				$point.y=Ax.camera.bounds.height
+			}
+			if ($point.y < 0) {
+				$point.y = 0;
+			}
+			return $point;
+		}
+		
 		public function castRay($start:AxPoint, $end:AxPoint, $resolution:int):AxRayResult {
+			clampPointToPlaySpace($start);
+			clampPointToPlaySpace($end);
 			var points:Vector.<AxPoint> = efla($start.x, $start.y, $end.x, $end.y);
 			var len:int = points.length - 1;
 			var col:AxEntity = new AxEntity (0, 0);
@@ -671,23 +689,32 @@ package axengine.world
 			col.height = 3;
 			col.solid = true;
 			var overlaps:Boolean;
-			var result:AxRayResult = new AxRayResult ();
+			var result:AxRayResult = new AxRayResult();
 			result.point.x = points[points.length - 1].x;
 			result.point.y =  points[points.length - 1].y;
+			result.path = new Vector.<AxPoint>();
 			for (var i:int = 0; i < len; i++) {
 				var point:AxPoint = points[i];
+				var tileX:int = int(point.x / 32);
+				var tileY:int = int(point.y / 32);
+				
 				//col.x = point.x;
 				//col.y = point.y;
-				overlaps = m_collision_map.getTileAtPixelCoordinates(point.x, point.y) as Boolean;
+				overlaps = m_collision_map.getTileAtPixelCoordinates(point.x, point.y) != null;
 				if (overlaps) {
 					result.point.x = point.x; 
 					result.point.y =  point.y;
-					trace("broke early at " + result.point);
 					return result;
+				} 
+				if (result.path.length == 0) {
+					result.path.push(new AxPoint(tileX, tileY));
+				} else {
+					var lastTile:AxPoint = result.path[result.path.length -1]
+					if (tileX != lastTile.x || tileY != lastTile.y && !m_collision_map.tileHasCollision(tileX,tileY)) {
+						result.path.push(new AxPoint(tileX, tileY));
+					}
 				}
 			}
-			trace("start "+ $start);
-			trace("result "+ result.point);
 			return result;
 		}
 		
@@ -754,12 +781,13 @@ package axengine.world
 			var results:Vector.<AxEntity> = new Vector.<AxEntity>()
 			for each (var entity:AxEntity in m_entitys)
 			{
+				var classType:Class
 				if ($rect && entity.center.x > $rect.left && entity.center.x < $rect.right
 				&& entity.center.y < $rect.bottom && entity.center.y > $rect.top)
 				{
 					if (!entity.exists) continue;
 					if ($classTypes){
-						for each (var classType:Class in $classTypes)
+						for each (classType in $classTypes)
 						{
 							if (entity is classType) results.push(entity);
 						}
@@ -769,7 +797,7 @@ package axengine.world
 					
 				} else {
 					if ($classTypes){
-						for each (var classType:Class in $classTypes)
+						for each (classType in $classTypes)
 						{
 							if (entity is classType) results.push(entity);
 						}

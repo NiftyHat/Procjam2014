@@ -20,8 +20,16 @@ package assets
 		[Embed(source = "graphics/player.png")] public var img_player:Class;
 		
 		
+		[Embed(source="graphics/items/coin_pile.png")] public var img_coin_pile:Class;
+		[Embed(source = "graphics/characters/theif_01_char.png")] public var img_thief_01:Class;
 		
+		[Embed(source = "graphics/tiles/vision_tiles.png")]public var img_vision_tiles:Class;
+		
+		[Embed(source = "graphics/grave.png")]public var img_grave:Class;
 
+		[Embed(source = "fonts/alagard.ttf", fontFamily = "alagard", embedAsCFF = "false")] public static const font:String
+		
+		
 		public function InternalAssets() 
 		{
 			super();
