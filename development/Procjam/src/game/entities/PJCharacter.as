@@ -5,6 +5,7 @@ package game.entities
 	import game.deco.PJGravestone;
 	import game.PJEntity;
 	import game.world.PJWorld;
+	import org.axgl.AxGroup;
 	import org.axgl.AxPoint;
 	import org.axgl.AxSprite;
 	/**
@@ -35,26 +36,28 @@ package game.entities
 		
 		override public function update():void 
 		{
+			
 			super.update();
-			if (_bIsMoving) {
-				animate("walk" + _animSuffix);
-			} else {
-				animate("idle" + _animSuffix);
-				if (_playerDetectionLevel > 0) {
-					setDetectionLevel(_playerDetectionLevel - 5);
+			if (alive) {
+				if (_bIsMoving) {
+					animate("walk" + _animSuffix);
+				} else {
+					animate("idle" + _animSuffix);
+					if (_playerDetectionLevel > 0) {
+						setDetectionLevel(_playerDetectionLevel - 5);
+					}
 				}
+			} else {
+				animate("dead" + _animSuffix);
 			}
-			if (isOnEntity(PJEntity(_world.player))) {
-				kill();
-			}
+			
 		}
 		
 		override public function kill():void 
 		{
-			super.kill();
-			var grave:PJGravestone = new PJGravestone (x, y);
-			_world.addEntity(grave);
-			destroy();
+			//super.kill();
+			animate("dead" + _animSuffix);
+			alive = false;
 		}
 		
 		protected function castVision():void 
@@ -67,19 +70,15 @@ package game.entities
 			switch (_moveDir) {
 				case DOWN:
 					_visionTarget.y += 140;
-					_visionSource.y += 32;
 				break;
 				case UP:
 					_visionTarget.y -= 140;
-					_visionSource.y -= 32;
 				break;
 				case LEFT:
 					_visionTarget.x -= 140;
-					_visionSource.x -= 32;
 				break;
 				case RIGHT:
 					_visionTarget.x += 140;
-					_visionSource.x += 32;
 				break;
 			}
 			if (_moveDir != NONE) {
@@ -89,13 +88,21 @@ package game.entities
 						_playerDetectionLevel++;
 						isPlayerVisible = true;
 					} 
-					var temp:AxSprite = new AxSprite (point.x * 32, point.y * 32);
-					
-					temp.load(Core.lib.int.img_vision_tiles, 32, 32);
+					var visionView:AxGroup = PJWorld(_world).visionDebug;
+					var temp:AxSprite = visionView.recycle() as AxSprite;
+					if (!temp) {
+						temp = new AxSprite (0,0);
+						temp.load(Core.lib.int.img_vision_tiles, 32, 32);
+						temp.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 0, true);
+						
+					} else {
+					}
 					temp.animate("idle");
+					temp.x = point.x * 32
+					temp.y = point.y * 32
 					setDetectionLevel(_playerDetectionLevel);
 					//temp.frame =  3 + int((temp.totalFrames /100) * _playerDetectionLevel) 
-					PJWorld(_world).visionDebug.add(temp);
+					visionView.add(temp);
 					temp.frame = 4;
 				}
 			} 
@@ -136,17 +143,19 @@ package game.entities
 			
 		}
 		
-		
 		protected function generateAnims ():void {
 			addAnimation("walk_down", [1, 0, 1, 2], 5, true);
-			addAnimation("walk_left", [4, 3, 4, 5], 5, true);
+			addAnimation("walk_up", [4, 3, 4, 5], 5, true);
 			addAnimation("walk_right", [7, 6, 7, 8], 5, true);
-			addAnimation("walk_up", [10, 9, 10, 11], 5, true);
+			addAnimation("walk_left", [10, 9, 10, 11], 5, true);
 			addAnimation("idle_down", [1], 5, true);
-			addAnimation("idle_left", [4], 5, true);
+			addAnimation("idle_up", [4], 5, true);
 			addAnimation("idle_right", [7], 5, true);
-			addAnimation("idle_up", [10], 5, true);
-			
+			addAnimation("idle_left", [10], 5, true);
+			addAnimation("dead_down", [12], 5, true);
+			addAnimation("dead_up", [15], 5, true);
+			addAnimation("dead_right", [18], 5, true);
+			addAnimation("dead_left", [21], 5, true);
 		}
 		
 	}

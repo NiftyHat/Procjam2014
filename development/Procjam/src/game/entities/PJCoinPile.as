@@ -25,7 +25,9 @@ package game.entities
 		{
 			super.init($world);
 			loadNativeGraphics();
-			frame = int((totalFrames - 1) / 100 * health);
+			addAnimation("idle", [0]);
+			animate("idle");
+			show(int((totalFrames - 1) / 100 * health))
 		}
 		
 		override public function hurt($damage:int = 0, $source:AxGameEntity = null):void 
@@ -35,7 +37,7 @@ package game.entities
 			} else {
 				Core.control.score -= health;
 			}
-			
+			show(int((totalFrames - 1) / 100 * health))
 			super.hurt($damage, $source);
 		}
 		

@@ -1,5 +1,6 @@
 package game.world 
 {
+	import axengine.entities.enemies.AxEnemy;
 	import org.axgl.AxPoint;
 	import axengine.entities.AxDynamicEntity;
 	import axengine.util.ray.AxRayResult;
@@ -38,6 +39,7 @@ package game.world
 		private var _aStarDebug:AxGroup;
 		protected var _navigationMap:Map;
 		protected var _visionDebug:AxGroup;
+		protected var _groupAttackZone:AxGroup;
 		protected var _soundDebug:AxGroup;
 		
 		public function PJWorld(x:Number=0, y:Number=0) 
@@ -78,22 +80,36 @@ package game.world
 		override public function update():void 
 		{
 			if (_visionDebug) {
-				_visionDebug.clear();
+				for each (var entity:AxEntity in _visionDebug.members) {
+					entity.destroy();
+				}
 			}
+			m_group_entities.sort("y");
 			super.update();
-			checkForWin();
 			checkForLost();
+		}
+		
+		public function clearPounceEffects():void {
+			if (_groupAttackZone) {
+				for each (var entity:AxEntity in _visionDebug.members) {
+					entity.destroy();
+				}
+			}
+			_groupAttackZone.clear();
 		}
 		
 		override protected function init():void 
 		{
 			_aStarDebug = new AxGroup();
 			_visionDebug = new AxGroup();
+			_groupAttackZone = new AxGroup();
 
 			super.init();
 			//m_groups.unshift(_visionDebug);
+			m_groups.splice(2, 0, _groupAttackZone);
 			m_groups.splice(2, 0, _visionDebug);
-			m_groups.splice(10, 0, _aStarDebug);
+			//m_groups.splice(10, 0, _aStarDebug);
+			
 		}
 		
 		override protected function initGroups():void 
@@ -117,7 +133,6 @@ package game.world
 		}
 
 		protected function initAStarMap ():void {
-			trace("INIT ASTAR PATHING!");
 			_navigationMap = new Map(collision_map.cols, collision_map.rows, 1);
 			_navigationMap.heuristic = Map.DIAGONAL_HEURISTIC;
 			for (var y:int = 0; y < collision_map.rows; y++) {
@@ -126,7 +141,6 @@ package game.world
 					_navigationMap.setTile(new BasicTile(1, new Point(x, y), (tileIndex <= 0)));
 				}
 			}
-			
 			_aStarSolver = new Astar();
 			_aStarSolver.addEventListener(AstarEvent.PATH_FOUND, onPathFound);
 			_aStarSolver.addEventListener(AstarEvent.PATH_NOT_FOUND, onPathNotFound);
@@ -134,9 +148,17 @@ package game.world
 			_aStarSolver.addAnalyzer(new FullClippingAnalyzer());
 		}
 		
+		override public function destroy():void 
+		{
+			super.destroy();
+			m_level.destroy();
+			m_level = null;
+			_aStarSolver.removeEventListener(AstarEvent.PATH_FOUND, onPathFound);
+			_aStarSolver.removeEventListener(AstarEvent.PATH_NOT_FOUND, onPathNotFound);
+		}
+		
 		private function onPathFound(event : AstarEvent) : void
 		{
-			trace("Path was found: ");
 			var result:AstarPath = event.result;
 			var request:PathCallbackRequest = event.request as PathCallbackRequest;
 			if (request && request.callback != null) {
@@ -150,13 +172,13 @@ package game.world
 					request.callback();
 				}
 			}
-			_aStarDebug.clear(true);
+			//_aStarDebug.clear(true);
 			for(var i:int = 0; i<event.result.path.length;i++)
 			{
 				
-				var next:Point = ((event.result.path[i] as BasicTile).getPosition());
-				var temp:AxText = new AxText (next.x * 32, next.y * 32, null, "P" + i, 16, "center");
-				_aStarDebug.add(temp);
+				//var next:Point = ((event.result.path[i] as BasicTile).getPosition());
+				//var temp:AxText = new AxText (next.x * 32, next.y * 32, null, "P" + i, 16, "center");
+				//_aStarDebug.add(temp);
 			}
 		}
 		
@@ -168,6 +190,11 @@ package game.world
 		public function get visionDebug():AxGroup 
 		{
 			return _visionDebug;
+		}
+		
+		public function get groupAttackZone():AxGroup 
+		{
+			return _groupAttackZone;
 		}
 		
 	}
