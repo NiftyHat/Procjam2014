@@ -1,5 +1,6 @@
 package keith 
 {
+	import axengine.world.AxDynamicTilemap;
 	import flash.display.BitmapData;
 	import org.axgl.tilemap.AxTile;
 	import org.axgl.tilemap.AxTilemap;
@@ -48,7 +49,7 @@ package keith
 		public static const TILE_DIRT_NE_INVERT:int = 25;
 		*/
 		
-		private var wallGeometry:AxTilemap;
+		private var wallGeometry:AxDynamicTilemap;
 		private var floorGeometry:AxTilemap;
 		
 		private var floorTiler:LimitedSetTiler
@@ -75,7 +76,7 @@ package keith
 			floorTiler.addTile(new WangTile(11,GRN, YLW, RED, RED));
 		}
 		
-		public function getWallGeometry():AxTilemap {
+		public function getWallGeometry():AxDynamicTilemap {
 			return wallGeometry;
 		}
 		public function getFloorGeometry():AxTilemap {
@@ -235,7 +236,7 @@ package keith
 			}
 			
 			
-			wallGeometry = new AxTilemap(0, 0);
+			wallGeometry = new AxDynamicTilemap(0, 0);
 			wallGeometry.build(wallsString, WALLS_TILES, 32, 32, 1);
 			
 			floorGeometry = new AxTilemap(0, 0);

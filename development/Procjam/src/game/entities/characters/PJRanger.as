@@ -10,6 +10,7 @@ package game.entities.characters
 	 */
 	public class PJRanger extends PJCharacter
 	{
+		private var _isOverwatch:Boolean;
 		
 		protected var _followTarget:PJEntity;
 		
@@ -33,7 +34,7 @@ package game.entities.characters
 			if (!alive) {
 				destroy();
 			}
-			castVision();
+			
 			if (!_followTarget) {
 				var possibleTargets:Vector.<AxEntity> = _world.getEntitiesInRect(null, [PJThief]);
 				for each (var item:PJThief in possibleTargets) {
@@ -55,6 +56,17 @@ package game.entities.characters
 					
 				}
 			}
+			castVision();
+		}
+		
+		override protected function castVision():void 
+		{
+			if (!_isOverwatch) {
+				super.castVision();
+			} else {
+				
+			}
+			
 		}
 		
 		

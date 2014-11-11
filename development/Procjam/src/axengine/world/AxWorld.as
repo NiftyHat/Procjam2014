@@ -49,7 +49,7 @@ package axengine.world
 		protected var m_tilemaps:Vector.<AxDynamicTilemap>
 		protected var m_collision_map:AxDynamicTilemap;
 		
-		private var m_group_bg:AxGroup = new AxGroup ();
+		protected var m_group_bg:AxGroup = new AxGroup ();
 		protected var m_group_entities:AxGroup = new AxGroup ();
 		protected var m_group_collision:AxGroup = new AxGroup ();
 		private var m_group_pickups:AxGroup = new AxGroup ();
@@ -451,7 +451,9 @@ package axengine.world
 			{
 				e.setPosition($x_pos,$y_pos)
 			}
-			if (e.isForceBack) target_group = m_group_bg;
+			if (e.isForceBack) {
+				target_group = m_group_bg;
+			}
 			else if (e.isForceFront)
 			{
 				target_group = m_group_fg;

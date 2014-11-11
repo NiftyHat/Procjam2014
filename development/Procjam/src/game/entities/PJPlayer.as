@@ -125,6 +125,12 @@ package game.entities
 		private function pounceAttack($rayResult:AxRayResult):void 
 		{
 			var char:PJCharacter;
+			if (!$rayResult.lastPoint) {
+				_isChargingPounce = false;
+				_isPouncing = false;
+				pounceCancel();
+				return;
+			}
 			for each (var tile:AxPoint in $rayResult.path) {
 				var characters:Vector.<AxEntity> = _world.getEntitiesInTile(tile, [PJCharacter]);
 				var isTargetFound:Boolean;

@@ -17,8 +17,16 @@ package game.entities
 		public function PJCoinPile(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
-			health = 10 + (Math.random() * 90);
 			
+			_libraryAssetName = "COIN_PILE";
+			
+		}
+		
+		public function setGold($amount:int):void {
+			health = 10 + (Math.random() * 90);
+			if (health < 0) {
+				destroy();
+			}
 		}
 		
 		override public function init($world:AxWorld):void 

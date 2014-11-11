@@ -23,10 +23,13 @@ package game.entities.characters
 		protected var _targetTreasure:PJCoinPile;
 		protected var _stealTimer:AxTimer;
 		
+		
 		public function PJThief() 
 		{
 			_mMoveSpeed = 0.2;
-			_libraryAssetName = "CHAR_THIEF";
+			_isForceBack = false;
+			_isForceFront = true;
+			_libraryAssetName = "THIEF";
 		}
 		
 		override public function init($world:AxWorld):void 

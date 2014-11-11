@@ -24,7 +24,7 @@
 		</LAYERS>
 		<OBJECTS>
 			<START>
-				<START x="144.000" y="0.000"/>
+				<START x="48.000" y="48.000"/>
 				<ID link_id="null" guid="2E77C800-5898-CF3F-6ACB-A3CD814ED251"/>
 				<CLASS name="MARKER_START"/>
 				<SIZE width="16.000" height="16.000"/>
@@ -36,123 +36,6 @@
 				<PROPS>					
 				</PROPS>
 			</START>
-			<COIN_PILE>
-				<START x="672.000" y="64.000"/>
-				<ID link_id="null" guid="D341D31B-2031-5E96-CD84-9C764FE20660"/>
-				<CLASS name="COIN_PILE"/>
-				<SIZE width="32.000" height="32.000"/>
-				<ROTATION deg="0.000" rad="0.000"/>
-				<BOUNDS x="0" y="0"  width="32" height="32"/>
-				<SCROLL x="1" y="1"/>
-				<SCALE x="1.000" y="1.000" />
-				<ANCHOR x="0" y="0"/>
-				<PROPS>					
-				</PROPS>
-			</COIN_PILE>
-			<COIN_PILE>
-				<START x="352.000" y="416.000"/>
-				<ID link_id="null" guid="966B0792-FA9F-6EB1-24D5-F323299A8A11"/>
-				<CLASS name="COIN_PILE"/>
-				<SIZE width="32.000" height="32.000"/>
-				<ROTATION deg="0.000" rad="0.000"/>
-				<BOUNDS x="0" y="0"  width="32" height="32"/>
-				<SCROLL x="1" y="1"/>
-				<SCALE x="1.000" y="1.000" />
-				<ANCHOR x="0" y="0"/>
-				<PROPS>					
-				</PROPS>
-			</COIN_PILE>
-			<COIN_PILE>
-				<START x="608.000" y="352.000"/>
-				<ID link_id="null" guid="65250C4B-E900-98F2-8372-21FA42DD70C1"/>
-				<CLASS name="COIN_PILE"/>
-				<SIZE width="32.000" height="32.000"/>
-				<ROTATION deg="0.000" rad="0.000"/>
-				<BOUNDS x="0" y="0"  width="32" height="32"/>
-				<SCROLL x="1" y="1"/>
-				<SCALE x="1.000" y="1.000" />
-				<ANCHOR x="0" y="0"/>
-				<PROPS>					
-				</PROPS>
-			</COIN_PILE>
-			<COIN_PILE>
-				<START x="256.000" y="96.000"/>
-				<ID link_id="null" guid="D414D9F6-DE19-1AC9-323B-0A1D00EE8779"/>
-				<CLASS name="COIN_PILE"/>
-				<SIZE width="32.000" height="32.000"/>
-				<ROTATION deg="0.000" rad="0.000"/>
-				<BOUNDS x="0" y="0"  width="32" height="32"/>
-				<SCROLL x="1" y="1"/>
-				<SCALE x="1.000" y="1.000" />
-				<ANCHOR x="0" y="0"/>
-				<PROPS>					
-				</PROPS>
-			</COIN_PILE>
-			<COIN_PILE>
-				<START x="384.000" y="256.000"/>
-				<ID link_id="null" guid="1F6D7605-463F-D2C8-ED8C-9D4EBEF71AA9"/>
-				<CLASS name="COIN_PILE"/>
-				<SIZE width="32.000" height="32.000"/>
-				<ROTATION deg="0.000" rad="0.000"/>
-				<BOUNDS x="0" y="0"  width="32" height="32"/>
-				<SCROLL x="1" y="1"/>
-				<SCALE x="1.000" y="1.000" />
-				<ANCHOR x="0" y="0"/>
-				<PROPS>					
-				</PROPS>
-			</COIN_PILE>
-			<COIN_PILE>
-				<START x="96.000" y="352.000"/>
-				<ID link_id="null" guid="73147BB4-E975-C55A-7943-C5A9849E6324"/>
-				<CLASS name="COIN_PILE"/>
-				<SIZE width="32.000" height="32.000"/>
-				<ROTATION deg="0.000" rad="0.000"/>
-				<BOUNDS x="0" y="0"  width="32" height="32"/>
-				<SCROLL x="1" y="1"/>
-				<SCALE x="1.000" y="1.000" />
-				<ANCHOR x="0" y="0"/>
-				<PROPS>					
-				</PROPS>
-			</COIN_PILE>
-			<COIN_PILE>
-				<START x="128.000" y="32.000"/>
-				<ID link_id="null" guid="A0DD9064-5B52-ED1C-ACCA-9BCA580D442E"/>
-				<CLASS name="COIN_PILE"/>
-				<SIZE width="32.000" height="32.000"/>
-				<ROTATION deg="0.000" rad="0.000"/>
-				<BOUNDS x="0" y="0"  width="32" height="32"/>
-				<SCROLL x="1" y="1"/>
-				<SCALE x="1.000" y="1.000" />
-				<ANCHOR x="0" y="0"/>
-				<PROPS>					
-				</PROPS>
-			</COIN_PILE>
-			<THIEF>
-				<START x="160.000" y="192.000"/>
-				<ID link_id="null" guid="2376F206-3013-28A8-F6B0-5F170F041C94"/>
-				<CLASS name="CHAR_THIEF"/>
-				<SIZE width="32.000" height="32.000"/>
-				<ROTATION deg="0.000" rad="0.000"/>
-				<BOUNDS x="0" y="0"  width="32" height="32"/>
-				<SCROLL x="1" y="1"/>
-				<SCALE x="1.000" y="1.000" />
-				<ANCHOR x="0" y="0"/>
-				<PROPS>					
-				</PROPS>
-			</THIEF>
-			<RANGER>
-				<START x="288.000" y="160.000"/>
-				<ID link_id="null" guid="3D26F4C9-4A4C-7CBA-BB05-2F7F3A4AADFB"/>
-				<CLASS name="CHAR_RANGER"/>
-				<SIZE width="32.000" height="32.000"/>
-				<ROTATION deg="0.000" rad="0.000"/>
-				<BOUNDS x="0" y="0"  width="32" height="32"/>
-				<SCROLL x="1" y="1"/>
-				<SCALE x="1.000" y="1.000" />
-				<ANCHOR x="0" y="0"/>
-				<PROPS>					
-				</PROPS>
-			</RANGER>
 		</OBJECTS>
 		<SHAPES>
 		</SHAPES>
