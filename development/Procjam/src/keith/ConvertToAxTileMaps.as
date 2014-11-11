@@ -2,7 +2,7 @@ package keith
 {
 	import axengine.world.AxDynamicTilemap;
 	import flash.display.BitmapData;
-	import org.axgl.tilemap.AxTile;
+	import org.axgl.AxPoint;
 	import org.axgl.tilemap.AxTilemap;
 	/**
 	 * ...
@@ -51,6 +51,7 @@ package keith
 		
 		private var wallGeometry:AxDynamicTilemap;
 		private var floorGeometry:AxTilemap;
+		private var rooms:Vector.<Vector.<AxPoint>>;
 		
 		private var floorTiler:LimitedSetTiler
 		
@@ -60,6 +61,8 @@ package keith
 			var RED:int = 2;
 			var BLU:int = 3;
 			var YLW:int = 4;
+			
+			rooms = new Vector.<Vector.<AxPoint>>();
 			
 			floorTiler = new LimitedSetTiler();
 			floorTiler.addTile(new WangTile(0, RED, YLW, GRN, BLU));
@@ -81,6 +84,13 @@ package keith
 		}
 		public function getFloorGeometry():AxTilemap {
 			return floorGeometry;
+		}
+		public function getRoom(i:uint):Vector.<AxPoint> {
+			if (rooms.length < i) return new Vector.<AxPoint>();
+			return rooms[i];
+		}
+		public function getRoomCount():uint {
+			return rooms.length;
 		}
 		
 		public function generate(width:int, height:int, seed:int):void {
@@ -242,6 +252,83 @@ package keith
 			floorGeometry = new AxTilemap(0, 0);
 			floorGeometry.build(floorsString, FLOOR_TILES, 32, 32, 99);
 			
+			
+			var floodArray:Array = geometryArray
+			var currentGroup:int = 0;
+			for (i = 0; i < floodArray.length; i++) {
+				for (j = 0; j < floodArray[i].length; j++) {
+					if (floodArray[i][j] == " ") {
+						
+						
+						//flood(j, i);
+						floodArray = fixedFlood(floodArray, j, i, currentGroup);
+						currentGroup++;
+					}
+				}
+			}
+			
+			rooms = new Vector.<Vector.<AxPoint>>(currentGroup-1);
+			
+			for (i = 0; i < floodArray.length; i++) {
+				var str:String = ""
+				for (j = 0; j < floodArray[i].length; j++) {
+					str += floodArray[i][j]
+					if (floodArray[i][j] != CORRIDOR && floodArray[i][j] != SOLIDWALL) {
+						if(rooms[floodArray[i][j] - 1] == null) rooms[floodArray[i][j] - 1] = new Vector.<AxPoint>()
+						rooms[floodArray[i][j] - 1].push(new AxPoint(j, i));
+					}
+				}
+				trace(str);
+			}
+			
+			
+		}
+		
+		protected function fixedFlood(splitArray:Array, x:int, y:int, currentGroup:int ):Array {
+			var i:int;
+			var floodArray:Array = splitArray.slice();
+			if (floodArray[y][x] != OPENSPACE || floodArray[y][x] == currentGroup) return splitArray;
+			
+			var queue:Vector.<AxPoint> = new Vector.<AxPoint>();
+			queue.push(new AxPoint(x, y));
+			
+			var loop:int = 0;
+			while (queue.length) {
+				loop++
+				var pt:AxPoint = queue.shift();
+				if (floodArray[pt.y][pt.x] == currentGroup || floodArray[pt.y][pt.x] != OPENSPACE) continue;
+				x = pt.x;
+				y = pt.y;
+				
+				floodArray[y][x] = currentGroup;
+				var w:int = x;
+				var e:int = x;
+				// West Loop
+				while (true) {
+					w--;
+					if (w == 0 || splitArray[y][w] != OPENSPACE) break;
+					floodArray[y][w] = currentGroup;
+				}
+				// East Loop
+				while (true) {
+					e++;
+					if (e == splitArray[y].length || splitArray[y][e] != OPENSPACE) break;
+					floodArray[y][e] = currentGroup;
+				}
+				for (i = w; i < e; i++) {
+					var n:String = y == 0 ? SOLIDWALL : floodArray[y-1][i].toString()
+					var s:String = y == floodArray.length ? SOLIDWALL : floodArray[y+1][i].toString()
+					if (!(n != OPENSPACE || n == currentGroup.toString())) {
+						queue.push(new AxPoint(i, pt.y - 1));
+					}
+					if (!(s != OPENSPACE || s == currentGroup.toString())) {
+						queue.push(new AxPoint(i, pt.y + 1));
+					}
+				}
+				
+			}
+			
+			return floodArray;
 		}
 		
 	}
