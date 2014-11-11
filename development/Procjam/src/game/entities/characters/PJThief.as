@@ -26,6 +26,7 @@ package game.entities.characters
 		public function PJThief() 
 		{
 			_mMoveSpeed = 0.2;
+			_libraryAssetName = "CHAR_THIEF";
 		}
 		
 		override public function init($world:AxWorld):void 

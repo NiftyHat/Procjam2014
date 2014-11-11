@@ -13,6 +13,7 @@ package game.ai
 		
 		public var callback:Function;
 		public var params:Array;
+		public var debug:Boolean;
 		
 		public function PathCallbackRequest($start : Point, $end : Point, $map : Map, $priority : uint = 10) 
 		{

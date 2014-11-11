@@ -22,6 +22,8 @@ package game.entities
 		protected var _playerDetectionLevel:int;
 		protected var _isAlertMode:Boolean;
 		
+		public var riskLevel:int = 0;
+		
 		public function PJCharacter() 
 		{
 			_visionTarget = new AxPoint();

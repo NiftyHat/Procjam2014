@@ -1,6 +1,7 @@
 package game 
 {
 	import axengine.state.AxInitState;
+	import game.entities.characters.PJRanger;
 	import game.entities.characters.PJThief;
 	import game.entities.characters.PJThief;
 	import game.entities.PJCoinPile;
@@ -21,6 +22,7 @@ package game
 			super.registerClasses();
 			Core.registry.registerClass(PJCoinPile, "COIN_PILE");
 			Core.registry.registerClass(PJThief, "CHAR_THIEF");
+			Core.registry.registerClass(PJRanger, "CHAR_RANGER");
 		}
 		
 	}

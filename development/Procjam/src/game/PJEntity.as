@@ -17,6 +17,7 @@ package game
 	 */
 	public class PJEntity extends AxDynamicEntity
 	{
+		protected var _isDebugPathfinding:Boolean;
 		protected var _tweenMove:TweenLite;
 		
 		protected var _moveDir:int = NONE;
@@ -148,14 +149,14 @@ package game
 			var targetTileY:int = $target.tileY;
 			trace("Path to entity ",$target ,targetTileX, targetTileY);
 			if (!_world.collision_map.tileHasCollision(targetTileX, targetTileY)) {
-				(_world as PJWorld).getAStarPath(new Point(_tileX, _tileY), new Point(targetTileX, targetTileY), onPath, null);
+				(_world as PJWorld).getAStarPath(new Point(_tileX, _tileY), new Point(targetTileX, targetTileY), onPath, null, _isDebugPathfinding);
 			}
 		}
 		
 		protected function pathToTile($tileX:int, $tileY:int):void {
 			trace("Path to tile " ,$tileX, $tileY);
 			if (!_world.collision_map.tileHasCollision($tileX, $tileY)) {
-				(_world as PJWorld).getAStarPath(new Point(_tileX, _tileY), new Point($tileX, $tileY), onPath, null);
+				(_world as PJWorld).getAStarPath(new Point(_tileX, _tileY), new Point($tileX, $tileY), onPath, null,_isDebugPathfinding);
 			}
 		}
 		
@@ -169,7 +170,7 @@ package game
 			return !_world.collision_map.tileHasCollision(nextTile.x, nextTile.y);
 		}
 		
-		private function onMoveComplete():void 
+		protected function onMoveComplete():void 
 		{
 			_bIsMoving = false;
 		}

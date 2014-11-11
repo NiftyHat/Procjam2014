@@ -127,9 +127,17 @@ package game.entities
 			var char:PJCharacter;
 			for each (var tile:AxPoint in $rayResult.path) {
 				var characters:Vector.<AxEntity> = _world.getEntitiesInTile(tile, [PJCharacter]);
-				if (characters && characters.length > 0) {
-					char= characters[0] as PJCharacter
-					char.alive = false;
+				var isTargetFound:Boolean;
+				if (characters) {
+					for each (var testChar:PJCharacter in characters) {
+						char = testChar;
+						if (char.alive) {
+							isTargetFound = true;
+							break;
+						}
+					}
+				}
+				if (isTargetFound) {
 					break;
 				}
 			}
