@@ -20,6 +20,7 @@ package game
 		protected var _tweenMove:TweenLite;
 		
 		protected var _moveDir:int = NONE;
+		protected var _faceDir:int = DOWN;
 		
 		protected var _tileX:int = 0;
 		protected var _tileY:int = 0;
@@ -45,6 +46,9 @@ package game
 		override public function update():void 
 		{
 			super.update();
+			if (!alive) {
+				 return;
+			}
 			updateTilePos();
 			if (_path && _path.length > 0 && !_bIsMoving) {
 				var tile:BasicTile = _path[0] as BasicTile;
@@ -106,9 +110,11 @@ package game
 				if (!_bIsMoving && isTileWalkable(_nextTile)) {
 					_tweenMove = TweenLite.to(this, _mMoveSpeed, { x:(_nextTile.x * TILE_WIDTH), y:(_nextTile.y * TILE_HEIGHT) , onComplete: onMoveComplete ,onReverseComplete: onReverseMoveComplete, ease:Linear.easeNone } );
 					_bIsMoving = true;
+					_faceDir = $dir;
 					switch ($dir) {
 					case DOWN:
 						_animSuffix = "_down";
+						
 					break;
 					case UP:
 						_animSuffix = "_up";
@@ -158,7 +164,7 @@ package game
 			_path = $path.path;
 		}
 		
-		private function isTileWalkable(nextTile:AxPoint):Boolean 
+		protected function isTileWalkable(nextTile:AxPoint):Boolean 
 		{
 			return !_world.collision_map.tileHasCollision(nextTile.x, nextTile.y);
 		}

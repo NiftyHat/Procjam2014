@@ -29,6 +29,8 @@ package assets
 
 		[Embed(source = "fonts/alagard.ttf", fontFamily = "alagard", embedAsCFF = "false")] public static const font:String
 		
+		[Embed(source="graphics/effects/attack_tiles.png")] public var img_attack_zone_tiles:Class;
+		
 		
 		public function InternalAssets() 
 		{

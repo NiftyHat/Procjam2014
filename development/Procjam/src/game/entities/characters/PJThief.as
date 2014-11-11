@@ -1,5 +1,6 @@
 package game.entities.characters 
 {
+	import axengine.entities.markers.AxMarkerStart;
 	import axengine.util.ray.AxRayResult;
 	import axengine.world.AxWorld;
 	import com.greensock.TweenLite;
@@ -37,7 +38,7 @@ package game.entities.characters
 		
 		private function onStealTimerComplete():void 
 		{
-			if (_targetTreasure) {
+			if (_targetTreasure && alive) {
 				if (isOnEntity(_targetTreasure)) {
 					_targetTreasure.hurt(10);
 				} else {
@@ -54,15 +55,21 @@ package game.entities.characters
 			}
 		}
 		
-		override public function destroy():void 
+		override public function kill():void 
 		{
-			super.destroy();
+			super.kill();
 			clearTarget();
 		}
 		
 		override public function update():void 
 		{
 			super.update();
+			if (!alive) {
+				if (_targetTreasure) {
+					clearTarget();
+				}
+				return;
+			}
 			if (_isAlertMode) {
 				_mMoveSpeed = 0.23;
 				if (!_bIsMoving) {
@@ -92,9 +99,9 @@ package game.entities.characters
 				_tweenMove.reverse();
 			}
 			_path = null;
-				clearTarget();
-				pJPlayer.stun(2);
-				detectEscapeRoute();
+			clearTarget();
+			//pJPlayer.stun(2);
+			detectEscapeRoute();
 			
 		}
 		
@@ -164,6 +171,17 @@ package game.entities.characters
 				_targetTreasure = bestTreasure;
 				bestTreasure.isClaimed = true;
 				pathToTile(bestTreasure.tileX, bestTreasure.tileY);
+			} else {
+				var startMarkers:Vector.<AxEntity> = _world.getEntitiesInRect(null, [AxMarkerStart]);
+				if (startMarkers.length > 0) {
+					var marker:AxMarkerStart = startMarkers[0] as AxMarkerStart;
+					if (isOnTile(int(marker.x) / 32, int(marker.y) / 32)) {
+						destroy();
+					} else {
+						pathToTile(marker.x / 32, marker.y / 32);
+					}
+					
+				}
 			}
 			
 		}

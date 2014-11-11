@@ -17,6 +17,7 @@ package axengine.world
 	import flash.display.Sprite;
 	import flash.events.EventDispatcher;
 	import flash.geom.Point;
+	import game.entities.PJCharacter;
 	import org.axgl.Ax;
 	import org.axgl.AxEntity;
 	import org.axgl.AxGroup;
@@ -663,7 +664,7 @@ package axengine.world
 			return false;
 		}
 		
-		protected function clampPointToPlaySpace($point:AxPoint) {
+		protected function clampPointToPlaySpace($point:AxPoint):AxPoint {
 			if ($point.x > Ax.camera.bounds.width) {
 				$point.x = Ax.camera.bounds.width
 			}
@@ -679,7 +680,7 @@ package axengine.world
 			return $point;
 		}
 		
-		public function castRay($start:AxPoint, $end:AxPoint, $resolution:int):AxRayResult {
+		public function castRay($start:AxPoint, $end:AxPoint, $getEntities:int):AxRayResult {
 			clampPointToPlaySpace($start);
 			clampPointToPlaySpace($end);
 			var points:Vector.<AxPoint> = efla($start.x, $start.y, $end.x, $end.y);
@@ -803,6 +804,33 @@ package axengine.world
 						}
 					}
 				}
+			}
+			if (results.length == 0) return null;
+			return results;
+		}
+		
+		public function getEntitiesInTile($tilePoint:AxPoint, $classTypes:Array):Vector.<AxEntity> 
+		{
+			if (!m_entitys) return null;
+			var results:Vector.<AxEntity> = new Vector.<AxEntity>()
+			for each (var entity:AxEntity in m_entitys)
+			{
+				var tx = $tilePoint.x * 32;
+				var ty = $tilePoint.y * 32;
+				var classType:Class
+				if ($tilePoint && entity.center.x > tx && entity.center.x < tx + 32
+				&& entity.center.y < ty + 32 && entity.center.y > ty)
+				{
+					if (!entity.exists) continue;
+					if ($classTypes){
+						for each (classType in $classTypes)
+						{
+							if (entity is classType) results.push(entity);
+						}
+					} else {
+						results.push(entity);
+					}
+				} 
 			}
 			if (results.length == 0) return null;
 			return results;

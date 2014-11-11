@@ -179,19 +179,6 @@
 				<PROPS>					
 				</PROPS>
 			</THIEF>
-			<GRAVE>
-				<START x="320.000" y="96.000"/>
-				<ID link_id="null" guid="49F6B5D8-3BD1-5F2D-02BE-7E5B0865818C"/>
-				<CLASS name="DECO"/>
-				<SIZE width="32.000" height="32.000"/>
-				<ROTATION deg="0.000" rad="0.000"/>
-				<BOUNDS x="0" y="0"  width="32" height="32"/>
-				<SCROLL x="1" y="1"/>
-				<SCALE x="1.000" y="1.000" />
-				<ANCHOR x="0" y="0"/>
-				<PROPS>					
-				</PROPS>
-			</GRAVE>
 		</OBJECTS>
 		<SHAPES>
 		</SHAPES>
