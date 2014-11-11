@@ -108,7 +108,7 @@ package game.world
 			//m_groups.unshift(_visionDebug);
 			m_groups.splice(2, 0, _groupAttackZone);
 			m_groups.splice(2, 0, _visionDebug);
-			//m_groups.splice(10, 0, _aStarDebug);
+			add(_aStarDebug);
 			
 		}
 		
@@ -125,10 +125,11 @@ package game.world
 		
 	
 		
-		public function getAStarPath ($startTile:Point, $endTile:Point, $callback:Function , $params:Array = null):void {
+		public function getAStarPath ($startTile:Point, $endTile:Point, $callback:Function , $params:Array = null, $debug:Boolean = false):void {
 			var request:PathCallbackRequest = new PathCallbackRequest ($startTile, $endTile, _navigationMap);
  			request.callback = $callback;
 			request.params = $params;
+			request.debug = $debug;
 			_aStarSolver.getPath(request);
 		}
 
@@ -172,14 +173,18 @@ package game.world
 					request.callback();
 				}
 			}
-			//_aStarDebug.clear(true);
-			for(var i:int = 0; i<event.result.path.length;i++)
-			{
-				
-				//var next:Point = ((event.result.path[i] as BasicTile).getPosition());
-				//var temp:AxText = new AxText (next.x * 32, next.y * 32, null, "P" + i, 16, "center");
-				//_aStarDebug.add(temp);
+			//
+			if (request.debug) {
+				_aStarDebug.clear(true);
+				for(var i:int = 0; i<event.result.path.length;i++)
+				{
+					
+					var next:Point = ((event.result.path[i] as BasicTile).getPosition());
+					var temp:AxText = new AxText (next.x * 32, next.y * 32, null, "P" + i, 16, "center");
+					_aStarDebug.add(temp);
+				}
 			}
+			
 		}
 		
 		private function onPathNotFound(event : AstarEvent) : void
