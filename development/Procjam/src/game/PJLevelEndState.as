@@ -23,6 +23,9 @@ package game
 		override public function create():void 
 		{
 			super.create();
+			Ax.camera.follow(null);
+			Ax.camera.x = 0;
+			Ax.camera.y = 0;
 			var copy:String;
 			if (Core.control.isWon) {
 				copy = "You Won! \n Gold Lost " + Math.abs(Core.control.score);

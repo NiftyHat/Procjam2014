@@ -25,6 +25,7 @@ package game.entities
 		
 		protected var _playerDetectionLevel:int;
 		protected var _isAlertMode:Boolean;
+		protected var _isPounced:Boolean;
 		
 		public var riskLevel:int = 0;
 		public var lightmap:LightmapCollisionArray
@@ -45,8 +46,11 @@ package game.entities
 		{
 			
 			super.update();
+			if (_isPounced) {
+				return;
+			}
 			if (alive) {
-				if (_bIsMoving) {
+				if (_isMoving) {
 					animate("walk" + _animSuffix);
 				} else {
 					animate("idle" + _animSuffix);
@@ -58,6 +62,11 @@ package game.entities
 				animate("dead" + _animSuffix);
 			}
 			
+		}
+		
+		override public function destroy():void 
+		{
+			super.destroy();
 		}
 		
 		override public function kill():void 
@@ -149,6 +158,11 @@ package game.entities
 				
 				_playerDetectionLevel = 0;
 			}
+		}
+		
+		protected function onPounced():void {
+			_isPounced = true;
+			_tweenMove.kill();
 		}
 		
 		private function onSeePlayerOver():void 

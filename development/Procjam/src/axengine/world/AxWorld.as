@@ -62,7 +62,7 @@ package axengine.world
 		private var m_group_parallax:AxGroup = new AxGroup ();
 		private var m_bg_block:AxGameEntity = new AxGameEntity();
 		protected var m_isPlayerAdded:Boolean;
-		private var m_group_projectiles:AxGroup = new AxGroup ();
+		protected var m_group_projectiles:AxGroup = new AxGroup ();
 		
 		//CHECKPOINT STUFF;
 		private var m_last_link_id:int = -1;
@@ -140,7 +140,7 @@ package axengine.world
 				
 				//Ax.overlap(m_group_projectiles, m_group_entities, onProjectileHitEntity, OBJECT_COLLISION);
 				//Ax.overlap(m_group_projectiles, _player, onProjectileHitEntity, OBJECT_COLLISION);
-				//Ax.collide(m_group_projectiles, m_group_collision, null, OBJECT_COLLISION);
+				Ax.collide(m_group_projectiles, m_group_collision, null, OBJECT_COLLISION);
 				
 				//Ax.collide(m_group_effects, m_group_collision,null,OBJECT_COLLISION);
 				//Ax.collide(m_group_enemies, m_group_collision, null, OBJECT_COLLISION);
@@ -397,7 +397,7 @@ package axengine.world
 				//new_tiles.setSlopesRight(Core.xml.game.TILE_DATA.*.(@key == item.@tile_path).RIGHT_SLOPES.toString());
 				//new_tiles.setSlopesLeft(Core.xml.game.TILE_DATA.*.(@key == item.@tile_path).LEFT_SLOPES.toString());
 				//new_tiles.updateSlopes();
-				Ax.camera.bounds = new AxRect(0,0,bounds_width,bounds_height)
+				
 				//Ax.camera.worldBounds.width = bounds_width;
 				//Ax.camera.worldBounds.height = bounds_height;
 				
@@ -696,6 +696,7 @@ package axengine.world
 			result.point.x = points[points.length - 1].x;
 			result.point.y =  points[points.length - 1].y;
 			result.path = new Vector.<AxPoint>();
+			result.blocked = false;
 			for (var i:int = 0; i < len; i++) {
 				var point:AxPoint = points[i];
 				var tileX:int = int(point.x / 32);
@@ -707,6 +708,7 @@ package axengine.world
 				if (overlaps) {
 					result.point.x = point.x; 
 					result.point.y =  point.y;
+					result.blocked = true;
 					return result;
 				} 
 				if (result.path.length == 0) {
