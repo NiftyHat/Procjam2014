@@ -1,6 +1,6 @@
-﻿package utils.collections 
+﻿package keith.utils.collections 
 {
-	import utils.iterators.IIterator;
+	import keith.utils.iterators.IIterator;
 	
 	/**
 	 * ...

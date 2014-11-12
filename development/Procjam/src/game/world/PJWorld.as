@@ -43,6 +43,7 @@ package game.world
 		private var _aStarSolver:Astar;
 		private var _aStarDebug:AxGroup;
 		private var _emptyTiles:Array;
+		private var generator:ConvertToAxTileMaps;
 		protected var _navigationMap:Map;
 		protected var _visionDebug:AxGroup;
 		protected var _groupAttackZone:AxGroup;
@@ -128,7 +129,7 @@ package game.world
 		override public function deserializeTiles($xml:XMLList):void 
 		{
 			//super.deserializeTiles($xml);
-			var generator:ConvertToAxTileMaps = new ConvertToAxTileMaps();
+			generator = new ConvertToAxTileMaps();
 			generator.generate(10, 5, _seed);
 			
 			var floor:AxTilemap = generator.getFloorGeometry();
@@ -181,6 +182,7 @@ package game.world
 				var startingTile:AxPoint = startingTiles.splice(startTileIndex, 1)[0];
 				thief.x = startingTile.x * 32;
 				thief.y = startingTile.y * 32;
+				thief.lightmap = generator.getLightmap();
 				addEntity(thief);
 				numThieves--;
 			}

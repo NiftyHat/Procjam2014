@@ -52,6 +52,7 @@ package keith
 		private var wallGeometry:AxDynamicTilemap;
 		private var floorGeometry:AxTilemap;
 		private var rooms:Vector.<Vector.<AxPoint>>;
+		private var lightmap:LightmapCollisionArray;
 		
 		private var floorTiler:LimitedSetTiler
 		
@@ -91,6 +92,10 @@ package keith
 		}
 		public function getRoomCount():uint {
 			return rooms.length;
+		}
+		
+		public function getLightmap():LightmapCollisionArray {
+			return lightmap;
 		}
 		
 		public function generate(width:int, height:int, seed:int):void {
@@ -249,10 +254,15 @@ package keith
 			wallGeometry = new AxDynamicTilemap(0, 0);
 			wallGeometry.build(wallsString, WALLS_TILES, 32, 32, 1);
 			
+			// Build Floors
 			floorGeometry = new AxTilemap(0, 0);
 			floorGeometry.build(floorsString, FLOOR_TILES, 32, 32, 99);
 			
+			// Build Lightmaps
+			lightmap = new LightmapCollisionArray(1);
+			lightmap.buildCollisions(wallsString, geometryArray.length, geometryArray[0].length);
 			
+			// Build Room Data
 			var floodArray:Array = geometryArray
 			var currentGroup:int = 0;
 			for (i = 0; i < floodArray.length; i++) {

@@ -1,9 +1,9 @@
-﻿package utils.collections 
+﻿package keith.utils.collections 
 {
-	import utils.ArrayUtils;
-	import utils.IArrayData;
-	import utils.iterators.ArrayIterator;
-	import utils.iterators.IIterator;
+	import keith.utils.IArrayData;
+	import keith.utils.ArrayUtils;
+	import keith.utils.iterators.ArrayIterator;
+	import keith.utils.iterators.IIterator;
 	/**
 	 * ...
 	 * @author James Tarling

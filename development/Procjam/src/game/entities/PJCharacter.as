@@ -1,10 +1,10 @@
 package game.entities 
 {
-	import axengine.entities.AxDynamicEntity;
 	import axengine.util.ray.AxRayResult;
-	import game.deco.PJGravestone;
 	import game.PJEntity;
 	import game.world.PJWorld;
+	import keith.LightmapCollisionArray;
+	import keith.Shadowcaster;
 	import org.axgl.AxGroup;
 	import org.axgl.AxPoint;
 	import org.axgl.AxSprite;
@@ -19,10 +19,15 @@ package game.entities
 		protected var _visionTarget:AxPoint;
 		protected var _visionSource:AxPoint;
 		
+		protected var prevVisionX:int = -1;
+		protected var prevVisionY:int = -1;
+		protected var prevVisionDirection:int = -1;
+		
 		protected var _playerDetectionLevel:int;
 		protected var _isAlertMode:Boolean;
 		
 		public var riskLevel:int = 0;
+		public var lightmap:LightmapCollisionArray
 		
 		public function PJCharacter() 
 		{
@@ -64,6 +69,22 @@ package game.entities
 		
 		protected function castVision():void 
 		{
+			
+			if (lightmap != null) {
+				if(prevVisionX != tileX || prevVisionY != tileY || prevVisionDirection != _moveDir){
+					Shadowcaster.castShadows(lightmap, tileX, tileY, 5, 
+						_moveDir == RIGHT ? Shadowcaster.CONE_EAST:
+						_moveDir == LEFT ? Shadowcaster.CONE_WEST:
+						_moveDir == UP ? Shadowcaster.CONE_NORTH:
+						_moveDir == DOWN ? Shadowcaster.CONE_SOUTH:
+						Shadowcaster.FULL_CIRLCE);
+					prevVisionX = tileX;
+					prevVisionY = tileY;
+					prevVisionDirection = _moveDir;
+				}
+				//return;
+			}
+			
 			var isPlayerVisible:Boolean = false;
 			_visionTarget.x = centerX;
 			_visionTarget.y = centerY;

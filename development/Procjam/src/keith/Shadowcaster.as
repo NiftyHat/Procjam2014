@@ -1,6 +1,6 @@
-package  
+package keith
 {
-	import utils.collections.HashMap;
+	import keith.utils.collections.HashMap;
 	/**
 	 * ...
 	 * @author Keith Evans @ heatknives.com
@@ -51,12 +51,12 @@ package
 		
 		protected static var light:Array = [];
 		
-		protected static function blocked(tileMap:TileMapObject, x:int, y:int):Boolean{
+		protected static function blocked(tileMap:LightmapCollisionArray, x:int, y:int):Boolean{
 			return x < 0 || y < 0 || x > tileMap.cols || y > tileMap.rows || tileMap.getCollision(x,y);
 		}
 		
 		
-		protected static function cast_light(vec:HashMap, tileMap:TileMapObject, cx:Number, cy:Number, row:Number, start:Number, end:Number, radius:Number, xx:Number, xy:Number, yx:Number, yy:Number, id:Number, hardFalloffForLight:Boolean):HashMap{
+		protected static function cast_light(vec:HashMap, tileMap:LightmapCollisionArray, cx:Number, cy:Number, row:Number, start:Number, end:Number, radius:Number, xx:Number, xy:Number, yx:Number, yy:Number, id:Number, hardFalloffForLight:Boolean):HashMap{
 		
 			// "Recursive lightcasting function"
 			
@@ -128,7 +128,7 @@ package
 			return vec;
 		}
 		
-		public static function castShadows(tileMap:TileMapObject, x:Number, y:Number, radius:int, sightMap:int = 255, preexistingHash:HashMap = null, hardFalloffForLight:Boolean = false):HashMap{
+		public static function castShadows(tileMap:LightmapCollisionArray, x:Number, y:Number, radius:int, sightMap:int = 255, preexistingHash:HashMap = null, hardFalloffForLight:Boolean = false):HashMap{
 			// "Calculate lit squares from the given location and radius"
 			var m:HashMap = preexistingHash == null ? new HashMap() : preexistingHash;
 			
@@ -143,5 +143,7 @@ package
 		
 		
 	}
+	
+	
 
 }

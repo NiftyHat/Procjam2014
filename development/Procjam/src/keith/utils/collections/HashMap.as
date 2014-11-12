@@ -1,9 +1,9 @@
-﻿package utils.collections 
+﻿package keith.utils.collections 
 {
-	import utils.ArrayUtils;
-	import utils.iterators.HashMapIterator;
-	import utils.iterators.IIterator;
-	import utils.ObjectUtils;
+	import keith.utils.iterators.HashMapIterator
+	import keith.utils.iterators.IIterator
+	import keith.utils.ArrayUtils
+	import keith.utils.ObjectUtils
 	/**
 	 * ...
 	 * @author James Tarling
