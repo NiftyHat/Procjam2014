@@ -66,33 +66,54 @@ package game.entities
 				animate("stun" + _animSuffix);
 				return;
 			}
-			if (!_bIsMoving) {
+			if (!_isMoving) {
 				if (Ax.keys.down(AxKey.Z)) {
 					pounceCharge();
 				} else if (_isChargingPounce) {
 					pounceCancel();
 				}
-				if (!_isChargingPounce) {
+				if (!_isChargingPounce && !_isPouncing) {
 					if (Ax.keys.down(AxKey.DOWN)) {
 					move(DOWN);
-				}
-				else if (Ax.keys.down(AxKey.UP)) {
-					move(UP);
-				}
-				else if (Ax.keys.down(AxKey.LEFT)) {
-					move(LEFT);
-				}
-				else if (Ax.keys.down(AxKey.RIGHT)) {
-					move(RIGHT);
-				}
-				else {
-					move(NONE);
-				}
+					}
+					else if (Ax.keys.down(AxKey.UP)) {
+						move(UP);
+					}
+					else if (Ax.keys.down(AxKey.LEFT)) {
+						move(LEFT);
+					}
+					else if (Ax.keys.down(AxKey.RIGHT)) {
+						move(RIGHT);
+					}
+					else {
+						move(NONE);
+					}
+				} 
+				else 
+				{
+					var oldFaceDir = _faceDir;
+					
+					if (Ax.keys.down(AxKey.DOWN)) {
+					_faceDir = DOWN;
+					}
+					else if (Ax.keys.down(AxKey.UP)) {
+						_faceDir =  (UP);
+					}
+					else if (Ax.keys.down(AxKey.LEFT)) {
+						_faceDir = (LEFT);
+					}
+					else if (Ax.keys.down(AxKey.RIGHT)) {
+						_faceDir = (RIGHT);
+					}
+					if (oldFaceDir != _faceDir) {
+						//_pounceTimer.repeat = _pounceTimer.max;
+						clearPounceEffect();
+					}
 				}
 				
 			}
 			
-			if (_bIsMoving) {
+			if (_isMoving) {
 				animate("walk" + _animSuffix);
 			} else {
 				if (_isChargingPounce) {
@@ -110,7 +131,7 @@ package game.entities
 				var pounceResult:AxRayResult = castPounce((_pounceTimer.max - _pounceTimer.repeat));
 				_pounceTimer.stop();
 				clearPounceEffect();
-				if (_isChargingPounce) {
+				if (_isChargingPounce && !_isPouncing) {
 						if (pounceResult) {
 						pounceAttack(pounceResult);
 					}
@@ -124,13 +145,11 @@ package game.entities
 		
 		private function pounceAttack($rayResult:AxRayResult):void 
 		{
-			var char:PJCharacter;
-			if (!$rayResult.lastPoint) {
-				_isChargingPounce = false;
-				_isPouncing = false;
-				pounceCancel();
+			if (_isPouncing) {
 				return;
 			}
+			trace("pounce attack from", _tileX,tileY);
+			var char:PJCharacter;
 			for each (var tile:AxPoint in $rayResult.path) {
 				var characters:Vector.<AxEntity> = _world.getEntitiesInTile(tile, [PJCharacter]);
 				var isTargetFound:Boolean;
@@ -147,22 +166,27 @@ package game.entities
 					break;
 				}
 			}
-			var tx:int =$rayResult.lastPoint.x * 32;
-			var ty:int = $rayResult.lastPoint.y * 32;
-			if (char) {
-				tx = int(char.x / 32) * 32;
-				ty = int(char.y / 32) * 32;
+			if ($rayResult.lastPoint) {
+				var tx:int =$rayResult.lastPoint.x * 32;
+				var ty:int = $rayResult.lastPoint.y * 32;
+				if (char) {
+					tx = int(char.x / 32) * 32;
+					ty = int(char.y / 32) * 32;
+				}
+				_isPouncing = true;
+				//onPounceComplete(char);
+				TweenLite.to(this, ($rayResult.path.length + 1) * 0.1 , {x:tx, y:ty, overwrite:0, onComplete:onPounceComplete, onReverseComplete:onPounceComplete, onCompleteParams:[char]})
+			} else {
+				onPounceComplete(null);
 			}
-			_isPouncing = true;
-			TweenLite.killTweensOf(this);
-			TweenLite.to(this, 0.3, {x:tx, y:ty + 4, onComplete:onPounceComplete, onCompleteParams:[char]})
 			
 		}
 		
 		private function onPounceComplete($target:PJCharacter):void 
 		{
+			trace("onPounceComplete");
 			_isPouncing = false;
-			_bIsMoving = false;
+			_isMoving = false;
 			_isChargingPounce = false;
 			if ($target) {
 				$target.alive = false;
@@ -193,16 +217,17 @@ package game.entities
 		
 		public function stun($time:Number):void 
 		{
+			/*
 			_isStunned = true;
 			_isChargingPounce = false;
 			pounceCancel();
 			if (!_stunTimer) {
 				_stunTimer = addTimer($time, onStunComplete);
 			} else {
-				_stunTimer.repeat = 0;
+				_stunTimer.repeat = _stunTimer.max;
 				_stunTimer.alive = true;
 			}
-			_stunTimer.start();
+			_stunTimer.start();*/
 		}
 		
 		protected function castPounce($distance:int):AxRayResult 
@@ -246,12 +271,24 @@ package game.entities
 					temp.y = point.y * 32
 					temp.animate("idle");
 					//temp.frame =  3 + int((temp.totalFrames /100) * _playerDetectionLevel) 
+					//temp.frame =  3 + int((temp.totalFrames /100) * _playerDetectionLevel) 
 					visionView.add(temp);
 					//temp.frame = 4;
 				}
 				return rayResult;
 			} 
 			return null;
+		}
+		
+		override public function destroy():void 
+		{
+			super.destroy();
+		}
+		
+		override public function kill():void 
+		{
+			addTimer(1.0, Core.control.levelEnd, 1).start();
+			super.kill();
 		}
 		
 		private function onStunComplete():void 

@@ -32,7 +32,7 @@ package game
 		protected static const TILE_HEIGHT:int = 32;
 		
 		protected var _animSuffix:String = "";
-		protected var _bIsMoving:Boolean = false;
+		protected var _isMoving:Boolean = false;
 		
 		protected var _mMoveSpeed:Number = 0.2;
 		
@@ -50,8 +50,25 @@ package game
 			if (!alive) {
 				 return;
 			}
+			if (_faceDir != NONE) {
+				switch (_faceDir) {
+					case DOWN:
+						_animSuffix = "_down";
+						
+					break;
+					case UP:
+						_animSuffix = "_up";
+					break;
+					case LEFT:
+						_animSuffix = "_left";
+					break;
+					case RIGHT:
+						_animSuffix = "_right";
+					break;
+					}
+			}
 			updateTilePos();
-			if (_path && _path.length > 0 && !_bIsMoving) {
+			if (_path && _path.length > 0 && !_isMoving) {
 				var tile:BasicTile = _path[0] as BasicTile;
 				if (tile.getPosition().x == _tileX && tile.getPosition().y == _tileY) {
 					_path.shift();
@@ -91,6 +108,7 @@ package game
 		
 		protected function move($dir:int):void {
 			_moveDir = $dir;
+			_faceDir = $dir
 			_nextTile.x = _tileX;
 			_nextTile.y = _tileY;
 			switch ($dir) {
@@ -108,25 +126,10 @@ package game
 				break;
 			}
 			if ($dir != NONE) {
-				if (!_bIsMoving && isTileWalkable(_nextTile)) {
+				if (!_isMoving && isTileWalkable(_nextTile)) {
 					_tweenMove = TweenLite.to(this, _mMoveSpeed, { x:(_nextTile.x * TILE_WIDTH), y:(_nextTile.y * TILE_HEIGHT) , onComplete: onMoveComplete ,onReverseComplete: onReverseMoveComplete, ease:Linear.easeNone } );
-					_bIsMoving = true;
+					_isMoving = true;
 					_faceDir = $dir;
-					switch ($dir) {
-					case DOWN:
-						_animSuffix = "_down";
-						
-					break;
-					case UP:
-						_animSuffix = "_up";
-					break;
-					case LEFT:
-						_animSuffix = "_left";
-					break;
-					case RIGHT:
-						_animSuffix = "_right";
-					break;
-					}
 				}
 			}
 		}
@@ -147,14 +150,13 @@ package game
 		protected function pathToEntity($target:PJEntity):void {
 			var targetTileX:int = $target.tileX
 			var targetTileY:int = $target.tileY;
-			trace("Path to entity ",$target ,targetTileX, targetTileY);
+			//trace("Path to entity ",$target ,targetTileX, targetTileY);
 			if (!_world.collision_map.tileHasCollision(targetTileX, targetTileY)) {
 				(_world as PJWorld).getAStarPath(new Point(_tileX, _tileY), new Point(targetTileX, targetTileY), onPath, null, _isDebugPathfinding);
 			}
 		}
 		
 		protected function pathToTile($tileX:int, $tileY:int):void {
-			trace("Path to tile " ,$tileX, $tileY);
 			if (!_world.collision_map.tileHasCollision($tileX, $tileY)) {
 				(_world as PJWorld).getAStarPath(new Point(_tileX, _tileY), new Point($tileX, $tileY), onPath, null,_isDebugPathfinding);
 			}
@@ -172,7 +174,7 @@ package game
 		
 		protected function onMoveComplete():void 
 		{
-			_bIsMoving = false;
+			_isMoving = false;
 		}
 		
 		public function get tileX():int 

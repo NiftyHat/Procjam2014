@@ -76,14 +76,14 @@ package game.entities.characters
 			}
 			if (_isAlertMode) {
 				_mMoveSpeed = 0.23;
-				if (!_bIsMoving) {
+				if (!_isMoving) {
 					detectEscapeRoute();
 				}
 			} 
 			else 
 			{
 				_mMoveSpeed = 0.5;
-				if (!_bIsMoving) 
+				if (!_isMoving) 
 				{
 					if (_targetTreasure && _targetTreasure.alive && isOnEntity(_targetTreasure)) {
 						_stealTimer.start();
@@ -101,6 +101,7 @@ package game.entities.characters
 			super.onJustSeenPlayer(pJPlayer);
 			if (_tweenMove) {
 				_tweenMove.reverse();
+				_isMoving = false;
 			}
 			_path = null;
 			clearTarget();

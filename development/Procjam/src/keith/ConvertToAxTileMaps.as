@@ -120,6 +120,11 @@ package keith
 			geometryArray[1][1] = CORRIDOR;
 			geometryArray[1][2] = CORRIDOR;
 			geometryArray[2][1] = CORRIDOR;
+			geometryArray[3][1] = CORRIDOR;
+			geometryArray[3][2] = CORRIDOR;
+			geometryArray[3][3] = CORRIDOR;
+			geometryArray[2][3] = CORRIDOR;
+			geometryArray[1][3] = CORRIDOR;
 			
 			var tileAtN:String
 			var tileAtNE:String

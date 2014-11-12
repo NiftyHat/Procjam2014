@@ -1,9 +1,15 @@
 package game.world 
 {
+	import axengine.entities.AxGameEntity;
 	import axengine.entities.enemies.AxEnemy;
+	import axengine.entities.markers.AxMarkerStart;
 	import de.polygonal.math.PM_PRNG;
+	import game.entities.characters.PJWizard;
 	import game.entities.characters.PJThief;
+	import game.entities.characters.PJWizard;
+	import game.entities.PJProjectile;
 	import keith.ConvertToAxTileMaps;
+	import keith.Shadowcaster;
 	import org.axgl.AxPoint;
 	import axengine.entities.AxDynamicEntity;
 	import axengine.util.ray.AxRayResult;
@@ -26,6 +32,7 @@ package game.world
 	import org.axgl.Ax;
 	import org.axgl.AxEntity;
 	import org.axgl.AxGroup;
+	import org.axgl.AxRect;
 	import org.axgl.AxSprite;
 	import org.axgl.input.AxInput;
 	import org.axgl.input.AxMouse;
@@ -48,6 +55,7 @@ package game.world
 		protected var _groupAttackZone:AxGroup;
 		protected var _soundDebug:AxGroup;
 		protected var _seed:int = Math.random() * int.MAX_VALUE;
+		protected var _difficulty:int = 1;
 		
 		public function PJWorld(x:Number=0, y:Number=0) 
 		{
@@ -92,6 +100,7 @@ package game.world
 					entity.destroy();
 				}
 			}
+			
 			m_group_entities.sort("y");
 			super.update();
 			checkForLost();
@@ -125,9 +134,19 @@ package game.world
 			super.initGroups();
 		}
 		
+		override public function deserializeEntities($xml:XMLList):void 
+		{
+			//super.deserializeEntities($xml);
+			var startMarker:AxMarkerStart = new AxMarkerStart();
+			addEntity(startMarker, 32, 32);
+			
+		}
+		
 		override public function deserializeTiles($xml:XMLList):void 
 		{
 			//super.deserializeTiles($xml);
+			//initAStarMap();
+			
 			var generator:ConvertToAxTileMaps = new ConvertToAxTileMaps();
 			generator.generate(10, 5, _seed);
 			
@@ -136,7 +155,9 @@ package game.world
 			var walls:AxDynamicTilemap = generator.getWallGeometry();
 			m_collision_map = walls;
 			
-			//m_group_collision.add(walls);
+			//Shadowcaster.castShadows(walls, 2, 2, 5, Shadowcaster.CONE_NORTH);
+			Ax.camera.bounds = new AxRect(0,0,walls.width,walls.height)
+			m_group_collision.add(walls);
 			m_group_bg.add(walls);
 			initAStarMap();
 			generateEnemies();
@@ -150,10 +171,10 @@ package game.world
 			var emptyTiles:Array  = _emptyTiles.slice();
 			Shuffle.array(emptyTiles, _seed);
 			var totalGoldValue:int = 500;
-			var minPiles:int = totalGoldValue / 100;
-			var maxPiles:int = totalGoldValue / 50;
+			var minPiles:int = 8;
+			var maxPiles:int = 15;
 			var goldPileCount:int = pr.nextIntRange(minPiles, maxPiles);
-			while (totalGoldValue > 0 && emptyTiles.length > 0) {
+			while (totalGoldValue > 0 && emptyTiles.length > 0 && goldPileCount > 0) {
 				var gold:PJCoinPile = new PJCoinPile();
 				var tile:AxPoint = emptyTiles.pop();
 				var pileValue:int = (totalGoldValue / goldPileCount) + pr.nextIntRange(-40, 40);
@@ -165,14 +186,24 @@ package game.world
 				gold.setGold(pileValue);
 				gold.x = tile.x * 32;
 				gold.y = tile.y * 32;
+				goldPileCount--;
 				addEntity(gold);
 			}
+		}
+		
+		override public function addEntity(e:AxGameEntity, $x_pos:int = 0, $y_pos:int = 0):void 
+		{
+			if (e is PJProjectile) {
+				m_group_projectiles.add(e);
+			}
+			super.addEntity(e, $x_pos, $y_pos);
 		}
 		
 		public function generateEnemies ():void {
 			var pr:PM_PRNG = new PM_PRNG();
 			pr.seed = _seed;
-			var numThieves:int = pr.nextIntRange(3, 5);
+			var numThieves:int = pr.nextIntRange(_difficulty , _difficulty * 1.5);
+			var numRangers:int = pr.nextIntRange(_difficulty, _difficulty * 1.2 );
 			var startingTiles:Array = getSpawningTiles();
 			Shuffle.array(startingTiles, _seed);
 			while (numThieves > 0 && startingTiles.length > 0) {
@@ -183,14 +214,23 @@ package game.world
 				thief.y = startingTile.y * 32;
 				addEntity(thief);
 				numThieves--;
+				if (numRangers > 0) {
+					numRangers--;
+					var ranger:PJWizard = new PJWizard ();
+					var startTileIndex:int = pr.nextIntRange(0, startingTiles.length - 1)
+					var startingTile:AxPoint = startingTiles.splice(startTileIndex, 1)[0];
+					ranger.x = startingTile.x * 32;
+					ranger.y = startingTile.y * 32;
+					addEntity(ranger);
+				}
 			}
 		}
 		
 		public function getSpawningTiles ():Array {
-			var startAreaSize:int = 10;
+			var startAreaSize:int = 15;
 			var spawningTiles:Array = [];
-			for (var x:int = 0; x < startAreaSize; x++) {
-				for (var y:int = 0; y < startAreaSize; y++) {
+			for (var x:int = 5; x < startAreaSize; x++) {
+				for (var y:int = 5; y < startAreaSize; y++) {
 					if (m_collision_map.getTileAt(x,y) == null){
 						spawningTiles.push(new AxPoint(x, y));
 					}

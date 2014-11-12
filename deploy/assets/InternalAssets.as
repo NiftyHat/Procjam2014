@@ -32,6 +32,9 @@ package assets
 		[Embed(source="graphics/effects/attack_tiles.png")] public var img_attack_zone_tiles:Class;
 		
 		
+		[Embed(source = "graphics/effects/fire.png")]public var img_fire:Class;
+		[Embed(source="graphics/projectiles/fireball.png")]public var img_fireball:Class;
+		
 		public function InternalAssets() 
 		{
 			super();

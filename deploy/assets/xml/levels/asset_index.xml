@@ -4,11 +4,11 @@
 			<BOUNDS x="0" y="0" width="32" height="32"/>
 			<ANCHOR x="0" y="0"/>
 		</THIEF>
-		<RANGER path="graphics/characters/ranger_01_char.png">
+		<WIZARD path="graphics/characters/ranger_01_char.png">
 			<SIZE width="32" height="32"/>
 			<BOUNDS x="0" y="0" width="32" height="32"/>
 			<ANCHOR x="0" y="0"/>
-		</RANGER>
+		</WIZARD>
 		<START path="graphics/editor_stuff/mt_start.png">
 			<SIZE width="16" height="16"/>
 			<BOUNDS x="0" y="0" width="16" height="16"/>

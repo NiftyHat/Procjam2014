@@ -12,6 +12,7 @@ package axengine.util.ray
 		public var point:AxPoint;
 		public var path:Vector.<AxPoint>;
 		public var entity:AxEntity;
+		public var blocked:Boolean;
 		
 		public function AxRayResult() 
 		{
