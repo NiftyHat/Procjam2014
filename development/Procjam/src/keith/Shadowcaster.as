@@ -1,6 +1,6 @@
 package keith
 {
-	import keith.utils.collections.HashMap;
+	import de.polygonal.ds.HashMap
 	/**
 	 * ...
 	 * @author Keith Evans @ heatknives.com
@@ -98,7 +98,7 @@ package keith
 							} else
 							intsity = intsity * (radius!= -1 ?  1-((dx * dx + dy * dy) / radius_squared) : 1)
 							if (intsity < 0) intsity = 0;
-							if (vec.getValue(n) == null || vec.getValue(n).intensity <  intsity ) vec.setValue(n, new ShadowPoint(X, Y, intsity))
+							if (vec.get(n) == null || vec.get(n).intensity <  intsity ) vec.set(n, new ShadowPoint(X, Y, intsity))
 						} else continue
 						if(block){
 							// we're scanning a row of blocked squares:
@@ -132,7 +132,7 @@ package keith
 			// "Calculate lit squares from the given location and radius"
 			var m:HashMap = preexistingHash == null ? new HashMap() : preexistingHash;
 			
-			m.setValue(x + "," + y, new ShadowPoint(x, y, 1));
+			m.set(x + "," + y, new ShadowPoint(x, y, 1));
 			
 			for (var i:int = 0; i < 8; i++) {
 				if(Math.pow(2, i) & (sightMap)) cast_light(m, tileMap, x, y, 1, 1.0, 0.0, radius, mult[0][i], mult[1][i], mult[2][i], mult[3][i], 0, hardFalloffForLight);

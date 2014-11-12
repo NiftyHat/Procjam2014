@@ -1,10 +1,13 @@
 package game.entities 
 {
 	import axengine.util.ray.AxRayResult;
+	import de.polygonal.ds.HashMap;
+	import de.polygonal.ds.Itr;
 	import game.PJEntity;
 	import game.world.PJWorld;
 	import keith.LightmapCollisionArray;
 	import keith.Shadowcaster;
+	import keith.ShadowPoint;
 	import org.axgl.AxGroup;
 	import org.axgl.AxPoint;
 	import org.axgl.AxSprite;
@@ -81,7 +84,7 @@ package game.entities
 			
 			if (lightmap != null) {
 				if(prevVisionX != tileX || prevVisionY != tileY || prevVisionDirection != _moveDir){
-					Shadowcaster.castShadows(lightmap, tileX, tileY, 5, 
+					var hash:HashMap = Shadowcaster.castShadows(lightmap, tileX, tileY, 5, 
 						_moveDir == RIGHT ? Shadowcaster.CONE_EAST:
 						_moveDir == LEFT ? Shadowcaster.CONE_WEST:
 						_moveDir == UP ? Shadowcaster.CONE_NORTH:
@@ -90,6 +93,12 @@ package game.entities
 					prevVisionX = tileX;
 					prevVisionY = tileY;
 					prevVisionDirection = _moveDir;
+					
+					var it:Itr = hash.iterator();
+					while (it.hasNext()) {
+						var sp:ShadowPoint = ShadowPoint(it.next());
+						
+					}
 				}
 				//return;
 			}

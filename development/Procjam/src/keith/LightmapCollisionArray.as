@@ -1,6 +1,6 @@
 package keith
 {
-	import keith.utils.collections.HashMap;
+	import de.polygonal.ds.HashMap;
 	/**
 	 * ...
 	 * @author Keith Evans @ heatknives.com
@@ -22,12 +22,12 @@ package keith
 		}
 		
 		public function addVisibilityException(index:int, val:Number):void {
-			visMatrix.setValue(index, val);
+			visMatrix.set(index, val);
 		}
 		
 		public function buildCollisions(inputStr:String, rows:uint, cols:uint):void {
 			var valAtCel:int;
-			var valInMat:int;
+			var valInMat:Object;
 			var dta:Array = inputStr.split("\n");
 			var tdta:Array;
 			
@@ -43,11 +43,11 @@ package keith
 				for (var x:int = 0; x < cols; x++) {
 					
 					valAtCel = tdta[x];
-					valInMat = visMatrix.getValue(valAtCel)
-					if (visMatrix.getValue(valAtCel) != null) mapData[y][x] = valInMat
+					valInMat = visMatrix.get(valAtCel)
+					if (valInMat != null) mapData[y][x] = int(valInMat)
 					else {
 						mapData[y][x] = valAtCel >= hardCutOffVisibilityIndex ? 1 : 0;
-						visMatrix.setValue(valAtCel, mapData[y][x]);
+						visMatrix.set(valAtCel, mapData[y][x]);
 					}
 				}
 				
