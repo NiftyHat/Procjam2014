@@ -3,6 +3,7 @@ package game
 	import axengine.events.AxLevelEvent;
 	import base.events.GameEvent;
 	import game.entities.characters.PJThief;
+	import game.entities.characters.PJWizard;
 	import game.entities.PJPlayer;
 	import game.world.PJWorld;
 	import org.axgl.Ax;
@@ -25,10 +26,13 @@ package game
 			
 		}
 		
-		override public function update():void 
+		override public function create():void 
 		{
-			super.update();
-			if (!_world && Ax.keys.released(AxKey.Z)) {
+			super.create();
+			if (!_world) {
+				Core.control.score["THIEF"] = 0;
+				Core.control.score["WIZARD"] = 0;
+				Core.control.score["BESERKER"] = 0;
 				_world = new PJWorld()
 				add(_world);
 			}

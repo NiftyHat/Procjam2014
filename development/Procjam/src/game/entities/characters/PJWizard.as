@@ -7,7 +7,11 @@ package game.entities.characters
 	import game.entities.PJFireball;
 	import game.entities.PJPlayer;
 	import game.PJEntity;
+	import game.util.EnumShadowType;
 	import game.world.PJWorld;
+	import keith.Shadowcaster;
+	import keith.ShadowPoint;
+	import keith.utils.iterators.IIterator;
 	import org.axgl.AxEntity;
 	import org.axgl.AxGroup;
 	import org.axgl.AxPoint;
@@ -29,16 +33,21 @@ package game.entities.characters
 		
 		public function PJWizard() 
 		{
-			_mMoveSpeed = 0.4;
+			_mMoveSpeed = 0.45;
 			_libraryAssetName = "WIZARD";
 			_isDebugPathfinding = true;
 			_shootTimer = addTimer(1.0, onShootTimer, 0);
 			_shootTimer.pause();
 		}
 		
+		override public function kill():void 
+		{
+			Core.control.score["WIZARD"] += 1;
+			super.kill();
+		}
+		
 		private function onShootTimer():void 
 		{
-			
 			var player:PJPlayer = (_world.player as PJPlayer)
 			if (player && player.alive) {
 				var fireballCheck:AxRayResult = _world.castRay(this.center, player.center,0);
@@ -48,7 +57,7 @@ package game.entities.characters
 					shot.shootAtEntity(player, 80);
 				}
 			}
-			_followTarget = null;
+			follow(null);
 			if (!_isAlertMode) {
 				_shootTimer.pause();
 			}
@@ -72,100 +81,97 @@ package game.entities.characters
 			if (!alive) {
 				destroy();
 			}
-			if (_shootTimer.active) {
-				return;
-			}
-			if (!_followTarget) {
-				var possibleTargets:Vector.<AxEntity> = _world.getEntitiesInRect(null, [PJThief]);
-				if (possibleTargets && possibleTargets.length > 0) {
-					for each (var item:PJThief in possibleTargets) {
-					if (item.riskLevel >= 0 && !_followTarget) {
-						item.riskLevel--;
-						follow(item);
-						break;
-					}
-					
-					}
-				} else {
-					var startMarkers:Vector.<AxEntity> = _world.getEntitiesInRect(null, [AxMarkerStart]);
-					if (startMarkers.length > 0) {
-						var marker:AxMarkerStart = startMarkers[0] as AxMarkerStart;
-						if (isOnTile(int(marker.x) / 32, int(marker.y) / 32)) {
-							destroy();
-						} else {
-							pathToTile(marker.x / 32, marker.y / 32);
-						}
-						
-					}
+			
+			if (_isOverwatch && _overwatchTimer){
+				var overwatchSize:int = 1 + int(_overwatchTimer.perc * 7); 
+				if (_followTarget) {
+					switch(_followTarget.faceDir) {
+					case UP:
+						face(DOWN);
+					break;
+					case DOWN:
+						face(UP);
+					break;
+					case LEFT:
+						face(RIGHT);
+					break;
+					case RIGHT:
+						face(LEFT);
+					break;
+				}
 				}
 				
+				castVision(EnumShadowType.HALF, overwatchSize);
 			} else {
-				if (!_isMoving) {
-					var dx: int = Math.abs(_followTarget.tileX - this.tileX);
-					var dy: int =  Math.abs(_followTarget.tileY - this.tileY);
-					if (dx > 1 || dy > 1) {
-						pathToEntity(_followTarget);
-						_isOverwatch = false;
-					} else {
-						_isOverwatch = true;
+				castVision();
+			}
+			
+			if (_playerDetectionLevel > 5) 
+			{
+				//I'VE SEEN THE PLAYER, QUICK, DO SOMETHIGN!
+				if (!_shootTimer.active) {
+					_shootTimer.start();
+					_shootTimer.active = true;
+				}
+			} 
+			else if (!_shootTimer.active) {
+				if (!_followTarget) {
+					var possibleTargets:Vector.<AxEntity> = _world.getEntitiesInRect(null, [PJThief]);
+					if (possibleTargets && possibleTargets.length > 0) {
+						for each (var item:PJThief in possibleTargets) {
+							if (item.riskLevel >= 0 && !_followTarget && item.alive) {
+								item.riskLevel--;
+								follow(item);
+								break;
+							}
+						}
+					}
+					if (!_followTarget)
+					{
+						var startMarkers:Vector.<AxEntity> = _world.getEntitiesInRect(null, [AxMarkerStart]);
+						if (startMarkers.length > 0) {
+							var marker:AxMarkerStart = startMarkers[0] as AxMarkerStart;
+							if (isOnTile(int(marker.x) / 32, int(marker.y) / 32)) {
+								destroy();
+							} else {
+								pathToTile(marker.x / 32, marker.y / 32);
+							}
+							
+						}
+					}
+					
+				} else {
+					if (!_isMoving) {
+						var dx: int = Math.abs(_followTarget.tileX - this.tileX);
+						var dy: int =  Math.abs(_followTarget.tileY - this.tileY);
+						if (dx > 1 || dy > 1) {
+							pathToEntity(_followTarget);
+							_isOverwatch = false;
+							_overwatchTimer = null;
+						} else {
+							if (!_overwatchTimer)
+							{
+								_overwatchTimer = addTimer(0.1, onOverwatchAdvance, 8);
+								_overwatchTimer.start();
+								_isOverwatch = true;
+							}
+							
+						}
 					}
 				}
 			}
-			castVision();
+			
+			
 		}
 		
-		override protected function castVision():void 
+		private function onOverwatchAdvance():void 
 		{
-			if (!_isOverwatch) {
-				super.castVision();
-				_lastOverwatchRadius = -1;
-				if (_overwatchTimer) {
-					_overwatchTimer.stop();
-					_overwatchTimer = null;
-				}
-				
-			} else {
-				if (!_overwatchTimer)
-				{
-					_overwatchTimer = addTimer(0.3, onOverwatchTimer, 3);
-				}
-				var overwatchRadius:int = (_overwatchTimer.max - _overwatchTimer.repeat) + 1;
-				var overwatchCircle:Vector.<AxPoint> = visionCircle(tileX, tileY, overwatchRadius);
-				for each(var point:AxPoint in overwatchCircle) {
-					
-					
-					if (_world && (_world.player as PJEntity).isOnTile(point.x, point.y)) {
-						_playerDetectionLevel += 5;
-					} 
-					setDetectionLevel(_playerDetectionLevel);/*
-					var visionView:AxGroup = PJWorld(_world).visionDebug;
-					var temp:AxSprite = visionView.recycle() as AxSprite;
-					if (!temp) {
-						temp = new AxSprite (0,0);
-						temp.load(Core.lib.int.img_vision_tiles, 32, 32);
-						
-					}
-					temp.x = point.x * 32
-					temp.y = point.y * 32
-					temp.show(3);
-					
-					//temp.frame =  3 + int((temp.totalFrames /100) * _playerDetectionLevel) 
-					visionView.add(temp);*/
-				}
-			}
 			
 		}
 		
 		override protected function setDetectionLevel($value:int):void 
 		{
 			super.setDetectionLevel($value);
-			if (_playerDetectionLevel > 3) {
-				if (!_shootTimer.active) {
-					_shootTimer.start();
-					_shootTimer.active = true;
-				}
-				
-			}
 		}
 		
 		protected function visionCircle(xp:Number, yp:Number, radius:Number):Vector.<AxPoint> {
@@ -207,8 +213,16 @@ package game.entities.characters
 		}
 		
 		public function follow($character:PJEntity):void {
+			if (_followTarget) {
+				if (_followTarget is PJThief) {
+					(_followTarget as PJThief).riskLevel++;
+				}
+			}
 			_followTarget = $character;
-			pathToEntity($character);
+			if (_followTarget) {
+				pathToEntity(_followTarget);
+			}
+			
 		}
 		
 		override protected function onMoveComplete():void 

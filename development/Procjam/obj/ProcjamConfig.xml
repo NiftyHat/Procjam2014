@@ -34,25 +34,25 @@
     <omit-trace-statements>true</omit-trace-statements>
     <verbose-stacktraces>false</verbose-stacktraces>
     <source-path append="true">
-      <path-element>C:\Users\Keith\Documents\Procjam-Playerkiller\development\Procjam\src</path-element>
-      <path-element>C:\Users\Keith\Documents\Procjam-Playerkiller\development\lib</path-element>
-      <path-element>C:\Users\Keith\Documents\Procjam-Playerkiller\development\Levels</path-element>
-      <path-element>C:\Users\Keith\Documents\Procjam-Playerkiller\design</path-element>
-      <path-element>C:\Users\Keith\Documents\Procjam-Playerkiller\deploy</path-element>
+      <path-element>D:\GitHub\Procjam2014\development\Procjam\src</path-element>
+      <path-element>D:\GitHub\Procjam2014\development\lib</path-element>
+      <path-element>D:\GitHub\Procjam2014\development\Levels</path-element>
+      <path-element>D:\GitHub\Procjam2014\design</path-element>
+      <path-element>D:\GitHub\Procjam2014\deploy</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <include-libraries>
-      <library>C:\Users\Keith\Documents\Procjam-Playerkiller\development\lib\com\p3\swc\actionjson.swc</library>
-      <library>C:\Users\Keith\Documents\Procjam-Playerkiller\development\lib\com\p3\swc\ds_release.swc</library>
+      <library>D:\GitHub\Procjam2014\development\lib\com\p3\swc\actionjson.swc</library>
+      <library>D:\GitHub\Procjam2014\development\lib\com\p3\swc\ds_release.swc</library>
     </include-libraries>
     <library-path append="true">
-      <path-element>C:\Users\Keith\Documents\Procjam-Playerkiller\development\lib\com\p3\swc\MinimalComps_0_9_10.swc</path-element>
-      <path-element>C:\Users\Keith\Documents\Procjam-Playerkiller\development\lib\com\p3\swc\greensock.swc</path-element>
-      <path-element>C:\Users\Keith\Documents\Procjam-Playerkiller\development\Procjam\swc\baseoneaslib.swc</path-element>
+      <path-element>D:\GitHub\Procjam2014\development\lib\com\p3\swc\MinimalComps_0_9_10.swc</path-element>
+      <path-element>D:\GitHub\Procjam2014\development\lib\com\p3\swc\greensock.swc</path-element>
+      <path-element>D:\GitHub\Procjam2014\development\Procjam\swc\baseoneaslib.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>C:\Users\Keith\Documents\Procjam-Playerkiller\development\Procjam\src\Main.as</path-element>
+    <path-element>D:\GitHub\Procjam2014\development\Procjam\src\Main.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>60</default-frame-rate>

@@ -44,6 +44,26 @@ package game
 			_nextTile = new AxPoint ();
 		}
 		
+			
+		public function face($dir:int) {
+			_faceDir = $dir;
+			switch (_faceDir) {
+					case DOWN:
+						_animSuffix = "_down";
+					break;
+					case UP:
+						_animSuffix = "_up";
+					break;
+					case LEFT:
+						_animSuffix = "_left";
+					break;
+					case RIGHT:
+						_animSuffix = "_right";
+					break;
+					}
+		}
+		
+		
 		override public function update():void 
 		{
 			super.update();
@@ -54,7 +74,6 @@ package game
 				switch (_faceDir) {
 					case DOWN:
 						_animSuffix = "_down";
-						
 					break;
 					case UP:
 						_animSuffix = "_up";
@@ -185,6 +204,11 @@ package game
 		public function get tileY():int 
 		{
 			return _tileY;
+		}
+		
+		public function get faceDir():int 
+		{
+			return _faceDir;
 		}
 		
 	}

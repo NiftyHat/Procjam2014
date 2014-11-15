@@ -57,11 +57,6 @@ package game.entities
 		
 		override public function hurt($damage:int = 0, $source:AxGameEntity = null):void 
 		{
-			if ($damage < health) {
-				Core.control.score -= $damage;
-			} else {
-				Core.control.score -= health;
-			}
 			show(int((totalFrames - 1) / 100 * health))
 			super.hurt($damage, $source);
 		}

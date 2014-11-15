@@ -693,8 +693,14 @@ package axengine.world
 			col.solid = true;
 			var overlaps:Boolean;
 			var result:AxRayResult = new AxRayResult();
-			result.point.x = points[points.length - 1].x;
-			result.point.y =  points[points.length - 1].y;
+			if (points.length > 0) {
+				result.point.x = points[points.length - 1].x;
+				result.point.y =  points[points.length - 1].y;
+			} else {
+				result.point.x = $start.x;
+				result.point.y = $start.x;
+			}
+			
 			result.path = new Vector.<AxPoint>();
 			result.blocked = false;
 			for (var i:int = 0; i < len; i++) {

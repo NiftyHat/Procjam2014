@@ -191,7 +191,7 @@ package game.entities
 			if ($target) {
 				$target.alive = false;
 			}
-			addTimer(0.3, (_world as PJWorld).checkForWin, 1);
+			addTimer(0.3, (_world as PJWorld).checkForWaveDefeated, 1);
 		}
 		
 		private function clearPounceEffect():void 

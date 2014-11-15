@@ -26,7 +26,7 @@ package axengine.components
 		public var isWon:Boolean;
 		public var isTutorial:Boolean; 
 		
-		public var score:int = 0;
+		public var score:Object = {}
 		public var lives:int = 0;
 		public var time_taken:Number = 0;
 		

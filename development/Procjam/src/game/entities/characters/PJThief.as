@@ -61,6 +61,7 @@ package game.entities.characters
 		
 		override public function kill():void 
 		{
+			Core.control.score["THIEF"] += 1;
 			super.kill();
 			clearTarget();
 		}

@@ -1,6 +1,8 @@
 package game 
 {
 	import base.Control;
+	import game.entities.characters.PJThief;
+	import game.entities.characters.PJWizard;
 	import org.axgl.Ax;
 	import org.axgl.AxState;
 	import org.axgl.input.AxKey;
@@ -26,11 +28,16 @@ package game
 			Ax.camera.follow(null);
 			Ax.camera.x = 0;
 			Ax.camera.y = 0;
+			
+			var countThieves:int = Core.control.score["THIEF"];
+			var countWizards:int = Core.control.score["WIZARD"]
 			var copy:String;
 			if (Core.control.isWon) {
-				copy = "You Won! \n Gold Lost " + Math.abs(Core.control.score);
+				copy = "You Won!";
 			} else {
-				copy = "You Lost!";
+				copy = "You Lost!"
+				copy += "\n Rouges Rubbed Out: " + countThieves.toString();
+				copy += "\n Sexy Wizards Wasted: " +  countWizards.toString();
 			}
 			add(new AxText(0, Ax.viewHeight * 0.5 , AxFont.fromFont("alagard", false, 32), copy, Ax.viewWidth, "center"));
 		}

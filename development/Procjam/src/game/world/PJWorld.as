@@ -1,18 +1,7 @@
 package game.world 
 {
 	import axengine.entities.AxGameEntity;
-	import axengine.entities.enemies.AxEnemy;
 	import axengine.entities.markers.AxMarkerStart;
-	import de.polygonal.math.PM_PRNG;
-	import game.entities.characters.PJWizard;
-	import game.entities.characters.PJThief;
-	import game.entities.characters.PJWizard;
-	import game.entities.PJProjectile;
-	import keith.ConvertToAxTileMaps;
-	import keith.Shadowcaster;
-	import org.axgl.AxPoint;
-	import axengine.entities.AxDynamicEntity;
-	import axengine.util.ray.AxRayResult;
 	import axengine.world.AxDynamicTilemap;
 	import axengine.world.AxWorld;
 	import axengine.world.level.AxLevel;
@@ -23,21 +12,24 @@ package game.world
 	import be.dauntless.astar.core.Astar;
 	import be.dauntless.astar.core.AstarEvent;
 	import be.dauntless.astar.core.AstarPath;
+	import de.polygonal.math.PM_PRNG;
 	import flash.geom.Point;
 	import game.ai.PathCallbackRequest;
+	import game.deco.PJGravestone;
+	import game.entities.characters.PJThief;
+	import game.entities.characters.PJWizard;
 	import game.entities.PJCharacter;
 	import game.entities.PJCoinPile;
 	import game.entities.PJPlayer;
-	import game.PJEntity;
+	import game.entities.PJProjectile;
+	import game.VisionMap;
+	import keith.ConvertToAxTileMaps;
 	import org.axgl.Ax;
 	import org.axgl.AxEntity;
 	import org.axgl.AxGroup;
+	import org.axgl.AxPoint;
 	import org.axgl.AxRect;
-	import org.axgl.AxSprite;
-	import org.axgl.input.AxInput;
-	import org.axgl.input.AxMouse;
 	import org.axgl.text.AxText;
-	import org.axgl.tilemap.AxTile;
 	import org.axgl.tilemap.AxTilemap;
 	import utils.Shuffle;
 	
@@ -51,8 +43,8 @@ package game.world
 		private var _aStarDebug:AxGroup;
 		private var _emptyTiles:Array;
 		private var generator:ConvertToAxTileMaps;
+		private var _visionMap:VisionMap;
 		protected var _navigationMap:Map;
-		protected var _visionDebug:AxGroup;
 		protected var _groupAttackZone:AxGroup;
 		protected var _soundDebug:AxGroup;
 		protected var _seed:int = Math.random() * int.MAX_VALUE;
@@ -67,22 +59,31 @@ package game.world
 			m_level.init("level");
 			m_level.loadData();
 			_player = new PJPlayer();
-			Core.control.score = 0;
 		}
 		
-		public function checkForWin():void {
+		public function checkForWaveDefeated():void {
 			var characters:Vector.<AxEntity> = getEntitiesInRect(null, [PJCharacter]);
 			if (characters && characters.length > 0) {
 					for each (var character:PJCharacter in characters) {
-					if (character.alive) {
+					if (character.exists && character.alive) {
 						return;
 					}
 				}
-				Core.control.levelEnd(true);
+				_difficulty += 1;
+				for each (var character:PJCharacter in characters) {
+					var grave:PJGravestone = new PJGravestone (character.x, character.y);
+					addEntity(grave,character.x, character.y);
+					character.destroy();
+				}
+				generateEnemies(new AxPoint(2,2));
 			}
 		}
 		
 		public function checkForLost():void {
+			if (!_player.exists) {
+				Core.control.levelEnd(false);
+				return;
+			}
 			var treasures:Vector.<AxEntity> = getEntitiesInRect(null, [PJCoinPile]);
 			if (treasures && treasures.length > 0) {
 					for each (var treasure:PJCoinPile in treasures) {
@@ -92,24 +93,23 @@ package game.world
 				}
 				Core.control.levelEnd(false);
 			}
+			
 		}
 		
 		override public function update():void 
 		{
-			if (_visionDebug) {
-				for each (var entity:AxEntity in _visionDebug.members) {
-					entity.destroy();
-				}
+			if (_visionMap && _visionMap.isDirty()) {
+				_visionMap.clearVision();
 			}
-			
 			m_group_entities.sort("y");
 			super.update();
 			checkForLost();
+			
 		}
 		
 		public function clearPounceEffects():void {
 			if (_groupAttackZone) {
-				for each (var entity:AxEntity in _visionDebug.members) {
+				for each (var entity:AxEntity in _groupAttackZone.members) {
 					entity.destroy();
 				}
 			}
@@ -119,13 +119,14 @@ package game.world
 		override protected function init():void 
 		{
 			_aStarDebug = new AxGroup();
-			_visionDebug = new AxGroup();
 			_groupAttackZone = new AxGroup();
+			_visionMap = new VisionMap (0, 0);
+			add(_visionMap);
 
 			super.init();
 			//m_groups.unshift(_visionDebug);
 			m_groups.splice(2, 0, _groupAttackZone);
-			m_groups.splice(2, 0, _visionDebug);
+			m_groups.splice(2, 0, _visionMap);
 			add(_aStarDebug);
 			
 		}
@@ -154,11 +155,16 @@ package game.world
 			var walls:AxDynamicTilemap = generator.getWallGeometry();
 			m_collision_map = walls;
 			
+			
 			//Shadowcaster.castShadows(walls, 2, 2, 5, Shadowcaster.CONE_NORTH);
 			Ax.camera.bounds = new AxRect(0,0,walls.width,walls.height)
 			m_group_collision.add(walls);
 			m_group_bg.add(walls);
 			initAStarMap();
+			
+			_visionMap.setSize(m_collision_map.cols, m_collision_map.rows);
+			
+			
 			generateEnemies();
 			generateGold();
 		}
@@ -195,23 +201,29 @@ package game.world
 			if (e is PJProjectile) {
 				m_group_projectiles.add(e);
 			}
+			if (e is PJCharacter) {
+				(e as PJCharacter).lightmap = generator.getLightmap();
+			}
 			super.addEntity(e, $x_pos, $y_pos);
 		}
 		
-		public function generateEnemies ():void {
+		public function generateEnemies ($tile:AxPoint = null ):void {
 			var pr:PM_PRNG = new PM_PRNG();
 			pr.seed = _seed;
 			var numThieves:int = pr.nextIntRange(_difficulty , _difficulty * 1.5);
 			var numRangers:int = pr.nextIntRange(_difficulty, _difficulty * 1.2 );
+			
 			var startingTiles:Array = getSpawningTiles();
 			Shuffle.array(startingTiles, _seed);
 			while (numThieves > 0 && startingTiles.length > 0) {
 				var thief:PJThief = new PJThief ();
 				var startTileIndex:int = pr.nextIntRange(0, startingTiles.length - 1)
 				var startingTile:AxPoint = startingTiles.splice(startTileIndex, 1)[0];
+				if ($tile) {
+					startingTile = $tile;
+				}
 				thief.x = startingTile.x * 32;
 				thief.y = startingTile.y * 32;
-				thief.lightmap = generator.getLightmap();
 				addEntity(thief);
 				numThieves--;
 				if (numRangers > 0) {
@@ -219,6 +231,9 @@ package game.world
 					var ranger:PJWizard = new PJWizard ();
 					var startTileIndex:int = pr.nextIntRange(0, startingTiles.length - 1)
 					var startingTile:AxPoint = startingTiles.splice(startTileIndex, 1)[0];
+					if ($tile) {
+						startingTile = $tile;
+					}
 					ranger.x = startingTile.x * 32;
 					ranger.y = startingTile.y * 32;
 					addEntity(ranger);
@@ -313,14 +328,14 @@ package game.world
 			trace("path not found");
 		}
 		
-		public function get visionDebug():AxGroup 
-		{
-			return _visionDebug;
-		}
-		
 		public function get groupAttackZone():AxGroup 
 		{
 			return _groupAttackZone;
+		}
+		
+		public function get visionMap():VisionMap 
+		{
+			return _visionMap;
 		}
 		
 	}

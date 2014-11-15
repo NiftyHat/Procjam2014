@@ -1,5 +1,4 @@
-package game.entities 
-{
+package game.effects {
 	import game.PJEntity;
 	/**
 	 * ...
