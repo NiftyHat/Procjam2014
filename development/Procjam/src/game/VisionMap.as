@@ -1,11 +1,10 @@
 package game 
 {
 	import de.polygonal.ds.Array2;
+	import de.polygonal.ds.HashMap;
+	import de.polygonal.ds.Itr;
 	import flash.utils.Dictionary;
 	import keith.ShadowPoint;
-	import keith.utils.collections.HashMap;
-	import keith.utils.iterators.HashMapIterator;
-	import keith.utils.iterators.IIterator;
 	import org.axgl.AxEntity;
 	import org.axgl.AxGroup;
 	import org.axgl.AxSprite;
@@ -58,12 +57,12 @@ package game
 		
 		public function showVisionCone($points:HashMap,$entity:AxEntity):void {
 			if (_entitiesLookup[$entity]) {
-				clearVisionCone(_entitiesLookup[$entity]);
+				removeVisionCone(_entitiesLookup[$entity]);
 			}
 			_entitiesLookup[$entity] = $points;
-			var itterator:IIterator = $points.iterator();
+			var itterator:Itr = $points.iterator();
 			var pointData:ShadowPoint;
-			while (pointData = itterator.next()) {
+			while (pointData = itterator.next() as ShadowPoint) {
 				showVision(pointData);
 			}
 		}
@@ -73,10 +72,10 @@ package game
 			tile.visible = true;			
 		}
 		
-		public function clearVisionCone($points:HashMap):void {
+		public function removeVisionCone($points:HashMap):void {
 			var pointData:ShadowPoint;
-			var itterator:IIterator = $points.iterator();
-			while (pointData = itterator.next()) {
+			var itterator:Itr = $points.iterator();
+			while (pointData = itterator.next() as ShadowPoint) {
 				removeVision(pointData);
 			}
 		}

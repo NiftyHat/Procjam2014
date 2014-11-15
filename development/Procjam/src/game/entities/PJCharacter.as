@@ -4,6 +4,8 @@ package game.entities
 	import de.polygonal.ds.HashMap;
 	import de.polygonal.ds.Itr;
 	import game.PJEntity;
+	import game.util.EnumShadowType;
+	import game.VisionMap;
 	import game.world.PJWorld;
 	import keith.LightmapCollisionArray;
 	import keith.Shadowcaster;
@@ -17,21 +19,23 @@ package game.entities
 	 */
 	public class PJCharacter extends PJEntity
 	{
+		private var _visionCone:HashMap;
+		private var _prevVisionRadius;
 		
 		protected var _visionLength:int = 3;
 		protected var _visionTarget:AxPoint;
 		protected var _visionSource:AxPoint;
 		
-		protected var prevVisionX:int = -1;
-		protected var prevVisionY:int = -1;
-		protected var prevVisionDirection:int = -1;
+		protected var _prevVisionX:int = -1;
+		protected var _prevVisionY:int = -1;
+		protected var _prevVisionDirection:int = -1;
 		
 		protected var _playerDetectionLevel:int;
 		protected var _isAlertMode:Boolean;
 		protected var _isPounced:Boolean;
 		
 		public var riskLevel:int = 0;
-		public var lightmap:LightmapCollisionArray
+		public var lightmap:LightmapCollisionArray;
 		
 		public function PJCharacter() 
 		{
@@ -79,26 +83,45 @@ package game.entities
 			alive = false;
 		}
 		
-		protected function castVision():void 
+		protected function castVision($shadowType:EnumShadowType = null, $visionRadius:int = 5):void 
 		{
 			
 			if (lightmap != null) {
-				if(prevVisionX != tileX || prevVisionY != tileY || prevVisionDirection != _moveDir){
-					var hash:HashMap = Shadowcaster.castShadows(lightmap, tileX, tileY, 5, 
-						_moveDir == RIGHT ? Shadowcaster.CONE_EAST:
-						_moveDir == LEFT ? Shadowcaster.CONE_WEST:
-						_moveDir == UP ? Shadowcaster.CONE_NORTH:
-						_moveDir == DOWN ? Shadowcaster.CONE_SOUTH:
-						Shadowcaster.FULL_CIRLCE);
-					prevVisionX = tileX;
-					prevVisionY = tileY;
-					prevVisionDirection = _moveDir;
-					
-					var it:Itr = hash.iterator();
-					while (it.hasNext()) {
-						var sp:ShadowPoint = ShadowPoint(it.next());
+				var shadowCasterCone:int;
+				switch ($shadowType) {
+					default:
+					case EnumShadowType.CONE:
+							shadowCasterCone = (
+							_faceDir == RIGHT ? Shadowcaster.CONE_EAST:
+							_faceDir == LEFT ? Shadowcaster.CONE_WEST:
+							_faceDir == UP ? Shadowcaster.CONE_NORTH:
+							_faceDir == DOWN ? Shadowcaster.CONE_SOUTH:
+							Shadowcaster.FULL_CIRLCE);
+						break;
 						
-					}
+					case EnumShadowType.HALF:
+						shadowCasterCone = (
+							_faceDir == RIGHT ? Shadowcaster.HALF_EAST:
+							_faceDir == LEFT ? Shadowcaster.HALF_WEST:
+							_faceDir == UP ? Shadowcaster.HALF_NORTH:
+							_faceDir == DOWN ? Shadowcaster.HALF_SOUTH:
+							Shadowcaster.FULL_CIRLCE);
+					break;
+					
+					case EnumShadowType.PERIPHERAL:
+						shadowCasterCone = (
+							_faceDir == RIGHT ? Shadowcaster.PERIPHERAL_EAST:
+							_faceDir == LEFT ? Shadowcaster.PERIPHERAL_WEST:
+							_faceDir == UP ? Shadowcaster.PERIPHERAL_NORTH:
+							_faceDir == DOWN ? Shadowcaster.PERIPHERAL_SOUTH:
+							Shadowcaster.FULL_CIRLCE);
+					break;
+				}
+				if(_prevVisionX != tileX || _prevVisionY != tileY || _prevVisionDirection != _faceDir || _prevVisionRadius != $visionRadius){
+					_visionCone = Shadowcaster.castShadows(lightmap, tileX, tileY, $visionRadius, shadowCasterCone);
+					_prevVisionY = tileY;
+					_prevVisionDirection = _moveDir;
+					_prevVisionRadius = $visionRadius;
 				}
 				//return;
 			}
@@ -122,30 +145,27 @@ package game.entities
 					_visionTarget.x += 140;
 				break;
 			}
-			if (_moveDir != NONE) {
-				var rayResult:AxRayResult = _world.castRay(_visionSource, new AxPoint(_visionTarget.x, _visionTarget.y), 0);
-				for each(var point:AxPoint in rayResult.path) {
-					if (_world && (_world.player as PJEntity).isOnTile(point.x, point.y)) {
-						_playerDetectionLevel++;
-						isPlayerVisible = true;
-					} 
-					var visionView:AxGroup = PJWorld(_world).visionDebug;
-					var temp:AxSprite = visionView.recycle() as AxSprite;
-					if (!temp) {
-						temp = new AxSprite (0,0);
-						temp.load(Core.lib.int.img_vision_tiles, 32, 32);
-						temp.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 0, true);
-						
-					} else {
+			if (_visionCone) {
+				var visionMap:VisionMap = (_world as PJWorld).visionMap;
+				if (_faceDir != NONE && alive)
+				{
+					var pjPlayer:PJPlayer = _world.player as PJPlayer
+					if (pjPlayer && pjPlayer.alive && pjPlayer.active) {
+						visionMap.showVisionCone(_visionCone, this);
+						var itterator:Itr = _visionCone.iterator();
+						var sp:ShadowPoint;
+						while (sp = itterator.next() as ShadowPoint) {
+							if (pjPlayer.isOnTile(sp.x, sp.y)) {
+								_playerDetectionLevel += sp.intensity;
+							}
+							
+						}
 					}
-					temp.animate("idle");
-					temp.x = point.x * 32
-					temp.y = point.y * 32
-					setDetectionLevel(_playerDetectionLevel);
-					//temp.frame =  3 + int((temp.totalFrames /100) * _playerDetectionLevel) 
-					visionView.add(temp);
-					temp.frame = 4;
 				}
+				else {
+					visionMap.removeVisionCone(_visionCone);
+				}
+				
 			} 
 		}
 		

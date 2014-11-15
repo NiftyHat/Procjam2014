@@ -45,7 +45,7 @@ package game
 		}
 		
 			
-		public function face($dir:int) {
+		public function face($dir:int):void {
 			_faceDir = $dir;
 			switch (_faceDir) {
 					case DOWN:
@@ -96,6 +96,7 @@ package game
 					tile = _path[0] as BasicTile;
 					if (tile.getPosition().x > _tileX) {
 						move(RIGHT);
+						
 					}
 					if (tile.getPosition().x < _tileX) {
 						move(LEFT);

@@ -11,7 +11,6 @@ package game.entities.characters
 	import game.world.PJWorld;
 	import keith.Shadowcaster;
 	import keith.ShadowPoint;
-	import keith.utils.iterators.IIterator;
 	import org.axgl.AxEntity;
 	import org.axgl.AxGroup;
 	import org.axgl.AxPoint;
