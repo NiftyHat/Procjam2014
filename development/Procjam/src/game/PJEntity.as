@@ -9,6 +9,7 @@ package game
 	import com.greensock.easing.Linear;
 	import com.greensock.TweenLite;
 	import flash.geom.Point;
+	import game.entities.characters.actions.PJAction;
 	import game.world.PJWorld;
 	import org.axgl.AxPoint;
 	/**
@@ -38,12 +39,54 @@ package game
 		
 		protected var _path:Vector.<IAstarTile> = null;
 		
+		protected var _action:PJAction;
+		
 		public function PJEntity(X:Number = 0, Y:Number = 0, SimpleGraphic:Class = null) 
 		{
 			super(X, Y, SimpleGraphic);
 			_nextTile = new AxPoint ();
 		}
 		
+		public function setAction($action:PJAction, $autoStart:Boolean = true):void {
+			if (_action) {
+				clearAction();
+			}
+			_action = $action;
+			_action.setEntity(this);
+			if ($autoStart) {
+				_action.start(this);
+			}
+		}
+		
+		protected function isAction($class:Class = null):Boolean {
+			if (!$class) {
+				if (_action) {
+					return true;
+				}
+			} else {
+				if (_action && _action is $class) {
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		public function clearAction():void 
+		{
+			if (_action) {
+				_action.destroy();
+			}
+			
+			_action = null;
+		}
+		
+		public function onStartAction ($action:PJAction):void {
+		}
+		
+		public function onEndAction($action:PJAction):void {
+			//clearAction();
+		}
 			
 		public function face($dir:int):void {
 			_faceDir = $dir;
@@ -63,12 +106,14 @@ package game
 					}
 		}
 		
-		
 		override public function update():void 
 		{
 			super.update();
 			if (!alive) {
 				 return;
+			}
+			if (_action) {
+				_action.update();
 			}
 			if (_faceDir != NONE) {
 				switch (_faceDir) {
@@ -110,6 +155,11 @@ package game
 				}
 				
 			}
+		}
+		
+		protected function animateDirectional($name:String,$reset:Boolean = false):void 
+		{
+			animate($name + _animSuffix, $reset);
 		}
 		
 		private function updateTilePos():void 
@@ -177,6 +227,9 @@ package game
 		}
 		
 		protected function pathToTile($tileX:int, $tileY:int):void {
+			if (isAction()) {
+				return;
+			}
 			if (!_world.collision_map.tileHasCollision($tileX, $tileY)) {
 				(_world as PJWorld).getAStarPath(new Point(_tileX, _tileY), new Point($tileX, $tileY), onPath, null,_isDebugPathfinding);
 			}
@@ -210,6 +263,10 @@ package game
 		public function get faceDir():int 
 		{
 			return _faceDir;
+		}
+		
+		public function get world():PJWorld {
+			return _world as PJWorld;
 		}
 		
 	}

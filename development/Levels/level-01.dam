@@ -6,8 +6,45 @@
   <firstLayersTop>false</firstLayersTop>
   <spriteEntries currentId="13">
     <group name="Characters" idx="1" open="true">
-      <sprite name="THIEF" idx="2" className="CHAR_THIEF" image="../../deploy/assets/graphics/characters/theif_01_char.png" width="32" height="32" preview="1" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
-      <sprite name="WIZARD" idx="3" className="CHAR_WIZARD" image="../../deploy/assets/graphics/characters/ranger_01_char.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false" selected="true"/>
+      <sprite name="THIEF" idx="2" className="CHAR_THIEF" image="../../deploy/assets/graphics/characters/theif_01_char.png" width="32" height="48" preview="1" anchorX="0" anchorY="16" centerAnchor="false" boundsX="0" boundsY="16" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false" selected="true">
+        <anims>
+          <anim name="walk_down" fps="8" loops="true">1,0,1,2</anim>
+          <anim name="idle_down" fps="8" loops="true">1,1</anim>
+          <anim name="dead_down" fps="8" loops="true">3,3</anim>
+          <anim name="walk_up" fps="8" loops="true">13,12,13,14</anim>
+          <anim name="idle_up" fps="8" loops="true">13,13</anim>
+          <anim name="dead_up" fps="8" loops="true">15,15</anim>
+          <anim name="walk_right" fps="8" loops="true">25,24,25,26</anim>
+          <anim name="idle_right" fps="8" loops="true">25,25</anim>
+          <anim name="dead_right" fps="8" loops="true">27,27</anim>
+          <anim name="walk_left" fps="8" loops="true">37,36,37,38</anim>
+          <anim name="idle_left" fps="8" loops="true">37,37</anim>
+          <anim name="dead_left" fps="8" loops="true">39,39</anim>
+          <anim name="steal_crouch" fps="6.5" loops="false">26,28,32,29,30</anim>
+          <anim name="steal" fps="5" loops="true">30,31</anim>
+          <anim name="steal_stand" fps="7" loops="false">30,29,32,28</anim>
+          <anim name="steal_store" fps="7" loops="true">33,34,35</anim>
+        </anims>
+      </sprite>
+      <sprite name="WIZARD" idx="3" className="CHAR_WIZARD" image="../../deploy/assets/graphics/characters/wizard_01_char.png" width="32" height="48" preview="0" anchorX="0" anchorY="16" centerAnchor="false" boundsX="0" boundsY="16" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
+        <anims>
+          <anim name="idle_down" fps="6" loops="true">1,1</anim>
+          <anim name="walk_down" fps="6" loops="true">1,0,1,2</anim>
+          <anim name="dead_down" fps="6" loops="true">3,3</anim>
+          <anim name="idle_up" fps="6" loops="true">11,11</anim>
+          <anim name="walk_up" fps="6" loops="true">11,10,11,12</anim>
+          <anim name="dead_up" fps="6" loops="true">13,13</anim>
+          <anim name="walk_right" fps="6" loops="true">21,20,21,22</anim>
+          <anim name="idle_right" fps="6" loops="true">21,21</anim>
+          <anim name="dead_right" fps="6" loops="true">23,23</anim>
+          <anim name="idle_left" fps="6" loops="true">31,31</anim>
+          <anim name="walk_left" fps="6" loops="true">31,30,31,32</anim>
+          <anim name="dead_left" fps="6" loops="true">33,33</anim>
+          <anim name="shoot_prep" fps="8" loops="false">1,4,5,6</anim>
+          <anim name="shoot" fps="6.5" loops="true">7,8,9</anim>
+          <anim name="shoot_end" fps="8" loops="false">6,5,4,1</anim>
+        </anims>
+      </sprite>
     </group>
     <group name="Markers" idx="4" open="false">
       <tileEntry name="START" idx="5" className="MARKER_START" image="../../deploy/assets/graphics/editor_stuff/mt_start.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false"/>
@@ -19,28 +56,26 @@
       </tileEntry>
       <tileEntry name="FINISH" idx="7" className="MARKER_END" image="../../deploy/assets/graphics/editor_stuff/mt_fin.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false"/>
     </group>
-    <sprite name="PLAYER" idx="8" className="PLAYER" image="../../deploy/assets/graphics/player.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="120" canEditFrames="true" lockRotation="false">
+    <sprite name="PLAYER" idx="8" className="PLAYER" image="../../deploy/assets/graphics/player.png" width="32" height="48" preview="0" anchorX="0" anchorY="16" centerAnchor="false" boundsX="0" boundsY="16" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="120" canEditFrames="true" lockRotation="false">
       <anims>
         <anim name="walk_down" fps="7" loops="true">1,0,1,2</anim>
-        <anim name="pounce_charge_down" fps="10" loops="true">3,4,5,4,5,4</anim>
         <anim name="stun_down" fps="10" loops="true">6,7</anim>
         <anim name="idle_down" fps="10" loops="true">1,1</anim>
         <anim name="walk_up" fps="7" loops="true">9,8,9,10</anim>
-        <anim name="pounce_charge_up" fps="10" loops="true">11,12,13,12,13,12,13</anim>
+        <anim name="pounce_charge_up" fps="10" loops="true">12,11</anim>
         <anim name="stun_up" fps="10" loops="true">14,15</anim>
         <anim name="idle_up" fps="10" loops="true">9,9</anim>
         <anim name="walk_right" fps="7" loops="true">17,16,17,18</anim>
-        <anim name="pounce_charge_right" fps="10" loops="true">19,20,21,20,21,20,21</anim>
+        <anim name="pounce_charge_right" fps="10" loops="true">18,19</anim>
         <anim name="stun_right" fps="10" loops="true">22,23</anim>
         <anim name="idle_right" fps="10" loops="true">17,17</anim>
-        <anim name="walk_left" fps="7" loops="true">25,24,25,26</anim>
-        <anim name="pounce_charge_left" fps="10" loops="true">27,28,29,28,29,28,29</anim>
-        <anim name="stun_left" fps="10" loops="true">30,31</anim>
-        <anim name="idle_left" fps="10" loops="true">25,25</anim>
-        <anim name="pounce_down" fps="10" loops="true">32,32</anim>
-        <anim name="pounce_up" fps="10" loops="true">40,40</anim>
-        <anim name="pounce_right" fps="10" loops="true">48,48</anim>
-        <anim name="pounce_left" fps="10" loops="true">56,56</anim>
+        <anim name="walk_left" fps="7" loops="true">22,21,22,24</anim>
+        <anim name="pounce_charge_left" fps="10" loops="true">25,26</anim>
+        <anim name="idle_left" fps="10" loops="true">22,22</anim>
+        <anim name="pounce_down" fps="10" loops="true">6,6</anim>
+        <anim name="pounce_up" fps="10" loops="true">13,13</anim>
+        <anim name="pounce_right" fps="10" loops="true">20,20</anim>
+        <anim name="pounce_left" fps="10" loops="true">27,27</anim>
       </anims>
     </sprite>
     <sprite name="EMOTE_ICON" idx="9" className="" image="../../deploy/assets/graphics/effects/gath_emote.png" width="16" height="16" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
@@ -54,7 +89,7 @@
   </spriteEntries>
   <layers>
     <group name="Group1" id="0" xScroll="1" yScroll="1" visible="true" open="true" locked="false" exports="true">
-      <maplayer name="Map1" id="0" xScroll="1" yScroll="1" x="0" y="0" width="30" height="19" tileset="../../deploy/assets/graphics/tiles/greybox_tiles.png" tileWidth="32" tileHeight="32" visible="true" hasHits="true" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
+      <maplayer name="Map1" id="0" xScroll="1" yScroll="1" x="0" y="0" width="30" height="19" tileset="../../deploy/assets/graphics/tiles/greybox_tiles.png" tileWidth="32" tileHeight="32" visible="false" hasHits="true" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
         <row>26,18,18,19,0,0,17,27,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10</row>
         <row>11,0,0,0,0,0,0,17,18,18,18,27,10,10,10,10,10,26,18,18,18,18,18,27,10,10,10,10,10,10</row>
         <row>11,0,0,0,0,0,0,0,0,0,0,9,10,10,26,18,18,19,0,0,0,0,0,17,18,18,27,10,10,10</row>
@@ -77,11 +112,6 @@
       </maplayer>
       <spritelayer name="Layer2" id="1" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false" selected="true">
         <sprite guid="2E77C800-5898-CF3F-6ACB-A3CD814ED251" x="32" y="32" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="5"/>
-        <sprite guid="14F6274E-EDDD-35A1-4637-7C53E6867445" x="96" y="96" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="2"/>
-        <sprite guid="1462A093-1A84-B7AF-4274-9BA7C817843E" x="320" y="288" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="10"/>
-        <sprite guid="C1EB556C-CA6D-9781-EE55-16969FFC93A6" x="768" y="320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="10"/>
-        <sprite guid="239C2AD2-92FF-3C9D-B5B7-9C094AAC8427" x="544" y="448" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="10"/>
-        <sprite guid="0F993191-98B8-BA0D-A173-35F5759F67B1" x="192" y="160" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="3"/>
       </spritelayer>
     </group>
   </layers>

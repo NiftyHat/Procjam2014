@@ -64,13 +64,14 @@ package game.world
 		public function checkForWaveDefeated():void {
 			var characters:Vector.<AxEntity> = getEntitiesInRect(null, [PJCharacter]);
 			if (characters && characters.length > 0) {
-					for each (var character:PJCharacter in characters) {
+				var character:PJCharacter
+					for each (character in characters) {
 					if (character.exists && character.alive) {
 						return;
 					}
 				}
 				_difficulty += 1;
-				for each (var character:PJCharacter in characters) {
+				for each (character in characters) {
 					var grave:PJGravestone = new PJGravestone (character.x, character.y);
 					addEntity(grave,character.x, character.y);
 					character.destroy();

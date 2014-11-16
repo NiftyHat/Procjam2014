@@ -1,6 +1,7 @@
 package game.entities 
 {
 	import axengine.util.ray.AxRayResult;
+	import axengine.world.AxWorld;
 	import de.polygonal.ds.HashMap;
 	import de.polygonal.ds.Itr;
 	import game.PJEntity;
@@ -13,6 +14,8 @@ package game.entities
 	import org.axgl.AxGroup;
 	import org.axgl.AxPoint;
 	import org.axgl.AxSprite;
+	import org.axgl.text.AxFont;
+	import org.axgl.text.AxText;
 	/**
 	 * ...
 	 * @author ...
@@ -20,7 +23,7 @@ package game.entities
 	public class PJCharacter extends PJEntity
 	{
 		private var _visionCone:HashMap;
-		private var _prevVisionRadius;
+		private var _prevVisionRadius:int;
 		
 		protected var _visionLength:int = 3;
 		protected var _visionTarget:AxPoint;
@@ -33,9 +36,12 @@ package game.entities
 		protected var _playerDetectionLevel:int;
 		protected var _isAlertMode:Boolean;
 		protected var _isPounced:Boolean;
+		protected var _isPlayerVisible:Boolean;
 		
 		public var riskLevel:int = 0;
 		public var lightmap:LightmapCollisionArray;
+		
+		protected var _txtDetection:AxText;
 		
 		public function PJCharacter() 
 		{
@@ -46,29 +52,47 @@ package game.entities
 		override public function loadNativeGraphics(Animated:Boolean = true, Reverse:Boolean = false, Width:uint = 0, Height:uint = 0, Unique:Boolean = false):void 
 		{
 			super.loadNativeGraphics(Animated, Reverse, Width, Height, Unique);
-			generateAnims();
+			
+		}
+		
+		override public function init($world:AxWorld):void 
+		{
+			super.init($world);
+			_txtDetection = new AxText (0, 0, AxFont.fromFont("alagard", true, 16), "100", 32, "center");
+			$world.add(_txtDetection);
 		}
 		
 		override public function update():void 
 		{
-			
 			super.update();
+			if (_txtDetection) {
+				_txtDetection.x = x + 2;
+				_txtDetection.y = y - 18;
+				_txtDetection.text = _playerDetectionLevel.toString();
+			}
 			if (_isPounced) {
 				return;
 			}
+			
+			if (_playerDetectionLevel > 0 && !_isPlayerVisible) {
+				setDetectionLevel(_playerDetectionLevel - 5);
+			}
+			updateAnimation();
+			
+		}
+		
+		protected function updateAnimation():void 
+		{
 			if (alive) {
 				if (_isMoving) {
-					animate("walk" + _animSuffix);
+					animateDirectional("walk");
 				} else {
-					animate("idle" + _animSuffix);
-					if (_playerDetectionLevel > 0) {
-						setDetectionLevel(_playerDetectionLevel - 5);
-					}
+					animateDirectional("idle");
+					
 				}
 			} else {
-				animate("dead" + _animSuffix);
+				animateDirectional("dead");
 			}
-			
 		}
 		
 		override public function destroy():void 
@@ -83,7 +107,7 @@ package game.entities
 			alive = false;
 		}
 		
-		protected function castVision($shadowType:EnumShadowType = null, $visionRadius:int = 5):void 
+		protected function castVision($shadowType:EnumShadowType = null, $visionRadius:int = 4):void 
 		{
 			
 			if (lightmap != null) {
@@ -150,16 +174,22 @@ package game.entities
 				if (_faceDir != NONE && alive)
 				{
 					var pjPlayer:PJPlayer = _world.player as PJPlayer
+					var containsPlayer:Boolean;
 					if (pjPlayer && pjPlayer.alive && pjPlayer.active) {
 						visionMap.showVisionCone(_visionCone, this);
 						var itterator:Itr = _visionCone.iterator();
 						var sp:ShadowPoint;
+						
 						while (sp = itterator.next() as ShadowPoint) {
 							if (pjPlayer.isOnTile(sp.x, sp.y)) {
-								_playerDetectionLevel += sp.intensity;
+								_playerDetectionLevel += (sp.intensity) * 10;
+								containsPlayer = true;
+								_isPlayerVisible = true;
 							}
-							
 						}
+					}
+					if ( !containsPlayer) {
+						_isPlayerVisible = false;
 					}
 				}
 				else {

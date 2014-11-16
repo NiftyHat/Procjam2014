@@ -165,7 +165,7 @@ package axengine.entities
 				if (!Name) {
 					anim.callback = Callback;
 				}
-				else (anim.name == Name)
+				else if (anim.name == Name)
 				{
 					anim.callback = Callback;
 					return this;

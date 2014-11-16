@@ -825,8 +825,8 @@ package axengine.world
 			var results:Vector.<AxEntity> = new Vector.<AxEntity>()
 			for each (var entity:AxEntity in m_entitys)
 			{
-				var tx = $tilePoint.x * 32;
-				var ty = $tilePoint.y * 32;
+				var tx:int = $tilePoint.x * 32;
+				var ty:int = $tilePoint.y * 32;
 				var classType:Class
 				if ($tilePoint && entity.center.x > tx && entity.center.x < tx + 32
 				&& entity.center.y < ty + 32 && entity.center.y > ty)

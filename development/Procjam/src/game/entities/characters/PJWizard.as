@@ -32,11 +32,16 @@ package game.entities.characters
 		
 		public function PJWizard() 
 		{
-			_mMoveSpeed = 0.45;
+			_mMoveSpeed = 0.5;
 			_libraryAssetName = "WIZARD";
 			_isDebugPathfinding = true;
 			_shootTimer = addTimer(1.0, onShootTimer, 0);
 			_shootTimer.pause();
+		}
+		
+		override public function loadNativeGraphics(Animated:Boolean = true, Reverse:Boolean = false, Width:uint = 0, Height:uint = 0, Unique:Boolean = false):void 
+		{
+			super.loadNativeGraphics(Animated, Reverse, Width, Height, Unique);
 		}
 		
 		override public function kill():void 
@@ -71,7 +76,6 @@ package game.entities.characters
 		{
 			super.init($world);
 			loadNativeGraphics();
-			generateAnims();
 		}
 		
 		override public function update():void 
@@ -82,7 +86,7 @@ package game.entities.characters
 			}
 			
 			if (_isOverwatch && _overwatchTimer){
-				var overwatchSize:int = 1 + int(_overwatchTimer.perc * 7); 
+				var overwatchSize:int = 3 + 3 - int(_overwatchTimer.perc * 3); 
 				if (_followTarget) {
 					switch(_followTarget.faceDir) {
 					case UP:
@@ -203,7 +207,7 @@ package game.entities.characters
 			return tiles;
 		}
 		
-		function hLine(xp:Number, yp:Number, w:Number):Vector.<AxPoint> {
+		private function hLine(xp:Number, yp:Number, w:Number):Vector.<AxPoint> {
 			var line:Vector.<AxPoint> = new Vector.<AxPoint> ();
 			for (var i:int = 0; i < w; i++) {
 				line.push (new AxPoint(xp+i,yp));

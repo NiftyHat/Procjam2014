@@ -109,7 +109,7 @@ package keith
 			noise.setPixel(0, 1, 0);
 			noise.setPixel(1, 1, 0);
 			
-			var _geometry = DungeonFromWangAlgorithm.convertFromWang(WangGenerator.buildMaze(noise, seed, 190), DungeonFromWangAlgorithm.matrix52, DungeonFromWangAlgorithm.matrix5);
+			var _geometry:String = DungeonFromWangAlgorithm.convertFromWang(WangGenerator.buildMaze(noise, seed, 190), DungeonFromWangAlgorithm.matrix52, DungeonFromWangAlgorithm.matrix5);
 			var geometryArray:Array = _geometry.split("\n");
 			
 			var wallsString:String = ""

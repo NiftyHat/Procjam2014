@@ -12,7 +12,7 @@ package game.entities
 	public class PJFire extends PJEntity 
 	{
 		
-		var spreadChance:int = 0;
+		protected var spreadChance:int = 0;
 		
 		protected var _neighbors:Vector.<AxPoint>;
 		

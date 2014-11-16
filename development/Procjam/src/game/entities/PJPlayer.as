@@ -91,7 +91,7 @@ package game.entities
 				} 
 				else 
 				{
-					var oldFaceDir = _faceDir;
+					var oldFaceDir:int = _faceDir;
 					
 					if (Ax.keys.down(AxKey.DOWN)) {
 					_faceDir = DOWN;
@@ -175,7 +175,7 @@ package game.entities
 				}
 				_isPouncing = true;
 				//onPounceComplete(char);
-				TweenLite.to(this, ($rayResult.path.length + 1) * 0.1 , {x:tx, y:ty, overwrite:0, onComplete:onPounceComplete, onReverseComplete:onPounceComplete, onCompleteParams:[char]})
+				TweenLite.to(this, ($rayResult.path.length) * 0.05 , {x:tx, y:ty, overwrite:0, onComplete:onPounceComplete, onReverseComplete:onPounceComplete, onCompleteParams:[char]})
 			} else {
 				onPounceComplete(null);
 			}

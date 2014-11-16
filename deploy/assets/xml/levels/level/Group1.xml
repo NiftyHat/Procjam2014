@@ -23,6 +23,19 @@
 			</LAYER>
 		</LAYERS>
 		<OBJECTS>
+			<START>
+				<START x="32.000" y="32.000"/>
+				<ID link_id="null" guid="2E77C800-5898-CF3F-6ACB-A3CD814ED251"/>
+				<CLASS name="MARKER_START"/>
+				<SIZE width="16.000" height="16.000"/>
+				<ROTATION deg="0.000" rad="0.000"/>
+				<BOUNDS x="0" y="0"  width="16" height="16"/>
+				<SCROLL x="1" y="1"/>
+				<SCALE x="1.000" y="1.000" />
+				<ANCHOR x="0" y="0"/>
+				<PROPS>					
+				</PROPS>
+			</START>
 		</OBJECTS>
 		<SHAPES>
 		</SHAPES>

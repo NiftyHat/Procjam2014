@@ -4,6 +4,7 @@ package game.entities.characters
 	import axengine.util.ray.AxRayResult;
 	import axengine.world.AxWorld;
 	import com.greensock.TweenLite;
+	import game.entities.characters.actions.PJActionSteal;
 	import game.entities.PJCharacter;
 	import game.entities.PJCoinPile;
 	import game.entities.PJPlayer;
@@ -21,7 +22,7 @@ package game.entities.characters
 	{
 		
 		protected var _targetTreasure:PJCoinPile;
-		protected var _stealTimer:AxTimer;
+		protected var _timer:AxTimer;
 		
 		
 		public function PJThief() 
@@ -36,20 +37,12 @@ package game.entities.characters
 		{
 			super.init($world);
 			loadNativeGraphics();
-			_stealTimer = addTimer(0.3, onStealTimerComplete, 0);
-			_stealTimer.pause();
 		}
 		
-		private function onStealTimerComplete():void 
+		override public function loadNativeGraphics(Animated:Boolean = true, Reverse:Boolean = false, Width:uint = 0, Height:uint = 0, Unique:Boolean = false):void 
 		{
-			if (_targetTreasure && alive) {
-				if (isOnEntity(_targetTreasure)) {
-					_targetTreasure.hurt(10);
-				} else {
-					_stealTimer.pause();
-				}
-				
-			}
+			super.loadNativeGraphics(Animated, Reverse, Width, Height, Unique);
+			
 		}
 		
 		protected function clearTarget():void {
@@ -86,8 +79,10 @@ package game.entities.characters
 				_mMoveSpeed = 0.5;
 				if (!_isMoving) 
 				{
-					if (_targetTreasure && _targetTreasure.alive && isOnEntity(_targetTreasure)) {
-						_stealTimer.start();
+					if (_targetTreasure && _targetTreasure.alive && isOnEntity(_targetTreasure) && !isAction(PJActionSteal)) {
+						var stealAction:PJActionSteal = new PJActionSteal()
+						stealAction.setTarget(_targetTreasure);
+						setAction(stealAction);
 					} else {
 						detectTreasure();
 					}
@@ -97,9 +92,28 @@ package game.entities.characters
 			castVision();
 		}
 		
+		override protected function updateAnimation():void 
+		{
+			//super.updateAnimation();
+			if (alive) {
+				if (_isMoving) {
+					animateDirectional("walk");
+				} else {
+					if (!isAction(PJActionSteal)) {
+						animateDirectional("idle");
+					}
+				}
+			} else {
+				animateDirectional("dead");
+			}
+		}
+		
+		
+		
 		override protected function onJustSeenPlayer(pJPlayer:PJPlayer):void 
 		{
 			super.onJustSeenPlayer(pJPlayer);
+			clearAction();
 			if (_tweenMove) {
 				_tweenMove.reverse();
 				_isMoving = false;

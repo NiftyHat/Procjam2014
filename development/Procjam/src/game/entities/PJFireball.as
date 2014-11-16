@@ -53,7 +53,7 @@ package game.entities
 			
 		}
 		
-		public function shootAtEntity($entity:PJEntity, $velocity:int) {
+		public function shootAtEntity($entity:PJEntity, $velocity:int):void {
 			var angle:Number = Math.atan2($entity.centerY - centerY, $entity.centerX - centerX);
 			 velocity.x = Math.cos(angle) * _launchSpeed;
 			 velocity.y = Math.sin(angle) * _launchSpeed;
