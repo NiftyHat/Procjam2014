@@ -1,15 +1,10 @@
 package game 
 {
 	import axengine.events.AxLevelEvent;
-	import base.events.GameEvent;
-	import game.entities.characters.PJThief;
-	import game.entities.characters.PJWizard;
-	import game.entities.PJPlayer;
+	import game.ui.PJUserInterface;
 	import game.world.PJWorld;
 	import org.axgl.Ax;
 	import org.axgl.AxState;
-	import org.axgl.input.AxKey;
-	import org.axgl.text.AxText;
 	
 	/**
 	 * ...
@@ -18,6 +13,7 @@ package game
 	public class PJGameState extends AxState 
 	{
 		private var _world:PJWorld;
+		private var _ui:PJUserInterface;
 		
 		public function PJGameState() 
 		{
@@ -35,6 +31,11 @@ package game
 				Core.control.score["BESERKER"] = 0;
 				_world = new PJWorld()
 				add(_world);
+				
+				_ui = new PJUserInterface();
+				add(_ui);
+				
+				
 			}
 		}
 		
@@ -48,6 +49,9 @@ package game
 		{
 			_world.destroy();
 			_world = null;
+			_ui.destroy();
+			_ui = null;
+			
 			Core.control.removeEventListener(AxLevelEvent.END, onLevelComplete);
 			Ax.switchState(new PJLevelEndState());
 		}
