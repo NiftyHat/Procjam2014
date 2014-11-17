@@ -65,23 +65,20 @@
 			<ANCHOR x="0" y="16"/>
 			<ANIMS>
 				<ANIM animnum="0" fps="7.000" name="walk_down" numframes="4" looped="true" frames="1,0,1,2"/>
- 				<ANIM animnum="1" fps="10.000" name="stun_down" numframes="2" looped="true" frames="6,7"/>
- 				<ANIM animnum="2" fps="10.000" name="idle_down" numframes="2" looped="true" frames="1,1"/>
- 				<ANIM animnum="3" fps="7.000" name="walk_up" numframes="4" looped="true" frames="9,8,9,10"/>
- 				<ANIM animnum="4" fps="10.000" name="pounce_charge_up" numframes="2" looped="true" frames="12,11"/>
- 				<ANIM animnum="5" fps="10.000" name="stun_up" numframes="2" looped="true" frames="14,15"/>
- 				<ANIM animnum="6" fps="10.000" name="idle_up" numframes="2" looped="true" frames="9,9"/>
- 				<ANIM animnum="7" fps="7.000" name="walk_right" numframes="4" looped="true" frames="17,16,17,18"/>
- 				<ANIM animnum="8" fps="10.000" name="pounce_charge_right" numframes="2" looped="true" frames="18,19"/>
- 				<ANIM animnum="9" fps="10.000" name="stun_right" numframes="2" looped="true" frames="22,23"/>
- 				<ANIM animnum="10" fps="10.000" name="idle_right" numframes="2" looped="true" frames="17,17"/>
- 				<ANIM animnum="11" fps="7.000" name="walk_left" numframes="4" looped="true" frames="22,21,22,24"/>
- 				<ANIM animnum="12" fps="10.000" name="pounce_charge_left" numframes="2" looped="true" frames="25,26"/>
- 				<ANIM animnum="13" fps="10.000" name="idle_left" numframes="2" looped="true" frames="22,22"/>
- 				<ANIM animnum="14" fps="10.000" name="pounce_down" numframes="2" looped="true" frames="6,6"/>
- 				<ANIM animnum="15" fps="10.000" name="pounce_up" numframes="2" looped="true" frames="13,13"/>
- 				<ANIM animnum="16" fps="10.000" name="pounce_right" numframes="2" looped="true" frames="20,20"/>
- 				<ANIM animnum="17" fps="10.000" name="pounce_left" numframes="2" looped="true" frames="27,27"/>
+ 				<ANIM animnum="1" fps="10.000" name="idle_down" numframes="2" looped="true" frames="1,1"/>
+ 				<ANIM animnum="2" fps="7.000" name="walk_up" numframes="4" looped="true" frames="8,7,8,9"/>
+ 				<ANIM animnum="3" fps="10.000" name="pounce_charge_up" numframes="2" looped="true" frames="11,12"/>
+ 				<ANIM animnum="4" fps="10.000" name="idle_up" numframes="2" looped="true" frames="8,8"/>
+ 				<ANIM animnum="5" fps="7.000" name="walk_right" numframes="4" looped="true" frames="15,14,15,16"/>
+ 				<ANIM animnum="6" fps="10.000" name="pounce_charge_right" numframes="2" looped="true" frames="18,19"/>
+ 				<ANIM animnum="7" fps="10.000" name="idle_right" numframes="2" looped="true" frames="15,15"/>
+ 				<ANIM animnum="8" fps="7.000" name="walk_left" numframes="4" looped="true" frames="22,21,22,24"/>
+ 				<ANIM animnum="9" fps="10.000" name="pounce_charge_left" numframes="2" looped="true" frames="25,26"/>
+ 				<ANIM animnum="10" fps="10.000" name="idle_left" numframes="2" looped="true" frames="22,22"/>
+ 				<ANIM animnum="11" fps="10.000" name="pounce_down" numframes="2" looped="true" frames="6,6"/>
+ 				<ANIM animnum="12" fps="10.000" name="pounce_up" numframes="2" looped="true" frames="13,13"/>
+ 				<ANIM animnum="13" fps="10.000" name="pounce_right" numframes="2" looped="true" frames="20,20"/>
+ 				<ANIM animnum="14" fps="10.000" name="pounce_left" numframes="2" looped="true" frames="27,27"/>
  			</ANIMS>
  		</PLAYER>
 		<EMOTE_ICON path="graphics/effects/gath_emote.png">
@@ -92,10 +89,10 @@
 				<ANIM animnum="0" fps="10.000" name="!" numframes="12" looped="false" frames="0,2,17,18,18,18,18,18,19,17,2,1"/>
  			</ANIMS>
  		</EMOTE_ICON>
-		<COIN_PILE path="graphics/items/coin_pile.png">
-			<SIZE width="32" height="32"/>
-			<BOUNDS x="0" y="0" width="32" height="32"/>
-			<ANCHOR x="0" y="0"/>
+		<COIN_PILE path="graphics/pickups/gold_pile.png">
+			<SIZE width="32" height="48"/>
+			<BOUNDS x="0" y="16" width="32" height="32"/>
+			<ANCHOR x="0" y="16"/>
 		</COIN_PILE>
 		<GRAVE path="graphics/grave.png">
 			<SIZE width="32" height="32"/>

@@ -35,8 +35,7 @@ package game.ui
 		[Embed(source="../../../../../design/UI/vignette.png")]
 		public static const GRAPHIC_VIGNETTE:Class;
 		
-		[Embed(source="../../../../../design/tiles/tombstones.png")]
-		public static const GRAPHIC_TOMBSTONE:Class;
+		
 		
 		private static const MAX_GOLD_POINTER_Y:int = 106
 		private static const MIN_GOLD_POINTER_Y:int = 584
@@ -171,7 +170,7 @@ package game.ui
 					break;
 			}
 			
-			var newTomb:AxSprite = new AxSprite(tombstoneGroup.members.length * 23, 0, GRAPHIC_TOMBSTONE, 22, 32)
+			var newTomb:AxSprite = new AxSprite(tombstoneGroup.members.length * 23, 0, Core.lib.int.img_tombstones, 22, 32)
 			newTomb.show(frame)
 			tombstoneGroup.add(newTomb);
 			killcount++;

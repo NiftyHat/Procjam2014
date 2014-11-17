@@ -16,6 +16,7 @@ package game.entities
 	import org.axgl.AxSprite;
 	import org.axgl.text.AxFont;
 	import org.axgl.text.AxText;
+	import org.axgl.util.AxTimer;
 	/**
 	 * ...
 	 * @author ...
@@ -40,6 +41,7 @@ package game.entities
 		
 		public var riskLevel:int = 0;
 		public var lightmap:LightmapCollisionArray;
+		protected var _startDelay:AxTimer;
 		
 		protected var _txtDetection:AxText;
 		
@@ -60,11 +62,20 @@ package game.entities
 			super.init($world);
 			_txtDetection = new AxText (0, 0, AxFont.fromFont("alagard", true, 16), "100", 32, "center");
 			$world.add(_txtDetection);
+			_startDelay = addTimer(0.1, null, int(Math.random() * 4));
+			_startDelay.start();
+		}
+		
+		override protected function move($dir:int):void 
+		{ 
+			super.move($dir);
 		}
 		
 		override public function update():void 
 		{
+			
 			super.update();
+			
 			if (_txtDetection) {
 				_txtDetection.x = x + 2;
 				_txtDetection.y = y - 18;
@@ -103,6 +114,13 @@ package game.entities
 		override public function kill():void 
 		{
 			//super.kill();
+			var visionMap:VisionMap = (_world as PJWorld).visionMap;
+			if (visionMap && _visionCone) {
+				visionMap.removeVisionCone(_visionCone);
+			}
+			if (_txtDetection) {
+				_txtDetection.destroy();
+			}
 			animate("dead" + _animSuffix);
 			alive = false;
 		}

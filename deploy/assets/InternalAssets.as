@@ -33,7 +33,21 @@ package assets
 		
 		
 		[Embed(source = "graphics/effects/fire.png")]public var img_fire:Class;
-		[Embed(source="graphics/projectiles/fireball.png")]public var img_fireball:Class;
+		[Embed(source = "graphics/projectiles/fireball.png")]public var img_fireball:Class;
+		
+		[Embed(source="graphics/ui/tombstones.png")]public var img_tombstones:Class;
+		
+		
+		[Embed(source = "graphics/ui/title/game_start.jpg")]public var img_game_start:Class;
+		[Embed(source = "graphics/ui/title/subtitle_strapline.png")]public var img_subtitle_strapline:Class;
+		[Embed(source = "graphics/ui/title/subtitle_text.png")]public var img_subtitle_text:Class;
+		[Embed(source = "graphics/ui/title/title_text.png")]public var img_title_text:Class;
+		
+		[Embed(source = "graphics/ui/title/byline_text.png")]public var img_byline_text:Class;
+		
+		[Embed(source = "graphics/ui/gameover/game_over_bg.jpg")]public var img_game_over_bg:Class;
+		[Embed(source="graphics/ui/gameover/game_over_text.png")]public var img_game_over_text:Class;
+		
 		
 		public function InternalAssets() 
 		{

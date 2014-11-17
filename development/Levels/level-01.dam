@@ -4,9 +4,9 @@
   <bgColor>0x777777</bgColor>
   <viewPos x="70" y="83"/>
   <firstLayersTop>false</firstLayersTop>
-  <spriteEntries currentId="13">
+  <spriteEntries currentId="14">
     <group name="Characters" idx="1" open="true">
-      <sprite name="THIEF" idx="2" className="CHAR_THIEF" image="../../deploy/assets/graphics/characters/theif_01_char.png" width="32" height="48" preview="1" anchorX="0" anchorY="16" centerAnchor="false" boundsX="0" boundsY="16" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false" selected="true">
+      <sprite name="THIEF" idx="2" className="CHAR_THIEF" image="../../deploy/assets/graphics/characters/theif_01_char.png" width="32" height="48" preview="1" anchorX="0" anchorY="16" centerAnchor="false" boundsX="0" boundsY="16" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
         <anims>
           <anim name="walk_down" fps="8" loops="true">1,0,1,2</anim>
           <anim name="idle_down" fps="8" loops="true">1,1</anim>
@@ -46,7 +46,7 @@
         </anims>
       </sprite>
     </group>
-    <group name="Markers" idx="4" open="false">
+    <group name="Markers" idx="4" open="true">
       <tileEntry name="START" idx="5" className="MARKER_START" image="../../deploy/assets/graphics/editor_stuff/mt_start.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false"/>
       <tileEntry name="TELEPORT" idx="6" className="MARKER_TELEPORT" image="../../deploy/assets/graphics/editor_stuff/mt_teleport.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false">
         <properties>
@@ -56,19 +56,16 @@
       </tileEntry>
       <tileEntry name="FINISH" idx="7" className="MARKER_END" image="../../deploy/assets/graphics/editor_stuff/mt_fin.png" offsetX="0" offsetY="0" width="16" height="16" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="16" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" lockRotation="false"/>
     </group>
-    <sprite name="PLAYER" idx="8" className="PLAYER" image="../../deploy/assets/graphics/player.png" width="32" height="48" preview="0" anchorX="0" anchorY="16" centerAnchor="false" boundsX="0" boundsY="16" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="120" canEditFrames="true" lockRotation="false">
+    <sprite name="PLAYER" idx="8" className="PLAYER" image="../../deploy/assets/graphics/player.png" width="32" height="48" preview="0" anchorX="0" anchorY="16" centerAnchor="false" boundsX="0" boundsY="16" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="120" canEditFrames="true" lockRotation="false" selected="true">
       <anims>
         <anim name="walk_down" fps="7" loops="true">1,0,1,2</anim>
-        <anim name="stun_down" fps="10" loops="true">6,7</anim>
         <anim name="idle_down" fps="10" loops="true">1,1</anim>
-        <anim name="walk_up" fps="7" loops="true">9,8,9,10</anim>
-        <anim name="pounce_charge_up" fps="10" loops="true">12,11</anim>
-        <anim name="stun_up" fps="10" loops="true">14,15</anim>
+        <anim name="walk_up" fps="7" loops="true">8,7,8,10</anim>
+        <anim name="pounce_charge_up" fps="10" loops="true">11,12</anim>
         <anim name="idle_up" fps="10" loops="true">9,9</anim>
-        <anim name="walk_right" fps="7" loops="true">17,16,17,18</anim>
+        <anim name="walk_right" fps="7" loops="true">15,14,15,16</anim>
         <anim name="pounce_charge_right" fps="10" loops="true">18,19</anim>
-        <anim name="stun_right" fps="10" loops="true">22,23</anim>
-        <anim name="idle_right" fps="10" loops="true">17,17</anim>
+        <anim name="idle_right" fps="10" loops="true">15,15</anim>
         <anim name="walk_left" fps="7" loops="true">22,21,22,24</anim>
         <anim name="pounce_charge_left" fps="10" loops="true">25,26</anim>
         <anim name="idle_left" fps="10" loops="true">22,22</anim>
@@ -83,7 +80,7 @@
         <anim name="!" fps="10" loops="false">0,2,17,18,18,18,18,18,19,17,2,1</anim>
       </anims>
     </sprite>
-    <sprite name="COIN_PILE" idx="10" className="COIN_PILE" image="../../deploy/assets/graphics/items/coin_pile.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    <sprite name="COIN_PILE" idx="10" className="COIN_PILE" image="../../deploy/assets/graphics/pickups/gold_pile.png" width="32" height="48" preview="0" anchorX="0" anchorY="16" centerAnchor="false" boundsX="0" boundsY="16" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
     <sprite name="GRAVE" idx="11" className="DECO" image="../../deploy/assets/graphics/grave.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
     <sprite name="ARROW" idx="12" className="ARROW" image="../../deploy/assets/graphics/projectiles/arrow.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
   </spriteEntries>

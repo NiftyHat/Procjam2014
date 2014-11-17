@@ -9,6 +9,7 @@ package game.entities.characters
 	import game.entities.PJCoinPile;
 	import game.entities.PJPlayer;
 	import game.PJEntity;
+	import game.ui.events.KillEvent;
 	import org.axgl.Ax;
 	import org.axgl.AxEntity;
 	import org.axgl.AxPoint;
@@ -54,7 +55,7 @@ package game.entities.characters
 		
 		override public function kill():void 
 		{
-			Core.control.score["THIEF"] += 1;
+			Core.control.dispatchEvent(new KillEvent(KillEvent.REGISTER_KILL, KillEvent.KILLTYPE_THIEF));
 			super.kill();
 			clearTarget();
 		}

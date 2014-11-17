@@ -18,7 +18,7 @@ package game.entities
 			create(6, 6, 0xffff0000);
 			drag.x = drag.y = 3;
 			acceleration.x = acceleration.y = 0;
-			load(Core.lib.int.img_fireball, 8, 8)
+			load(Core.lib.int.img_fireball, 12, 12)
 			addAnimation("idle", [0, 1, 2, 3], 30, true);
 			//solid = true;
 			animate("idle");

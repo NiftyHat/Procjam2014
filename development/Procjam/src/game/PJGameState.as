@@ -1,6 +1,7 @@
 package game 
 {
 	import axengine.events.AxLevelEvent;
+	import game.ui.events.KillEvent;
 	import game.ui.PJUserInterface;
 	import game.world.PJWorld;
 	import org.axgl.Ax;
@@ -19,7 +20,22 @@ package game
 		{
 			super();
 			Core.control.addEventListener(AxLevelEvent.END, onLevelComplete);
-			
+			Core.control.addEventListener(KillEvent.REGISTER_KILL, onPlayerScoreKill);
+		}
+		
+		private function onPlayerScoreKill(e:KillEvent):void 
+		{
+			switch (e.killType) {
+				case KillEvent.KILLTYPE_THIEF:
+					Core.control.score[KillEvent.KILLTYPE_THIEF] += 1;
+					break;
+					case KillEvent.KILLTYPE_WIZARD:
+					Core.control.score[KillEvent.KILLTYPE_WIZARD] += 1;
+					break;
+					case KillEvent.KILLTYPE_BESERKER:
+					Core.control.score[KillEvent.KILLTYPE_BESERKER] += 1;
+					break;
+			}
 		}
 		
 		override public function create():void 

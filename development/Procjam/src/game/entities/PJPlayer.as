@@ -45,7 +45,7 @@ package game.entities
 			addAnimation("idle_right", [7]);
 			addAnimation("idle_up", [10]);
 			_attackTarget = new AxPoint();
-			_mMoveSpeed = 0.25;
+			_mMoveSpeed = 0.20;
 		}
 		
 		override public function init($world:AxWorld):void 
@@ -67,7 +67,7 @@ package game.entities
 				return;
 			}
 			if (!_isMoving) {
-				if (Ax.keys.down(AxKey.Z)) {
+				if (Ax.keys.down(AxKey.SPACE)) {
 					pounceCharge();
 				} else if (_isChargingPounce) {
 					pounceCancel();
@@ -189,7 +189,7 @@ package game.entities
 			_isMoving = false;
 			_isChargingPounce = false;
 			if ($target) {
-				$target.alive = false;
+				$target.kill();
 			}
 			addTimer(0.3, (_world as PJWorld).checkForWaveDefeated, 1);
 		}

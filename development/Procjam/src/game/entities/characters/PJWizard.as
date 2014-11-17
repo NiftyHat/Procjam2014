@@ -3,10 +3,12 @@ package game.entities.characters
 	import axengine.entities.markers.AxMarkerStart;
 	import axengine.util.ray.AxRayResult;
 	import axengine.world.AxWorld;
+	import game.entities.characters.actions.PJAction;
 	import game.entities.PJCharacter;
 	import game.entities.PJFireball;
 	import game.entities.PJPlayer;
 	import game.PJEntity;
+	import game.ui.events.KillEvent;
 	import game.util.EnumShadowType;
 	import game.world.PJWorld;
 	import keith.Shadowcaster;
@@ -46,8 +48,9 @@ package game.entities.characters
 		
 		override public function kill():void 
 		{
-			Core.control.score["WIZARD"] += 1;
+			Core.control.dispatchEvent(new KillEvent(KillEvent.REGISTER_KILL, KillEvent.KILLTYPE_WIZARD));
 			super.kill();
+			_shootTimer.pause();
 		}
 		
 		private function onShootTimer():void 
@@ -63,6 +66,7 @@ package game.entities.characters
 			}
 			follow(null);
 			if (!_isAlertMode) {
+				clearAction();
 				_shootTimer.pause();
 			}
 		}
@@ -82,7 +86,9 @@ package game.entities.characters
 		{
 			super.update();
 			if (!alive) {
-				destroy();
+				animateDirectional("dead");
+				return;
+				//destroy();
 			}
 			
 			if (_isOverwatch && _overwatchTimer){
@@ -101,7 +107,7 @@ package game.entities.characters
 					case RIGHT:
 						face(LEFT);
 					break;
-				}
+					}
 				}
 				
 				castVision(EnumShadowType.HALF, overwatchSize);
@@ -109,10 +115,11 @@ package game.entities.characters
 				castVision();
 			}
 			
-			if (_playerDetectionLevel > 5) 
+			if (_playerDetectionLevel > 20) 
 			{
 				//I'VE SEEN THE PLAYER, QUICK, DO SOMETHIGN!
-				if (!_shootTimer.active) {
+				if (!_shootTimer.active && !_isMoving) {
+					
 					_shootTimer.start();
 					_shootTimer.active = true;
 				}
@@ -147,7 +154,7 @@ package game.entities.characters
 					if (!_isMoving) {
 						var dx: int = Math.abs(_followTarget.tileX - this.tileX);
 						var dy: int =  Math.abs(_followTarget.tileY - this.tileY);
-						if (dx > 1 || dy > 1) {
+						if (dy + dy > 1) {
 							pathToEntity(_followTarget);
 							_isOverwatch = false;
 							_overwatchTimer = null;
@@ -165,6 +172,24 @@ package game.entities.characters
 			}
 			
 			
+		}
+		
+		override protected function updateAnimation():void 
+		{
+			//super.updateAnimation();
+			if (alive) {
+				if (_isMoving) {
+					animateDirectional("walk");
+				} else {
+					if (_shootTimer.active) {
+						animate("shoot");
+					} else {
+						animateDirectional("idle");
+					}
+				}
+			} else {
+				animateDirectional("dead");
+			}
 		}
 		
 		private function onOverwatchAdvance():void 
@@ -232,6 +257,9 @@ package game.entities.characters
 		{
 			super.onMoveComplete();
 			if (_followTarget) {
+				if (!_followTarget.alive) {
+					follow(null);
+				}
 				//pathToEntity(_followTarget);
 			} else {
 				_path = null;

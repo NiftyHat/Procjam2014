@@ -10,6 +10,7 @@ package axengine.components
 	import flash.events.EventDispatcher;
 	import flash.events.IEventDispatcher;
 	import game.PJGameState;
+	import game.PJTitleState;
 	import org.axgl.Ax;
 	import org.flixel.FlxG;
 	
@@ -91,7 +92,7 @@ package axengine.components
 		public function startNewGame ():void
 		{
 			Ax.state.destroy();
-			Ax.pushState(new PJGameState());
+			Ax.pushState(new PJTitleState());
 			
 		}
 	

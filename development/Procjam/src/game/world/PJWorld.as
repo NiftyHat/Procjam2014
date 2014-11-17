@@ -12,6 +12,7 @@ package game.world
 	import be.dauntless.astar.core.Astar;
 	import be.dauntless.astar.core.AstarEvent;
 	import be.dauntless.astar.core.AstarPath;
+	import com.greensock.TweenLite;
 	import de.polygonal.math.PM_PRNG;
 	import flash.geom.Point;
 	import game.ai.PathCallbackRequest;
@@ -22,6 +23,7 @@ package game.world
 	import game.entities.PJCoinPile;
 	import game.entities.PJPlayer;
 	import game.entities.PJProjectile;
+	import game.ui.events.GoldEvent;
 	import game.VisionMap;
 	import keith.ConvertToAxTileMaps;
 	import org.axgl.Ax;
@@ -72,7 +74,8 @@ package game.world
 				}
 				_difficulty += 1;
 				for each (character in characters) {
-					var grave:PJGravestone = new PJGravestone (character.x, character.y);
+					
+					var grave:PJGravestone = new PJGravestone (character);
 					addEntity(grave,character.x, character.y);
 					character.destroy();
 				}
@@ -87,12 +90,16 @@ package game.world
 			}
 			var treasures:Vector.<AxEntity> = getEntitiesInRect(null, [PJCoinPile]);
 			if (treasures && treasures.length > 0) {
+					var totalGold:int = 0;
 					for each (var treasure:PJCoinPile in treasures) {
 					if (treasure.active) {
-						return;
+						totalGold += treasure.health;
 					}
 				}
-				Core.control.levelEnd(false);
+				if (totalGold <= 0) {
+					Core.control.levelEnd(false);
+				}
+				Core.control.dispatchEvent(new GoldEvent(GoldEvent.SET_DUNGEON_CURRENT_GOLD_TO,totalGold));
 			}
 			
 		}
@@ -180,6 +187,7 @@ package game.world
 			var minPiles:int = 8;
 			var maxPiles:int = 15;
 			var goldPileCount:int = pr.nextIntRange(minPiles, maxPiles);
+			Core.control.dispatchEvent(new GoldEvent(GoldEvent.SET_DUNGEON_TOTAL_GOLD_TO, totalGoldValue));
 			while (totalGoldValue > 0 && emptyTiles.length > 0 && goldPileCount > 0) {
 				var gold:PJCoinPile = new PJCoinPile();
 				var tile:AxPoint = emptyTiles.pop();
@@ -225,19 +233,20 @@ package game.world
 				}
 				thief.x = startingTile.x * 32;
 				thief.y = startingTile.y * 32;
-				addEntity(thief);
+				TweenLite.delayedCall((0.25 * numThieves)  + 0.1, addEntity, [thief]);
 				numThieves--;
 				if (numRangers > 0) {
 					numRangers--;
-					var ranger:PJWizard = new PJWizard ();
+					var wizard:PJWizard = new PJWizard ();
 					var startTileIndex:int = pr.nextIntRange(0, startingTiles.length - 1)
 					var startingTile:AxPoint = startingTiles.splice(startTileIndex, 1)[0];
 					if ($tile) {
 						startingTile = $tile;
 					}
-					ranger.x = startingTile.x * 32;
-					ranger.y = startingTile.y * 32;
-					addEntity(ranger);
+					wizard.x = startingTile.x * 32;
+					wizard.y = startingTile.y * 32;
+					addEntity(wizard);
+					TweenLite.delayedCall((0.25 * numRangers) + 0.1, addEntity, [wizard]);
 				}
 			}
 		}
